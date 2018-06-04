@@ -1,0 +1,64 @@
+\section{Conclusions}
+
+The main goal of this work was to learn a high level soccer behavior for a simulated soccer robot.
+We tackled this problem using state-of-the-art model-free deep reinforcement learning algorithms
+This allowed us to avoid dealing with the complex dynamics of a humanoid robot.
+
+We decided to use a walking engine based on the Zero Moment Point (ZMP) concept that abstracts the need to deal with joint angles.
+The walking engine receives the desired speeds in forward, sideways and rotational directions and outputs
+the joint angles. The engine models the humanoid robot using the 3D Linear Inverted Pendulum Model to 
+approximate the robot dynamics.
+
+To accomplish our main goal, we developed a DRL framework that facilitates the integration of learning
+algorithms to learn upon the 3D RoboCup Soccer Simulation Environment. It is based on a client-server implementation and
+allowed us to use multiple DRL algorithms in different simulation tasks.
+This made it easy to switch between tasks and between learning algorithms and is one of the main 
+contributions of this dissertation.
+
+For this work, we experimented with three different learning algorithms: PPO, TRPO and DDPG.
+We used these algorithms on a set of three tasks (two of them were warm up tasks) and showed that the 
+learned behaviors performs better than the baseline behavior (implemented by the ITAndroids team using
+classical control theory and heuristics).
+
+Based on our training results, PPO performs the best in regards to the the metrics we defined and was
+able to effectively learn a humanoid soccer policy against a single opponent.
+
+\section{Future Work}
+
+This work could be extended in two major research paths:
+ enhancing the performance of the tasks studies in this dissertation or by
+learning a wider set of behaviors in the Soccer Simulation 3D environment or even in different environments.
+
+There are many approaches to improve the performance of the dribbling soccer agent, for example:
+
+\begin{itemize}
+    \item Incorporate more dimensions in the state space, for example, we could try using 
+    feet pressure to measure how stable the robot is.
+
+    \item Instead of treating the walking engine's parameters as fixed, we could also try learning them as part of the policy.
+    In this work, we considered that the walking engine, which acts as a lower level controller was part 
+    of the dynamics of the robot. Ideally, we could also learn some parameters of the walking engine,
+    for example, the step duration or the maximum acceleration.
+    This is similar approach to \citen{OverlappingLLMacAlpine}.
+
+    \item Using a walking engine reduces the complexity of the tasks to be learnt but it also 
+    restricts the robot's movement to follow a certain gait pattern.
+    We believe that an hierarchical end-to-end deep reinforcement learning approach that directly learns
+    from the robot's joints angles and positions could lead to interesting behaviors \cite{MetaLearningSharedHiearchies}.
+
+    \item The approach we had for the soccer task assumes that the opponent is part of the environment.
+    A novel approach for competitive environments is of applying self play, that is, both the agent and 
+    its environment are actively learning the task. For example, \cite{SelfPlayMetaLearning} shows it is possible to
+    use meta learning in nonestacionary tasks such as those of self play.
+
+    \item Experiment with different state-of-the-art DRL algorithms, such as Actor-Critic with Experience Replay (ACER) \cite{ACER}.
+
+    \item Experiment further with the RL hyperparameters, such as the discount factor $\gamma$ or with the policy entropy.
+\end{itemize}
+
+Finally, we could also try learning additional high level soccer behaviors, such as stealing the ball.
+Deep reinforcement learning algorithms are agnostic in regards to the task so they are applicable
+to a variety of different tasks.
+An even greater challenge would be to transfer the skills learned on a simulated robot to a real robot.
+However, this is still an open problem since the simulation environment poorly represents a physical robot soccer 
+which in turn leads to learning algorithms that overfit to such inaccuracies \cite{AAMAS13-Farchy}.

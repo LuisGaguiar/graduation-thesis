@@ -1,0 +1,50 @@
+\BOOKMARK [0][]{cover.0}{Cover}{}% 1
+\BOOKMARK [0][]{titulo.0}{Face Page}{}% 2
+\BOOKMARK [0][]{cip.0}{Cataloging-in-Publication}{}% 3
+\BOOKMARK [0][]{aprovacao.0}{Thesis Committee Composition:}{}% 4
+\BOOKMARK [0][]{dedication.0}{Dedication}{}% 5
+\BOOKMARK [0][]{acknowledgment.0}{Acknowledgments}{}% 6
+\BOOKMARK [0][]{resumo.0}{Resumo}{}% 7
+\BOOKMARK [0][]{abstract.0}{Abstract}{}% 8
+\BOOKMARK [0][]{listafiguras.0}{List of Figures}{}% 9
+\BOOKMARK [0][]{listatabelas.0}{List of Tables}{}% 10
+\BOOKMARK [0][]{listaabreviaturas.0}{List of Abbreviations and Acronyms}{}% 11
+\BOOKMARK [0][]{listasimbolos.0}{List of Symbols}{}% 12
+\BOOKMARK [0][]{contents.0}{Contents}{}% 13
+\BOOKMARK [0][]{chapter.1}{1 Introduction}{}% 14
+\BOOKMARK [1][]{section.1.1}{1.1 Motivation}{chapter.1}% 15
+\BOOKMARK [1][]{section.1.2}{1.2 Problem Statement}{chapter.1}% 16
+\BOOKMARK [1][]{section.1.3}{1.3 Approach}{chapter.1}% 17
+\BOOKMARK [1][]{section.1.4}{1.4 Literature Review}{chapter.1}% 18
+\BOOKMARK [1][]{section.1.5}{1.5 Contributions}{chapter.1}% 19
+\BOOKMARK [1][]{section.1.6}{1.6 Outline of this Dissertation}{chapter.1}% 20
+\BOOKMARK [0][]{chapter.2}{2 Reinforcement Learning}{}% 21
+\BOOKMARK [1][]{section.2.1}{2.1 Markov Decision Process}{chapter.2}% 22
+\BOOKMARK [1][]{section.2.2}{2.2 Return}{chapter.2}% 23
+\BOOKMARK [1][]{section.2.3}{2.3 Policies}{chapter.2}% 24
+\BOOKMARK [1][]{section.2.4}{2.4 Value functions}{chapter.2}% 25
+\BOOKMARK [1][]{section.2.5}{2.5 Goal of RL}{chapter.2}% 26
+\BOOKMARK [2][]{subsection.2.5.1}{2.5.1 Optimal Value Function}{section.2.5}% 27
+\BOOKMARK [2][]{subsection.2.5.2}{2.5.2 Optimal Policy}{section.2.5}% 28
+\BOOKMARK [1][]{section.2.6}{2.6 Function Approximation}{chapter.2}% 29
+\BOOKMARK [1][]{section.2.7}{2.7 RL algorithms}{chapter.2}% 30
+\BOOKMARK [2][]{subsection.2.7.1}{2.7.1 Value Function Methods}{section.2.7}% 31
+\BOOKMARK [2][]{subsection.2.7.2}{2.7.2 Policy Search Methods}{section.2.7}% 32
+\BOOKMARK [2][]{subsection.2.7.3}{2.7.3 Actor-Critic Methods}{section.2.7}% 33
+\BOOKMARK [1][]{section.2.8}{2.8 Curriculum Learning}{chapter.2}% 34
+\BOOKMARK [0][]{chapter.3}{3 Deep Learning}{}% 35
+\BOOKMARK [1][]{section.3.1}{3.1 History}{chapter.3}% 36
+\BOOKMARK [1][]{section.3.2}{3.2 Neural Networks}{chapter.3}% 37
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Representation}{section.3.2}% 38
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Vectorization}{section.3.2}% 39
+\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Deep Neural Networks}{section.3.2}% 40
+\BOOKMARK [1][]{section.3.3}{3.3 Learning}{chapter.3}% 41
+\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 Cost Function}{section.3.3}% 42
+\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Optimization Algorithms}{section.3.3}% 43
+\BOOKMARK [1][]{section.3.4}{3.4 Back Propagation}{chapter.3}% 44
+\BOOKMARK [0][]{chapter.4}{Bibliography}{}% 45
+\BOOKMARK [0][]{appendix.A}{A T\357\277\275picos de Dilema Linear}{}% 46
+\BOOKMARK [1][]{section.A.1}{A.1 Uma Primeira Se\347\343o para o Ap\352ndice}{appendix.A}% 47
+\BOOKMARK [0][]{annex.a}{A Exemplo de um Primeiro Anexo}{}% 48
+\BOOKMARK [1][]{section.a.1}{A.1 Uma Se\347\343o do Primeiro Anexo}{annex.a}% 49
+\BOOKMARK [0][]{bla.0}{Folha de Registro do Documento}{}% 50
