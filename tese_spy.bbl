@@ -5,6 +5,13 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{1.45.2.1 }
 
+\bibitem[Abdolmaleki \textit{et al.} 2016]{abbas}
+\abntrefinfo{Abdolmaleki \textit{et al.}}{ABDOLMALEKI \textit{et al.}}{2016}
+{ABDOLMALEKI, A.; SIMÕES, D.; LAU, N.; NEUMANN, L. P.~R. andGerhard. Learning
+  a humanoid kick with controlled distance.
+\textbf{20th RoboCup International Symposium, Leipzig, Germany, July 2016.},
+  July 2016.}
+
 \bibitem[Bansal \textit{et al.} 2017]{OpenAISelfPlay}
 \abntrefinfo{Bansal \textit{et al.}}{BANSAL \textit{et al.}}{2017}
 {BANSAL, T.; PACHOCKI, J.; SIDOR, S.; SUTSKEVER, I.; MORDATCH, I. Emergent
