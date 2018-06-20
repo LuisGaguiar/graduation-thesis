@@ -21,7 +21,7 @@ P(S_{t+1} | S_t) = P(S_{t+1} \mid S_1, ..., S_t)
 \label{eq:markov_basic}
 \end{equation}
 
-Markov decision processes, however, has a little more complete definition, it is a Markov process with rewards and actions. Basically, can be represented as a tuple $<\textbf{S}, \textbf{A}, P, R, \gamma>$, with each component defined as follows:
+Markov decision processes, however, has a more complete definition, it is a Markov process with rewards and actions. Basically, can be represented as a tuple $<\textbf{S}, \textbf{A}, P, R, \gamma>$, with each component defined as follows:
 \begin{itemize}
 \item
 	$\textbf{S}$ is a finite set of states the agent can assume in the environment.
@@ -45,7 +45,7 @@ Besides this basic tuple representation, there are four more concepts very used 
 	G_t = R_{t+1} + \gamma R_{t+2} + ... = \sum_{k=0}^{\infty}{\gamma^k R_{t+k+1}}
 	\end{equation}
 	Notice that by introducing the discount factor $\gamma$, it is possible to set the agent preference between short-term and long-term rewards.
-\item
+
 	The \textbf{policy} $\pi(a \mid s)$ is a probability distribution function over actions given states, defined by:
 	\begin{equation}
 	\pi(a \mid s) = \mathbb{P}[A_t=a | S_t=s]
@@ -55,20 +55,164 @@ Besides this basic tuple representation, there are four more concepts very used 
 	The \textbf{state-value function} $v_{\pi}(s)$ is the expected return starting from state $s$ and then following a policy $\pi$.
 	\begin{equation}
 	v_{\pi}(s) = \mathbb{E}_{\pi}[G_t \mid S_t = s]
+	\label{eq:state_value_function_definition}
 	\end{equation}
-	In informal words, it is a measure of how good the current agent's state is.
+	In other words, it can be seen as a measure of how good the current agent's state is.
 \item
 	The \textbf{action-value function} $q_{\pi}(s,a)$ is the expected return starting from state $s$, taking action $a$, and then following policy $\pi$
 	\begin{equation}
 	q_{\pi}(s,a) = \mathbb{E}_{\pi}(G_t \mid S_t = s, A_t = a)
+	\label{eq:action_value_function_definition}
 	\end{equation}
-	It can be understood as a measure of how good it is to take a given action at the agent's current state.
+	It can also be understood as a measure of how good it is to take a given action at the agent's current state.
 \end{itemize}
+
+\subsection{Optimality in Reinforcement Learning}
+
+The ultimate goal of RL is finding an optimal behavior that maximizes the total expected return given by $\mathbb{E}_{R_i,S_i \sim E, A_i \sim \pi}[G_i]$. Before starting presenting the methods for achieving this goal, we must define what is optimality for value functions and policies.
+
+\subsubsection{Optimal Value Function}
+
+A value function is optimal if it is the maximum over all policies for all states (or state-action pairs).
+\begin{itemize}
+\item
+	Optimal State-value function: $v_*(s) = \underset{\pi}{\textrm{max }} v_\pi(s)$
+\item
+	Optimal Action-value function: $q_*(s, a) = \underset{\pi}{\textrm{max }} q_\pi(s, a)$.
+\end{itemize}
+
+The optimal value functions specify the best possible performance in the MDP, which is only "solved" when we know the optimal value functions.
+
+\subsubsection{Optimal Policy}
+
+First, we must define a partial ordering over policies, given in equation \ref{eq:policy_ordering}.
+
+\begin{equation}
+\pi \geq \pi' \text{ if } v_{\pi}(s) \geq v_{\pi'}(s), \forall s
+\label{eq:policy_ordering}
+\end{equation}
+
+The optimal policy $\pi_*$ is then defined as the best among all the others policies $\pi$, such that $\pi_* \geq \pi, \forall \pi$. Moreover, the following theorem introduces three fundamental properties about optimal policies.
+
+\begin{itemize}
+\item
+There exists an optimal policy $\pi_*$ that is better than or equal to all other policies, $\pi_* \geq \pi, \forall \pi$.
+\item
+All optimal policies achieve the optimal value function, $v_{\pi_*}(s) = v_*(s)$.
+\item
+All optimal policies achieve the optimal action-value function, $q_{\pi_*}(s,a) = q_*(s,a)$.
+\end{itemize}
+
+Furthermore, a deterministic optimal policy always exists, and can be easily defined from the optimal action-value function, as described in equation \ref{eq:policy_from_greedy}.
+
+\begin{equation}
+ \pi_*(a | s) = 
+\begin{cases}
+    1,& \text{if } a = \underset{a'}{\textrm{argmax }} q_*(s,a')\\
+    0,& \text{otherwise}
+\end{cases}
+\label{eq:policy_from_greedy}
+\end{equation}
 
 \section{RL Algorithms}
 
+In order to base our future approaches in the main task, we must start presenting the classical reinforcement learning algorithms in the literature and, first of all, categorizing its different natures. The following subsections will be responsible for that.
+
 \subsection{Categorizing RL}
 
+RL algorithms can be classified into several types related to their problems and solutions approaches.
+
+%RL algorithms can be classified into model free or model based, prediction or control, and value based, policy based or actor critic.
+
+Model based algorithms are used when the model of the environment is known, and therefore, the agent can performs computations without external interaction to improves its policy. Model free algorithms, however, do not use any environment model, and it improves its policy by only interacting with the environment. These two problems conditions are respectively classified as planning and reinforcement learning problems.
+
+Moreover, RL algorithms can also be classified as value based, policy based or actor critic. Value based algorithms are methods based on computing optimal value functions, whereas policy based algorithms make use of optimal policy search approaches. Between them, we also have an hybrid solution which combines both value function and policy search approaches. Figure \ref{fig:categorizing_RL} illustrates this classical RL categories division.
+
+Regarding their solution nature, we also have two more classifications. Prediction algorithms are basically policy evaluation algorithms, which does not obtain any optimal policy solution, but instead, given a policy computes value functions. Control algorithms, whereas, aims to achieve an optimal policy. Besides, we still have two other classifications regarding the solution approach, that are on-policy algorithms, which learns by interacting with the world with its own policy, and off-policy algorithms, which learns an optimal policy by interacting with the world with another policy.
+
+%Explica on e off-policy
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Chapter2/categorizing_RL.png} 
+    \caption{Classical division among RL algorithms classifications.}
+    \label{fig:categorizing_RL}
+\end{figure}
+
 \subsection{Value Function Methods}
+
+As already mentioned, value function methods employ techniques that aims to compute or estimate value functions. These algorithms are the most classic in the RL literature, and their implementation differ basically in relation to concepts like bootstrapping, bias, variance, on-policy and off-policy. In this section, we will focus on presenting only model-free algorithms, since it is from the same nature of our problem.
+
+\subsubsection{Monte Carlo Methods}
+
+Monte Carlo or MC methods are model-free methods that learn directly from full episodes of experience. It computes value functions through its expectation definition given in equations \ref{eq:state_value_function_definition} and \ref{eq:action_value_function_definition}. However, without a known model for the MDP, it estimates this expectation by sampling and computing the empirical mean return.
+
+Therefore, for Monte Carlo prediction, the MC version for policy evaluation, we compute the state value $v_{\pi}(s)$ by averaging full episodic returns starting from state $s$ and running on policy $\pi$ for an arbitrarily large number of episodes in this condition.
+
+For the control method, the main idea is to employ policy iteration, which is a basic framework for control problems which consists in an iterative solution that evaluates a given policy, by computing the value functions, and then updates this policy by acting greedy with respect to these computed value functions. Acting greedy would be choosing a deterministic policy given by equation \ref{eq:policy_from_greedy}. This loop repeats until convergence to optimal policy and optimal value functions.
+
+In Monte Carlo model-free control, in particular, the usual approach is to use Monte-Carlo prediction to evaluate action-value functions $Q_{\pi}(s,a)$ under the policy $\pi$, then update the policy acting $\epsilon$-greedy. $\epsilon$-greedy is a simple policy update technique very similar to the greedy approach from \ref{eq:policy_from_greedy}, but it is able to ensure continual exploration. The solution for this is choosing the greedy action with $1-\epsilon$ probability, and all the others actions with the same non-zero probability. This calculation is presented in equation \ref{eq:epsilon-greedy}.
+
+\begin{equation}
+ \pi_*(a | s) = 
+ \begin{cases}
+    \epsilon/m + 1 - \epsilon ,& \text{if } a = \underset{a'}{\textrm{argmax }} q_*(s,a')\\
+    \epsilon/m ,& \text{otherwise}
+ \end{cases}
+ \label{eq:epsilon-greedy}
+\end{equation}
+
+%It is possible by making that the greedy action be chosen with $1-\epsilon$ probability, whereas 
+
+% Monte Carlo Prediction slides 6 e 7 lecture 4
+% Monte Carlo Control    slides 13 ao 16 lecture 5
+% Explica epsilon-greedy
+
+\subsubsection{Temporal-Difference and Sarsa}
+
+Temporal-Difference methods are model-free methods that are able to learn from incomplete episodes, by bootstrapping. This idea consists in updating an estimate by using another estimate obtained after taking some decision steps. In its most simple version for policy evaluation, $TD(0)$, it is possible to learn $v_{\pi}$ online while experiencing under $\pi$, by updating the estimate $V(S_t)$ toward the estimated return $R_{t+1} + \gamma V(S_{t+1})$, as given in equation \ref{eq:TD0_update}.
+
+\begin{equation}
+V(S_t) = V(S_t) + \alpha(R_{t+1} + \gamma V(S_{t+1}) - V(S_t))
+\label{eq:TD0_update}
+\end{equation}
+
+For Temporal-Difference control, it is also commonly employed a policy iteration approach. We use TD to compute action-value function estimates $Q(S,A)$ given the policy $\pi$, and then use $\epsilon$-greedy to improve the policy. This method is known as SARSA, due to the process of, given a state $S$, take an action $A$, receive a reward $R$, end in a next state $S'$, and then choose another action $A'$ in order to compute the TD target. The algorithm \ref{algo:sarsa} fully describes this method.
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+    \SetAlgoLined
+    Initialize $Q(s,a)$, $\forall s \in S$, $a \in A(s)$, arbitrarily, and $Q$(terminal-state,.)=0\;
+    \For{episode = $1$, $M$}{
+        Initiliaze $S$\;
+        Choose $A$ from $S$ using policy derived from $Q$ (e.g., $\epsilon$-greedy). \;
+        \For{t = $1$, $T$}{
+			Take action $A$, observe $R$, $S'$. \;
+			Choose $A'$ from $S'$ using policy derived from $Q$ (e.g., $\epsilon$-greedy). \;
+			$Q(S,A) \leftarrow Q(S,A) + \alpha(R + \gamma Q(S',A') - Q(S,A))$. \;
+			$S \leftarrow S'$; $A \leftarrow A'$; \;
+        }
+    }
+    \caption{Sarsa algorithm}
+    \label{algo:sarsa}
+\end{algorithm}
+
+The SARSA algorithm is most famous for another variation, that is able to bootstrap into more future steps. The SARSA($\lambda$) method computes a different TD target $Q_t^{\lambda}$ making use of a discount weight $(1-\lambda) \lambda^{n-1}$ over n steps action-values $Q_t^{(n)}$, as shown in equation \ref{eq:sarsa_lambda}.
+
+\begin{align}
+Q_t^{\lambda} = (1 - \lambda) \sum_{i=1}^{n}{\lambda^{n-1}Q_t^{(n)}} \\
+Q(S,A) = Q(S,A) + \alpha( Q_t^{\lambda} - Q(S,A))
+\label{eq:sarsa_lambda}
+\end{align}
+
+The main difference between SARSA and MC control algorithms is that SARSA can learns before the end of the episode, and have low variance and some bias, whereas MC can only learn from complete episodes, and therefore has high variance and zero bias. Besides, MC has better convergence properties.
+
+% TD lambda para prediction
+% TD lambda para control com Sarsa slides 23 ao 25 lecture 5, apresentar algoritmo
+
+\subsubsection{Q-Learning}
+
+
 
 \subsection{Policy Search Methods}

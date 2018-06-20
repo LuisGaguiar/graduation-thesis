@@ -9,27 +9,33 @@
 \contentsline {chapter}{\numberline {2}Reinforcement Learning}{21}{chapter.2}
 \contentsline {section}{\numberline {2.1}Model Introduction}{21}{section.2.1}
 \contentsline {section}{\numberline {2.2}Markov Decision Processes}{22}{section.2.2}
-\contentsline {section}{\numberline {2.3}RL Algorithms}{23}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Categorizing RL}{23}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Value Function Methods}{23}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Policy Search Methods}{23}{subsection.2.3.3}
-\contentsline {chapter}{\numberline {3}Deep Learning}{24}{chapter.3}
-\contentsline {section}{\numberline {3.1}History}{24}{section.3.1}
-\contentsline {section}{\numberline {3.2}Neural Networks}{25}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Representation}{25}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Vectorization}{28}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Deep Neural Networks}{29}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Learning}{29}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Cost Function}{30}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Optimization Algorithms}{31}{subsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.2.1}Gradient Descent}{31}{subsubsection.3.3.2.1}
-\contentsline {subsubsection}{\numberline {3.3.2.2}Stochastic Gradient Descent}{31}{subsubsection.3.3.2.2}
-\contentsline {subsubsection}{\numberline {3.3.2.3}Mini-Batch Gradient Descent}{32}{subsubsection.3.3.2.3}
-\contentsline {section}{\numberline {3.4}Back Propagation}{33}{section.3.4}
-\contentsline {chapter}{Bibliography}{34}{chapter.4}
+\contentsline {subsection}{\numberline {2.2.1}Optimality in Reinforcement Learning}{23}{subsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Optimal Value Function}{23}{subsubsection.2.2.1.1}
+\contentsline {subsubsection}{\numberline {2.2.1.2}Optimal Policy}{23}{subsubsection.2.2.1.2}
+\contentsline {section}{\numberline {2.3}RL Algorithms}{24}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Categorizing RL}{24}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Value Function Methods}{25}{subsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.2.1}Monte Carlo Methods}{25}{subsubsection.2.3.2.1}
+\contentsline {subsubsection}{\numberline {2.3.2.2}Temporal-Difference and Sarsa}{26}{subsubsection.2.3.2.2}
+\contentsline {subsubsection}{\numberline {2.3.2.3}Q-Learning}{27}{subsubsection.2.3.2.3}
+\contentsline {subsection}{\numberline {2.3.3}Policy Search Methods}{27}{subsection.2.3.3}
+\contentsline {chapter}{\numberline {3}Deep Learning}{28}{chapter.3}
+\contentsline {section}{\numberline {3.1}History}{28}{section.3.1}
+\contentsline {section}{\numberline {3.2}Neural Networks}{29}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Representation}{29}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Vectorization}{32}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Deep Neural Networks}{33}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Learning}{33}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Cost Function}{34}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Optimization Algorithms}{35}{subsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.2.1}Gradient Descent}{35}{subsubsection.3.3.2.1}
+\contentsline {subsubsection}{\numberline {3.3.2.2}Stochastic Gradient Descent}{35}{subsubsection.3.3.2.2}
+\contentsline {subsubsection}{\numberline {3.3.2.3}Mini-Batch Gradient Descent}{36}{subsubsection.3.3.2.3}
+\contentsline {section}{\numberline {3.4}Back Propagation}{37}{section.3.4}
+\contentsline {chapter}{Bibliography}{38}{chapter.4}
 \SetAppendixTocName {Appendix}
-\contentsline {chapter}{\numberline {A}T\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }picos de Dilema Linear}{37}{appendix.A}
-\contentsline {section}{\numberline {A.1}Uma Primeira Se\c c\~ao para o Ap\^endice}{37}{section.A.1}
+\contentsline {chapter}{\numberline {A}T\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }picos de Dilema Linear}{41}{appendix.A}
+\contentsline {section}{\numberline {A.1}Uma Primeira Se\c c\~ao para o Ap\^endice}{41}{section.A.1}
 \SetAppendixTocName {Annex}
-\contentsline {chapter}{\numberline {A}Exemplo de um Primeiro Anexo}{38}{annex.a}
-\contentsline {section}{\numberline {A.1}Uma Se\c c\~ao do Primeiro Anexo}{38}{section.a.1}
+\contentsline {chapter}{\numberline {A}Exemplo de um Primeiro Anexo}{42}{annex.a}
+\contentsline {section}{\numberline {A.1}Uma Se\c c\~ao do Primeiro Anexo}{42}{section.a.1}
