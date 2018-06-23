@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.28)  23 JUN 2018 12:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.28)  23 JUN 2018 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -727,7 +727,7 @@ e
 
 \c@butlastpage=\count143
 Package hyperref Info: Anchor `cover.0' on input line 127.
-<Cap0/ita_logo.jpg, id=168, 612.3678pt x 234.8775pt>
+<Cap0/ita_logo.jpg, id=164, 612.3678pt x 234.8775pt>
 File: Cap0/ita_logo.jpg Graphic file (type jpg)
  <use Cap0/ita_logo.jpg>
 Package pdftex.def Info: Cap0/ita_logo.jpg used on input line 127.
@@ -819,11 +819,6 @@ Package hyperref Info: Reference (link) `figure.caption.11' on input line 5.
 Package hyperref Info: Reference (link) `figure.caption.12' on input line 7.
 Package hyperref Info: Reference (link) `figure.caption.13' on input line 8.
 Package hyperref Info: Reference (link) `figure.caption.14' on input line 10.
-Package hyperref Info: Reference (link) `figure.caption.15' on input line 11.
-Package hyperref Info: Reference (link) `figure.caption.16' on input line 12.
-Package hyperref Info: Reference (link) `figure.caption.17' on input line 13.
-Package hyperref Info: Reference (link) `figure.caption.18' on input line 14.
-Package hyperref Info: Reference (link) `figure.caption.19' on input line 15.
 )
 \tf@lof=\write5
 \openout5 = `tese_spy.lof'.
@@ -837,11 +832,6 @@ Package `hyperref' Info: End of reference (link) `figure.caption.11', line 5.
 Package `hyperref' Info: End of reference (link) `figure.caption.12', line 7.
 Package `hyperref' Info: End of reference (link) `figure.caption.13', line 8.
 Package `hyperref' Info: End of reference (link) `figure.caption.14', line 10.
-Package `hyperref' Info: End of reference (link) `figure.caption.15', line 11.
-Package `hyperref' Info: End of reference (link) `figure.caption.16', line 12.
-Package `hyperref' Info: End of reference (link) `figure.caption.17', line 13.
-Package `hyperref' Info: End of reference (link) `figure.caption.18', line 14.
-Package `hyperref' Info: End of reference (link) `figure.caption.19', line 15.
 ]
 Package hyperref Info: Anchor `chapter*.5' on input line 168.
 Package hyperref Info: Anchor `listatabelas.0' on input line 168.
@@ -917,11 +907,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 
 Package hyperref Info: Reference (link) `chapter.3' on input line 23.
 Package hyperref Info: Reference (link) `section.3.1' on input line 24.
-Package hyperref Info: Reference (link) `section.3.2' on input line 25.
-Package hyperref Info: Reference (link) `subsection.3.2.1' on input line 26.
-Package hyperref Info: Reference (link) `subsection.3.2.2' on input line 27.
-Package hyperref Info: Reference (link) `subsection.3.2.3' on input line 28.
-Package hyperref Info: Reference (link) `section.3.3' on input line 29.
+Package hyperref Info: Reference (link) `subsection.3.1.1' on input line 25.
+Package hyperref Info: Reference (link) `subsection.3.1.2' on input line 26.
+Package hyperref Info: Reference (link) `subsection.3.1.3' on input line 27.
+Package hyperref Info: Reference (link) `subsection.3.1.4' on input line 28.
+Package hyperref Info: Reference (link) `subsection.3.1.5' on input line 29.
 Package hyperref Info: Anchor `page.xiii' on input line 30.
 [13
 
@@ -943,31 +933,29 @@ Package `hyperref' Info: End of reference (link) `subsection.2.3.3', line 21.
 Package `hyperref' Info: End of reference (link) `subsection.2.3.4', line 22.
 Package `hyperref' Info: End of reference (link) `chapter.3', line 23.
 Package `hyperref' Info: End of reference (link) `section.3.1', line 24.
-Package `hyperref' Info: End of reference (link) `section.3.2', line 25.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.1', line 26.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.2', line 27.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.3', line 28.
+Package `hyperref' Info: End of reference (link) `subsection.3.1.1', line 25.
+Package `hyperref' Info: End of reference (link) `subsection.3.1.2', line 26.
+Package `hyperref' Info: End of reference (link) `subsection.3.1.3', line 27.
+Package `hyperref' Info: End of reference (link) `subsection.3.1.4', line 28.
 ]
-Package hyperref Info: Reference (link) `subsection.3.3.1' on input line 30.
-Package hyperref Info: Reference (link) `subsection.3.3.2' on input line 31.
-Package hyperref Info: Reference (link) `section.3.4' on input line 35.
+Package hyperref Info: Reference (link) `section.3.2' on input line 30.
+Package hyperref Info: Reference (link) `section.3.3' on input line 31.
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
+Underfull \hbox (badness 10000) in paragraph at lines 32--32
  []  
  []
 
-Package hyperref Info: Reference (link) `chapter.4' on input line 36.
+Package hyperref Info: Reference (link) `chapter.4' on input line 32.
 )
 \tf@toc=\write9
 \openout9 = `tese_spy.toc'.
 
 Package hyperref Info: Anchor `page.xiv' on input line 181.
  [14
-Package `hyperref' Info: End of reference (link) `section.3.3', line 29.
-Package `hyperref' Info: End of reference (link) `subsection.3.3.1', line 30.
-Package `hyperref' Info: End of reference (link) `subsection.3.3.2', line 31.
-Package `hyperref' Info: End of reference (link) `section.3.4', line 35.
-Package `hyperref' Info: End of reference (link) `chapter.4', line 36.
+Package `hyperref' Info: End of reference (link) `subsection.3.1.5', line 29.
+Package `hyperref' Info: End of reference (link) `section.3.2', line 30.
+Package `hyperref' Info: End of reference (link) `section.3.3', line 31.
+Package `hyperref' Info: End of reference (link) `chapter.4', line 32.
 ]
 Package hyperref Info: Anchor `chapter.1' on input line 184.
 
@@ -984,14 +972,14 @@ Package hyperref Info: Reference (cite) `cite.AlphaGoZero' on input line 11.
 Package hyperref Info: Reference (cite) `cite.AlphaGoZero' on input line 11.
 Package hyperref Info: Reference (link) `figure.caption.9' on input line 11.
 Package hyperref Info: Anchor `figure.caption.9' on input line 13.
-<Chapter1/DQN-atari.png, id=311, 1606.0pt x 1139.25626pt>
+<Chapter1/DQN-atari.png, id=296, 1606.0pt x 1139.25626pt>
 File: Chapter1/DQN-atari.png Graphic file (type png)
 
 <use Chapter1/DQN-atari.png>
 Package pdftex.def Info: Chapter1/DQN-atari.png used on input line 17.
 (pdftex.def)             Requested size: 346.7536pt x 245.97836pt.
 
-<Chapter1/alphago.png, id=312, 983.675pt x 491.8375pt>
+<Chapter1/alphago.png, id=297, 983.675pt x 491.8375pt>
 File: Chapter1/alphago.png Graphic file (type png)
 
 <use Chapter1/alphago.png>
@@ -1002,7 +990,7 @@ Overfull \hbox (76.24231pt too wide) in paragraph at lines 23--24
  [][] 
  []
 
-<Chapter1/atari.jpg, id=313, 559.08875pt x 357.335pt>
+<Chapter1/atari.jpg, id=298, 559.08875pt x 357.335pt>
 File: Chapter1/atari.jpg Graphic file (type jpg)
  <use Chapter1/atari.jpg>
 Package pdftex.def Info: Chapter1/atari.jpg used on input line 29.
@@ -1025,7 +1013,7 @@ Package `hyperref' Info: End of reference (cite) `cite.AlphaGoZero', line 11.
 Package `hyperref' Info: End of reference (link) `figure.caption.9', line 11.
 ]
 Package hyperref Info: Anchor `figure.caption.10' on input line 43.
- <Chapter1/humanoid-deepmind1.jpg, id=322, 642.4pt x 354.32375pt>
+ <Chapter1/humanoid-deepmind1.jpg, id=307, 642.4pt x 354.32375pt>
 File: Chapter1/humanoid-deepmind1.jpg Graphic file (type jpg)
 
 <use Chapter1/humanoid-deepmind1.jpg>
@@ -1033,7 +1021,7 @@ Package pdftex.def Info: Chapter1/humanoid-deepmind1.jpg used on input line 47.
 
 (pdftex.def)             Requested size: 165.64775pt x 91.36522pt.
 
-<Chapter1/humanoid-deepmind2.png, id=323, 650.43pt x 365.365pt>
+<Chapter1/humanoid-deepmind2.png, id=308, 650.43pt x 365.365pt>
 File: Chapter1/humanoid-deepmind2.png Graphic file (type png)
 
 <use Chapter1/humanoid-deepmind2.png>
@@ -1041,7 +1029,7 @@ Package pdftex.def Info: Chapter1/humanoid-deepmind2.png used on input line 52.
 
 (pdftex.def)             Requested size: 162.64679pt x 91.36522pt.
 
-<Chapter1/humanoid-deepmind3.png, id=325, 1495.5875pt x 733.74126pt>
+<Chapter1/humanoid-deepmind3.png, id=310, 1495.5875pt x 733.74126pt>
 File: Chapter1/humanoid-deepmind3.png Graphic file (type png)
 
 <use Chapter1/humanoid-deepmind3.png>
@@ -1055,14 +1043,14 @@ Package hyperref Info: Anchor `page.16' on input line 69.
 [16 <./Chapter1/DQN-atari.png (PNG copy)> <./Chapter1/alphago.png (PNG copy)> <
 ./Chapter1/atari.jpg>]
 Package hyperref Info: Anchor `figure.caption.11' on input line 70.
- <Chapter1/RoboCup.png, id=331, 158.58102pt x 91.0602pt>
+ <Chapter1/RoboCup.png, id=315, 158.58102pt x 91.0602pt>
 File: Chapter1/RoboCup.png Graphic file (type png)
 
 <use Chapter1/RoboCup.png>
 Package pdftex.def Info: Chapter1/RoboCup.png used on input line 74.
 (pdftex.def)             Requested size: 159.12022pt x 91.36522pt.
 
-<Chapter1/SS3D.png, id=332, 564.60938pt x 248.42813pt>
+<Chapter1/SS3D.png, id=316, 564.60938pt x 248.42813pt>
 File: Chapter1/SS3D.png Graphic file (type png)
  <use Chapter1/SS3D.png>
 Package pdftex.def Info: Chapter1/SS3D.png used on input line 79.
@@ -1217,7 +1205,7 @@ Package hyperref Info: Reference (cite) `cite.Sutton1998' on input line 3.
 Package hyperref Info: Reference (cite) `cite.Sutton1998' on input line 3.
 Package hyperref Info: Reference (link) `figure.caption.12' on input line 5.
 Package hyperref Info: Anchor `figure.caption.12' on input line 7.
-<Chapter2/RL_basic_model.png, id=412, 446.66875pt x 444.66125pt>
+<Chapter2/RL_basic_model.png, id=397, 446.66875pt x 444.66125pt>
 File: Chapter2/RL_basic_model.png Graphic file (type png)
 
 <use Chapter2/RL_basic_model.png>
@@ -1279,7 +1267,7 @@ Package `hyperref' Info: End of reference (link) `figure.caption.13', line 129.
 
 ]
 Package hyperref Info: Anchor `figure.caption.13' on input line 136.
- <Chapter2/categorizing_RL.png, id=446, 575.14874pt x 501.875pt>
+ <Chapter2/categorizing_RL.png, id=431, 575.14874pt x 501.875pt>
 File: Chapter2/categorizing_RL.png Graphic file (type png)
 
 <use Chapter2/categorizing_RL.png>
@@ -1379,267 +1367,86 @@ Package hyperref Info: Reference (link) `algocf.2' on input line 283.
 Package hyperref Info: Reference (link) `equation.2.3.18' on input line 283.
 Package hyperref Info: Anchor `equation.2.3.18' on input line 285.
 )
-Package hyperref Info: Anchor `page.29' on input line 192.
+Package hyperref Info: Anchor `page.29' on input line 196.
  [29
 Package `hyperref' Info: End of reference (link) `algocf.2', line 257.
 Package `hyperref' Info: End of reference (link) `algocf.2', line 283.
 Package `hyperref' Info: End of reference (link) `equation.2.3.18', line 283.
 ]
-Package hyperref Info: Anchor `chapter.3' on input line 192.
+Package hyperref Info: Anchor `chapter.3' on input line 196.
 
 Chapter 3.
-pdftex: bookmark at 192: {3} {\numberline{3}Deep Learning} {chapter.3}{0}{toc}
-(./Chapter3/deep_learning.tex
-Package hyperref Info: Anchor `section.3.1' on input line 8.
+pdftex: bookmark at 196: {3} {\numberline{3}Deep Reinforcement Learning} {chapt
+er.3}{0}{toc}
+(./Chapter4/deep_rl.tex
+Package hyperref Info: Anchor `section.3.1' on input line 7.
 
-pdftex: bookmark at 8: {3.1} {\numberline{3.1}History} {section.3.1}{1}{toc}
-Package hyperref Info: Reference (cite) `cite.DeepLearningBook' on input line 9
-.
-Package hyperref Info: Reference (cite) `cite.DeepLearningBook' on input line 9
-.
-Package hyperref Info: Reference (link) `figure.caption.14' on input line 18.
-Package hyperref Info: Anchor `figure.caption.14' on input line 21.
-<Chapter3/neuron.png, id=509, 803.0pt x 501.875pt>
-File: Chapter3/neuron.png Graphic file (type png)
- <use Chapter3/neuron.png>
-Package pdftex.def Info: Chapter3/neuron.png used on input line 22.
-(pdftex.def)             Requested size: 455.24411pt x 284.53246pt.
-
-pdftex: bookmark at 23: {3.1} {\numberline{3.1}{\ignorespaces Neuron unit cell 
-structure.\relax }} {figure.caption.14}{0}{lof}
-Package hyperref Info: Anchor `section.3.2' on input line 32.
-pdftex: bookmark at 32: {3.2} {\numberline{3.2}Neural Networks} {section.3.2}{1
-}{toc}
-Package hyperref Info: Anchor `subsection.3.2.1' on input line 34.
-pdftex: bookmark at 34: {3.2.1} {\numberline{3.2.1}Representation} {subsection.
-3.2.1}{2}{toc}
-Package hyperref Info: Anchor `page.30' on input line 39.
+pdftex: bookmark at 7: {3.1} {\numberline{3.1}Neural Networks} {section.3.1}{1}
+{toc}
+Package hyperref Info: Anchor `subsection.3.1.1' on input line 13.
+pdftex: bookmark at 13: {3.1.1} {\numberline{3.1.1}Representation} {subsection.
+3.1.1}{2}{toc}
+Package hyperref Info: Anchor `page.30' on input line 24.
 [30
 
-Package `hyperref' Info: End of reference (cite) `cite.DeepLearningBook', line 
-9.
-Package `hyperref' Info: End of reference (cite) `cite.DeepLearningBook', line 
-9.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 18.
 ]
-Package hyperref Info: Anchor `equation.3.2.1' on input line 44.
-Package hyperref Info: Reference (link) `figure.caption.15' on input line 56.
-
-Overfull \hbox (10.03157pt too wide) in paragraph at lines 56--57
-[]\T1/aer/m/n/12 Figure [][]3.2[][][] il-lus-trates a very sim-ple NN with a 3-
-dimensional fea-ture vec-tor, 1-dimensional
+Overfull \hbox (5.1163pt too wide) in paragraph at lines 26--27
+[]\T1/aer/m/n/12 Each $\OML/cmm/m/it/12 j$\T1/aer/m/n/12 th hid-den unit has a 
+row-vector lin-ear pa-ram-e-ter $\OML/cmm/m/it/12 w[]$ \T1/aer/m/n/12 with di-m
+en-sions $\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; n[]\OT1/cmr/m/n/12 )$\T1/aer/m/n
+/12 .
  []
 
-Package hyperref Info: Anchor `figure.caption.15' on input line 58.
-<Chapter3/neuralnet.pdf, id=517, 643.15717pt x 345.50963pt>
-File: Chapter3/neuralnet.pdf Graphic file (type pdf)
+Package hyperref Info: Reference (link) `equation.3.1.1' on input line 32.
+Package hyperref Info: Anchor `equation.3.1.1' on input line 34.
+Package hyperref Info: Reference (link) `equation.3.1.2' on input line 41.
+Package hyperref Info: Reference (link) `equation.3.1.3' on input line 41.
+Package hyperref Info: Reference (link) `figure.caption.14' on input line 41.
+Package hyperref Info: Anchor `equation.3.1.2' on input line 49.
+Package hyperref Info: Anchor `equation.3.1.3' on input line 49.
+Package hyperref Info: Anchor `figure.caption.14' on input line 51.
+<Chapter4/neuralnet.pdf, id=500, 643.15717pt x 345.50963pt>
+File: Chapter4/neuralnet.pdf Graphic file (type pdf)
 
-<use Chapter3/neuralnet.pdf>
-Package pdftex.def Info: Chapter3/neuralnet.pdf used on input line 60.
-(pdftex.def)             Requested size: 341.43307pt x 183.425pt.
+<use Chapter4/neuralnet.pdf>
+Package pdftex.def Info: Chapter4/neuralnet.pdf used on input line 53.
+(pdftex.def)             Requested size: 273.14923pt x 146.74211pt.
 
-pdftex: bookmark at 61: {3.2} {\numberline{3.2}{\ignorespaces Simple neural net
-work.\relax }} {figure.caption.15}{0}{lof}
-Package hyperref Info: Anchor `page.31' on input line 63.
+pdftex: bookmark at 54: {3.1} {\numberline{3.1}{\ignorespaces Shallow Neural Ne
+twork Architecture\relax }} {figure.caption.14}{0}{lof}
+Package hyperref Info: Anchor `subsection.3.1.2' on input line 67.
+pdftex: bookmark at 67: {3.1.2} {\numberline{3.1.2}Vectorization} {subsection.3
+.1.2}{2}{toc}
+Package hyperref Info: Anchor `page.31' on input line 70.
 [31
-Package `hyperref' Info: End of reference (link) `figure.caption.15', line 56.
- <./Chapter3/neuron.png>]
-Package hyperref Info: Anchor `equation.3.2.2' on input line 71.
-Package hyperref Info: Anchor `equation.3.2.3' on input line 79.
-Package hyperref Info: Anchor `equation.3.2.4' on input line 86.
-Package hyperref Info: Reference (link) `figure.caption.16' on input line 90.
-Package hyperref Info: Anchor `figure.caption.16' on input line 92.
+Package `hyperref' Info: End of reference (link) `equation.3.1.1', line 32.
+Package `hyperref' Info: End of reference (link) `equation.3.1.2', line 41.
+Package `hyperref' Info: End of reference (link) `equation.3.1.3', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+ <./Chapter4/neuralnet.pdf>]
+Package hyperref Info: Anchor `subsection.3.1.3' on input line 77.
 
-<Chapter3/neuralnet_output.png, id=526, 713.66624pt x 366.36874pt>
-File: Chapter3/neuralnet_output.png Graphic file (type png)
-
-<use Chapter3/neuralnet_output.png>
-Package pdftex.def Info: Chapter3/neuralnet_output.png used on input line 94.
-(pdftex.def)             Requested size: 273.14923pt x 140.22223pt.
-
-pdftex: bookmark at 95: {3.3} {\numberline{3.3}{\ignorespaces Node computation.
-\relax }} {figure.caption.16}{0}{lof}
-Package hyperref Info: Reference (cite) `cite.ReLU' on input line 101.
-Package hyperref Info: Reference (cite) `cite.ReLU' on input line 101.
-Package hyperref Info: Reference (link) `figure.caption.17' on input line 102.
-Package hyperref Info: Anchor `figure.caption.17' on input line 104.
-<Chapter3/relu.pdf, id=530, 433.62pt x 289.08pt>
-File: Chapter3/relu.pdf Graphic file (type pdf)
- <use Chapter3/relu.pdf>
-Package pdftex.def Info: Chapter3/relu.pdf used on input line 106.
-(pdftex.def)             Requested size: 341.43307pt x 227.63405pt.
-
-pdftex: bookmark at 107: {3.4} {\numberline{3.4}{\ignorespaces Linear rectified
- unit plot.\relax }} {figure.caption.17}{0}{lof}
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package hyperref Info: Reference (cite) `cite.ActivationFunction' on input line
- 112.
-Package hyperref Info: Reference (cite) `cite.ActivationFunction' on input line
- 112.
-Package hyperref Info: Reference (link) `figure.caption.15' on input line 115.
-Package hyperref Info: Anchor `page.32' on input line 122.
-[32
-Package `hyperref' Info: End of reference (link) `figure.caption.16', line 90.
-Package `hyperref' Info: End of reference (cite) `cite.ReLU', line 101.
-Package `hyperref' Info: End of reference (cite) `cite.ReLU', line 101.
-Package `hyperref' Info: End of reference (link) `figure.caption.17', line 102.
-
-Package `hyperref' Info: End of reference (cite) `cite.ActivationFunction', lin
-e 112.
-Package `hyperref' Info: End of reference (cite) `cite.ActivationFunction', lin
-e 112.
- <./Chapter3/neuralnet.pdf>]
-Package hyperref Info: Reference (link) `figure.caption.15' on input line 123.
-Package hyperref Info: Anchor `equation.3.2.5' on input line 127.
-Package hyperref Info: Anchor `equation.3.2.6' on input line 131.
-Package hyperref Info: Anchor `page.33' on input line 133.
- [33
-Package `hyperref' Info: End of reference (link) `figure.caption.15', line 115.
-
-Package `hyperref' Info: End of reference (link) `figure.caption.15', line 123.
-
- <./Chapter3/neuralnet_output.png> <./Chapter3/relu.pdf>]
-Package hyperref Info: Anchor `equation.3.2.7' on input line 137.
-Package hyperref Info: Anchor `equation.3.2.8' on input line 141.
-Package hyperref Info: Anchor `equation.3.2.9' on input line 148.
-Package hyperref Info: Anchor `equation.3.2.10' on input line 153.
-Package hyperref Info: Anchor `subsection.3.2.2' on input line 159.
-
-pdftex: bookmark at 159: {3.2.2} {\numberline{3.2.2}Vectorization} {subsection.
-3.2.2}{2}{toc}
-Package hyperref Info: Reference (link) `algocf.3' on input line 164.
-Package hyperref Info: Anchor `algocfline.3' on input line 166.
-Package hyperref Info: Anchor `algocf.3' on input line 178.
-pdftex: bookmark at 178: {3} {\numberline{3}{\ignorespaces Naive algorithm for 
-computing NN output of $m$ samples.\relax }} {algocf.3}{0}{loa}
-Package hyperref Info: Anchor `page.34' on input line 184.
-[34
-Package `hyperref' Info: End of reference (link) `algocf.3', line 164.
-]
-Package hyperref Info: Reference (link) `subsection.3.2.1' on input line 197.
-Package hyperref Info: Reference (link) `subsection.3.2.1' on input line 201.
-Package hyperref Info: Reference (link) `algocf.4' on input line 207.
-Package hyperref Info: Anchor `algocfline.4' on input line 209.
-Package hyperref Info: Anchor `algocf.4' on input line 217.
-
-pdftex: bookmark at 217: {4} {\numberline{4}{\ignorespaces Vectorized algorithm
- for computing NN output of $m$ samples.\relax }} {algocf.4}{0}{loa}
-Package hyperref Info: Anchor `subsection.3.2.3' on input line 225.
-pdftex: bookmark at 225: {3.2.3} {\numberline{3.2.3}Deep Neural Networks} {subs
-ection.3.2.3}{2}{toc}
-Package hyperref Info: Reference (link) `subsection.3.2.1' on input line 227.
-Package hyperref Info: Reference (link) `figure.caption.18' on input line 228.
-Package hyperref Info: Anchor `figure.caption.18' on input line 230.
-<Chapter3/deep_neural_net.png, id=601, 562.1pt x 280.04625pt>
-File: Chapter3/deep_neural_net.png Graphic file (type png)
-
-<use Chapter3/deep_neural_net.png>
-Package pdftex.def Info: Chapter3/deep_neural_net.png used on input line 232.
-(pdftex.def)             Requested size: 455.24411pt x 226.81056pt.
-
-pdftex: bookmark at 233: {3.5} {\numberline{3.5}{\ignorespaces Neural network w
-ith multiple layer.\relax }} {figure.caption.18}{0}{lof}
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package hyperref Info: Reference (link) `equation.3.2.9' on input line 237.
-Package hyperref Info: Anchor `section.3.3' on input line 239.
-pdftex: bookmark at 239: {3.3} {\numberline{3.3}Learning} {section.3.3}{1}{toc}
-
-Package hyperref Info: Anchor `page.35' on input line 247.
-[35
-Package `hyperref' Info: End of reference (link) `subsection.3.2.1', line 197.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.1', line 201.
-Package `hyperref' Info: End of reference (link) `algocf.4', line 207.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.1', line 227.
-Package `hyperref' Info: End of reference (link) `figure.caption.18', line 228.
-
-Package `hyperref' Info: End of reference (link) `equation.3.2.9', line 237.
-]
-Package hyperref Info: Anchor `subsection.3.3.1' on input line 248.
-
-pdftex: bookmark at 248: {3.3.1} {\numberline{3.3.1}Cost Function} {subsection.
-3.3.1}{2}{toc}
-Package hyperref Info: Anchor `equation.3.3.11' on input line 258.
-Package hyperref Info: Anchor `equation.3.3.12' on input line 264.
-Package hyperref Info: Anchor `page.36' on input line 266.
-[36 <./Chapter3/deep_neural_net.png>]
-Package hyperref Info: Anchor `subsection.3.3.2' on input line 272.
-
-pdftex: bookmark at 272: {3.3.2} {\numberline{3.3.2}Optimization Algorithms} {s
-ubsection.3.3.2}{2}{toc}
-Package hyperref Info: Reference (cite) `cite.swirszcz2017local' on input line 
-277.
-Package hyperref Info: Reference (cite) `cite.swirszcz2017local' on input line 
-277.
-Package hyperref Info: Reference (cite) `cite.goodfellow2014qualitatively' on i
-nput line 277.
-Package hyperref Info: Reference (cite) `cite.goodfellow2014qualitatively' on i
-nput line 277.
-Package hyperref Info: Reference (cite) `cite.lin2017does' on input line 277.
-Package hyperref Info: Reference (cite) `cite.lin2017does' on input line 277.
-Package hyperref Info: Reference (link) `section.3.4' on input line 279.
-Package hyperref Info: Anchor `subsubsection.3.3.2.1' on input line 281.
-pdftex: bookmark at 281: {3.3.2.1} {\numberline{3.3.2.1}Gradient Descent} {subs
-ubsection.3.3.2.1}{3}{toc}
-Package hyperref Info: Reference (link) `equation.3.3.13' on input line 286.
-Package hyperref Info: Anchor `equation.3.3.13' on input line 288.
-Package hyperref Info: Reference (link) `figure.caption.19' on input line 295.
-Package hyperref Info: Anchor `figure.caption.19' on input line 299.
-<Chapter3/func_exam.pdf, id=625, 361.71556pt x 336.58171pt>
-File: Chapter3/func_exam.pdf Graphic file (type pdf)
-
-<use Chapter3/func_exam.pdf>
-Package pdftex.def Info: Chapter3/func_exam.pdf used on input line 301.
-(pdftex.def)             Requested size: 364.19667pt x 338.91254pt.
-
-pdftex: bookmark at 302: {3.6} {\numberline{3.6}{\ignorespaces Gradient descent
- on function g.\relax }} {figure.caption.19}{0}{lof}
-Package hyperref Info: Anchor `subsubsection.3.3.2.2' on input line 306.
-pdftex: bookmark at 306: {3.3.2.2} {\numberline{3.3.2.2}Stochastic Gradient Des
-cent} {subsubsection.3.3.2.2}{3}{toc}
-Package hyperref Info: Reference (link) `algocf.5' on input line 311.
-Package hyperref Info: Anchor `algocfline.5' on input line 313.
-Package hyperref Info: Anchor `algocf.5' on input line 323.
-pdftex: bookmark at 323: {5} {\numberline{5}{\ignorespaces SGD algorithm.\relax
- }} {algocf.5}{0}{loa}
-Package hyperref Info: Anchor `page.37' on input line 327.
-[37
-Package `hyperref' Info: End of reference (cite) `cite.swirszcz2017local', line
- 277.
-Package `hyperref' Info: End of reference (cite) `cite.swirszcz2017local', line
- 277.
-Package `hyperref' Info: End of reference (cite) `cite.goodfellow2014qualitativ
-ely', line 277.
-Package `hyperref' Info: End of reference (cite) `cite.goodfellow2014qualitativ
-ely', line 277.
-Package `hyperref' Info: End of reference (cite) `cite.lin2017does', line 277.
-Package `hyperref' Info: End of reference (cite) `cite.lin2017does', line 277.
-Package `hyperref' Info: End of reference (link) `section.3.4', line 279.
-Package `hyperref' Info: End of reference (link) `equation.3.3.13', line 286.
-Package `hyperref' Info: End of reference (link) `figure.caption.19', line 295.
-
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-]
-Package hyperref Info: Anchor `subsubsection.3.3.2.3' on input line 330.
-
-pdftex: bookmark at 330: {3.3.2.3} {\numberline{3.3.2.3}Mini-Batch Gradient Des
-cent} {subsubsection.3.3.2.3}{3}{toc}
-Package hyperref Info: Anchor `page.38' on input line 335.
-[38 <./Chapter3/func_exam.pdf>]
-Package hyperref Info: Anchor `section.3.4' on input line 335.
-
-pdftex: bookmark at 335: {3.4} {\numberline{3.4}Back Propagation} {section.3.4}
-{1}{toc}
+pdftex: bookmark at 77: {3.1.3} {\numberline{3.1.3}Forward Propagation} {subsec
+tion.3.1.3}{2}{toc}
+Package hyperref Info: Anchor `subsection.3.1.4' on input line 79.
+pdftex: bookmark at 79: {3.1.4} {\numberline{3.1.4}Backward Propagation} {subse
+ction.3.1.4}{2}{toc}
+Package hyperref Info: Anchor `subsection.3.1.5' on input line 81.
+pdftex: bookmark at 81: {3.1.5} {\numberline{3.1.5}Optimizations} {subsection.3
+.1.5}{2}{toc}
+Package hyperref Info: Anchor `section.3.2' on input line 83.
+pdftex: bookmark at 83: {3.2} {\numberline{3.2}Trust Region Policy Optimization
+} {section.3.2}{1}{toc}
+Package hyperref Info: Anchor `section.3.3' on input line 86.
+pdftex: bookmark at 86: {3.3} {\numberline{3.3}Proximal Policy Optimization (PP
+O)} {section.3.3}{1}{toc}
 ) (./tese_spy.bbl (./tese_spy.brf)
 \tf@brf=\write10
 \openout10 = `tese_spy.brf'.
 
-Package hyperref Info: Anchor `page.39' on input line 3.
- [39]
-Package hyperref Info: Anchor `chapter*.20' on input line 3.
+Package hyperref Info: Anchor `page.32' on input line 3.
+ [32]
+Package hyperref Info: Anchor `chapter*.15' on input line 3.
 Package hyperref Info: Anchor `chapter.4' on input line 3.
 
 pdftex: bookmark at 3: {4} {Bibliography} {chapter.4}{0}{toc}
@@ -1695,14 +1502,14 @@ You need to provide a definition with \DeclareInputText
 or \DeclareInputMath before using this key.
 
 Package hyperref Info: Anchor `cite.Backgammon' on input line 89.
-Package hyperref Info: Anchor `page.40' on input line 97.
-[40
+Package hyperref Info: Anchor `page.33' on input line 97.
+[33
 
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
 ]
 Package hyperref Info: Anchor `cite.DDPG' on input line 97.
 Package hyperref Info: Anchor `cite.lin2017does' on input line 104.
@@ -1715,14 +1522,14 @@ Package hyperref Info: Anchor `cite.deepmimic' on input line 154.
 Package hyperref Info: Anchor `cite.TRPO' on input line 162.
 Package hyperref Info: Anchor `cite.PPO' on input line 170.
 Package hyperref Info: Anchor `cite.AlphaGoZero' on input line 179.
-Package hyperref Info: Anchor `page.41' on input line 185.
- [41
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
+Package hyperref Info: Anchor `page.34' on input line 185.
+ [34
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
 ]
 Package hyperref Info: Anchor `cite.Sutton1998' on input line 185.
 Package hyperref Info: Anchor `cite.swirszcz2017local' on input line 191.
@@ -1733,9 +1540,9 @@ Package hyperref Info: Anchor `cite.REINFORCE' on input line 216.
 Package hyperref Info: Anchor `cite.ActivationFunction' on input line 221.
 Package hyperref Info: Anchor `cite.ExecuteCurrLearning' on input line 228.
 )
-Package hyperref Info: Anchor `page.42' on input line 235.
- [42
-Package `hyperref' Info: End of reference (link) `algocf.5', line 311.
+Package hyperref Info: Anchor `page.35' on input line 235.
+ [35
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
 ]
 \bottommargin=\skip87
 \rightmarginn=\skip88
@@ -1747,8 +1554,8 @@ Overfull \hbox (74.53033pt too wide) in paragraph at lines 235--235
 
 
 AED: lastpage setting LastPage
-Package hyperref Info: Anchor `page.43' on input line 237.
-[43
+Package hyperref Info: Anchor `page.36' on input line 237.
+[36
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 237.
@@ -1757,7 +1564,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 237.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 237.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 237.
 Package rerunfilecheck Info: File `tese_spy.out' has not changed.
-(rerunfilecheck)             Checksum: 1E528ADED4F16935A2D2CDD18E492A8B;2561.
+(rerunfilecheck)             Checksum: 69F678ADDDA812D2F32A08BCBCE17245;2558.
 Package rerunfilecheck Info: File `tese_spy.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1773,10 +1580,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 237.
  ) 
 Here is how much of TeX's memory you used:
- 11714 strings out of 493029
- 173214 string characters out of 6136234
- 284656 words of memory out of 5000000
- 14704 multiletter control sequences out of 15000+600000
+ 11647 strings out of 493029
+ 172056 string characters out of 6136234
+ 284194 words of memory out of 5000000
+ 14674 multiletter control sequences out of 15000+600000
  64316 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,15n,45p,893b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1799,14 +1606,13 @@ ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmu10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
-ls/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfrm1200.pfb>
-Output written on tese_spy.pdf (44 pages, 3622752 bytes).
+ls/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfrm1200.pfb>
+Output written on tese_spy.pdf (37 pages, 3201955 bytes).
 PDF statistics:
- 817 PDF objects out of 1000 (max. 8388607)
- 695 compressed objects within 7 object streams
- 187 named destinations out of 1000 (max. 500000)
- 414 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 679 PDF objects out of 1000 (max. 8388607)
+ 594 compressed objects within 6 object streams
+ 155 named destinations out of 1000 (max. 500000)
+ 381 words of extra memory for PDF output out of 10000 (max. 10000000)
 
