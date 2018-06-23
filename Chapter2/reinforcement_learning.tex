@@ -187,7 +187,7 @@ For Temporal-Difference control, it is also commonly employed a policy iteration
     \For{episode = $1$, $M$}{
         Initiliaze $S$\;
         Choose $A$ from $S$ using policy derived from $Q$ (e.g., $\epsilon$-greedy). \;
-        \For{t = $1$, $T$}{
+        \For{t = $1$, ...,$T$}{
 			Take action $A$, observe $R$, $S'$. \;
 			Choose $A'$ from $S'$ using policy derived from $Q$ (e.g., $\epsilon$-greedy). \;
 			$Q(S,A) \leftarrow Q(S,A) + \alpha(R + \gamma Q(S',A') - Q(S,A))$. \;
@@ -213,6 +213,79 @@ The main difference between SARSA and MC control algorithms is that SARSA can le
 
 \subsubsection{Q-Learning}
 
+For off-policy learning we have some variations of the previous algorithms. The most basic ones involve importance sampling, that corrects expectations given in one distribution to another, as shown in equation \ref{eq:importance_sampling}.
 
+\begin{equation}
+\mathbb{E}_{X \sim P}[f(X)] = \mathbb{E}_{X \sim Q}\left[\frac{P(X)}{Q(X)}f(X)\right]
+\label{eq:importance_sampling}
+\end{equation}
+
+The most famous off-policy algorithm though is Q-learning, that does not importance sample. Q-learning is able to improve both the behavior policy $\mu$ and the target policy $\pi$, by acting greedy w.r.t. $Q(s,a)$ for $\pi$ and acting $\epsilon$-greedy w.r.t. $Q(s,a)$ for $\mu$. The general algorithm is very similar to SARSA, with the difference that the next action is chosen using the behavior policy, and the alternative successor action is chosen using the target policy. Equation \ref{eq:qlearning_update} describes the update step for $Q(S,A)$ in Q-learning.
+
+\begin{equation}
+Q(S,A) \leftarrow Q(S,A) + \alpha (R + \gamma \underset{a'}{\textrm{max }}Q(S',a') - Q(S,A))
+\label{eq:qlearning_update}
+\end{equation}
 
 \subsection{Policy Search Methods}
+
+Policy search methods are model-free control algorithms which directly compute the optimal value function, without the use of value functions estimates, as shown in previous algorithms. In this sense, the approach consists in using a parametrized function approximation $\pi_{\theta}(a|s)$ for the policy, and the goal is to reach the desired parameters $\theta^*$ that best estimate the optimal policy, in a way that $\pi_{\theta^*}(a|s) \thickapprox \pi_*(a|s)$. Furthermore, the strategy for achieving this goal is solving an optimization problem, which comes from another perspective for the optimal policy, that is the policy that maximizes the expected total return running over several trajectories $\tau$, as defined in equations \ref{eq:tau_def} and \ref{eq:theta_max}.
+
+\begin{align}
+P_{\theta}(\tau) = P_{\theta}(s_1,a_1,...,s_T,a_T) = P(s_1)\prod_{t=1}^T{\pi_{\theta}(a_t|s_t) P(s_{t+1}|s_t,a_t)} 
+\label{eq:tau_def}
+\\
+\theta^* = \underset{\theta}{\textrm{argmax }} J(\theta) =
+\underset{\theta}{\textrm{argmax }} \mathbb{E}_{\tau \sim P_{\theta}(\tau)} \left[ \sum_t{R_t(s_t,a_t)} \right]
+\label{eq:theta_max}
+\end{align}
+
+This optimization problem is solved through gradient ascent methods, and therefore we must compute the gradient of the objective function $J(\theta)$. For this propose, we can rewrite $J(\theta)$ as in \ref{eq:rewrite_objective}, and compute its gradient $\nabla_{\theta} J(\theta)$ using the manipulation described in \ref{eq:grad_with_scorefunc}, in order to work with the score function $\nabla_{\theta}\log{\pi_{\theta}(a|s)}$.
+
+\begin{equation}
+J(\theta) = \mathbb{E}_{\tau \sim P_{\theta}(\tau)} \underbrace{ \left[ \sum_t{R_t(s_t,a_t)} \right] }_{r(\tau)} = \int{\pi_{\theta}(\tau)r(\tau)d \tau}
+\label{eq:rewrite_objective}
+\end{equation}
+
+\begin{equation}
+\nabla_{\theta} J(\theta) = \int{\nabla_{\theta} \pi_{\theta}(\tau)r(\tau)d \tau} = 
+\int{\pi_{\theta}(\tau) \nabla_{\theta} \log{\pi_{\theta}(\tau)} r(\tau)d \tau} =
+\mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} \left[ \nabla_{\theta} \log{\pi_{\theta}(\tau)} r(\tau) \right]
+\label{eq:grad_with_scorefunc}
+\end{equation}
+
+Using the gradient $\nabla_{\theta} J(\theta)$, computed in \ref{eq:grad_with_scorefunc}, the main idea presented in \cite{REINFORCE} is making use of stochastic gradient ascent to reach $\theta^*$. The algorithm is therefore presented in \ref{algo:reinforce}.
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+    \SetAlgoLined
+    Initialize $\theta$ arbitrarily\;
+    \For{each episode \{ $s_1$, $a_1$, $r_2$, ..., $s_{T-1}$, $a_{T-1}$, $r_T$ \} $\sim$ $\pi_{\theta}$ }{
+        \For{t = $1$, ...,$T$}{
+			$\theta \leftarrow \theta + \alpha \nabla_{\theta} \log{\pi_{\theta}(s_t,a_t)} G_t$
+        }
+    }
+    \Return{$\theta$}
+    \caption{REINFORCE algorithm}
+    \label{algo:reinforce}
+\end{algorithm}
+
+In comparison with value function methods, the main advantages of policy-based RL algorithms are the effectiveness in high-dimensional or continuous action spaces, the possibility to learn stochastic policies and the better convergence properties. The main disadvantages, though, are the computational inefficiency, the high variance of these methods and the usual convergence to local optimum rather than the global optimum.
+
+% define average reward objective function
+% define the goal for RL, that is theta argmax J(theta)
+% derive grad J(theta) with score function and sum total reward
+% present REINFORCE algo
+
+\subsection{Actor-Critic}
+% presenting the critic Qw(s,a) as a function estimate for the total return Gt
+
+In algorithm \ref{algo:reinforce}, we used the total return $G_t$ as an unbiased sample of $Q^{\pi_{\theta}}(s_t,a_t)$, but we can also rewrite $\nabla_{\theta} J(\theta)$ as in equation \ref{eq:actor_critic_gradient}. In this sense, we could also use an action-value function approximation to derive the objective function gradient, by making use of a \textit{critic} function $Q_W(s,a) \thickapprox Q^{\pi_{\theta}}(s_t,a_t)$.
+
+\begin{equation}
+\nabla_{\theta} J(\theta) = \mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} \left[ \nabla_{\theta} \log{\pi_{\theta}(\tau)} Q^{\pi_{\theta}}(s_t,a_t) \right]
+\label{eq:actor_critic_gradient}
+\end{equation}
+
+Therefore, Actor-Critic methods maintain two sets of parameters to be updated toward optimum policy and action-value functions: the parameters $W$ for the \textit{critic} action-value estimate $Q_W(s,a)$, and the parameters $\theta$ for the \textit{actor} policy estimate $\pi_{\theta^*}(a|s)$.
+

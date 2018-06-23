@@ -26,19 +26,16 @@
 \BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Categorizing RL}{section.2.3}% 26
 \BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Value Function Methods}{section.2.3}% 27
 \BOOKMARK [2][]{subsection.2.3.3}{2.3.3 Policy Search Methods}{section.2.3}% 28
-\BOOKMARK [0][]{chapter.3}{3 Deep Learning}{}% 29
-\BOOKMARK [1][]{section.3.1}{3.1 History}{chapter.3}% 30
-\BOOKMARK [1][]{section.3.2}{3.2 Neural Networks}{chapter.3}% 31
-\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Representation}{section.3.2}% 32
-\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Vectorization}{section.3.2}% 33
-\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Deep Neural Networks}{section.3.2}% 34
-\BOOKMARK [1][]{section.3.3}{3.3 Learning}{chapter.3}% 35
-\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 Cost Function}{section.3.3}% 36
-\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Optimization Algorithms}{section.3.3}% 37
-\BOOKMARK [1][]{section.3.4}{3.4 Back Propagation}{chapter.3}% 38
-\BOOKMARK [0][]{chapter.4}{Bibliography}{}% 39
-\BOOKMARK [0][]{appendix.A}{A T\357\277\275picos de Dilema Linear}{}% 40
-\BOOKMARK [1][]{section.A.1}{A.1 Uma Primeira Se\347\343o para o Ap\352ndice}{appendix.A}% 41
-\BOOKMARK [0][]{annex.a}{A Exemplo de um Primeiro Anexo}{}% 42
-\BOOKMARK [1][]{section.a.1}{A.1 Uma Se\347\343o do Primeiro Anexo}{annex.a}% 43
-\BOOKMARK [0][]{bla.0}{Folha de Registro do Documento}{}% 44
+\BOOKMARK [2][]{subsection.2.3.4}{2.3.4 Actor-Critic}{section.2.3}% 29
+\BOOKMARK [0][]{chapter.3}{3 Deep Learning}{}% 30
+\BOOKMARK [1][]{section.3.1}{3.1 History}{chapter.3}% 31
+\BOOKMARK [1][]{section.3.2}{3.2 Neural Networks}{chapter.3}% 32
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Representation}{section.3.2}% 33
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Vectorization}{section.3.2}% 34
+\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Deep Neural Networks}{section.3.2}% 35
+\BOOKMARK [1][]{section.3.3}{3.3 Learning}{chapter.3}% 36
+\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 Cost Function}{section.3.3}% 37
+\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Optimization Algorithms}{section.3.3}% 38
+\BOOKMARK [1][]{section.3.4}{3.4 Back Propagation}{chapter.3}% 39
+\BOOKMARK [0][]{chapter.4}{Bibliography}{}% 40
+\BOOKMARK [0][]{bla.0}{Folha de Registro do Documento}{}% 41

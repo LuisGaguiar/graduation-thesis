@@ -99,54 +99,66 @@
 \newlabel{eq:TD0_update}{{2.9}{26}{Temporal-Difference and Sarsa}{equation.2.3.9}{}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Sarsa algorithm\relax }}{27}{algocf.1}}
 \newlabel{algo:sarsa}{{1}{27}{Temporal-Difference and Sarsa}{algocf.1}{}}
+\newlabel{eq:sarsa_lambda}{{2.11}{27}{Temporal-Difference and Sarsa}{equation.2.3.11}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2.3}Q-Learning}{27}{subsubsection.2.3.2.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Policy Search Methods}{27}{subsection.2.3.3}}
+\newlabel{eq:importance_sampling}{{2.12}{27}{Q-Learning}{equation.2.3.12}{}}
+\citation{REINFORCE}
+\newlabel{eq:qlearning_update}{{2.13}{28}{Q-Learning}{equation.2.3.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Policy Search Methods}{28}{subsection.2.3.3}}
+\newlabel{eq:tau_def}{{2.14}{28}{Policy Search Methods}{equation.2.3.14}{}}
+\newlabel{eq:theta_max}{{2.15}{28}{Policy Search Methods}{equation.2.3.15}{}}
+\newlabel{eq:rewrite_objective}{{2.16}{28}{Policy Search Methods}{equation.2.3.16}{}}
+\newlabel{eq:grad_with_scorefunc}{{2.17}{28}{Policy Search Methods}{equation.2.3.17}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces REINFORCE algorithm\relax }}{29}{algocf.2}}
+\newlabel{algo:reinforce}{{2}{29}{Policy Search Methods}{algocf.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Actor-Critic}{29}{subsection.2.3.4}}
+\newlabel{eq:actor_critic_gradient}{{2.18}{29}{Actor-Critic}{equation.2.3.18}{}}
 \citation{DeepLearningBook}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Deep Learning}{28}{chapter.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Deep Learning}{30}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{chap:deep_learning}{{3}{28}{Deep Learning}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}History}{28}{section.3.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Neuron unit cell structure.\relax }}{29}{figure.caption.14}}
-\newlabel{fig:neuron}{{3.1}{29}{Neuron unit cell structure.\relax }{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Neural Networks}{29}{section.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Representation}{29}{subsection.3.2.1}}
-\newlabel{sec:rep}{{3.2.1}{29}{Representation}{subsection.3.2.1}{}}
+\newlabel{chap:deep_learning}{{3}{30}{Deep Learning}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}History}{30}{section.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Neuron unit cell structure.\relax }}{31}{figure.caption.14}}
+\newlabel{fig:neuron}{{3.1}{31}{Neuron unit cell structure.\relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Neural Networks}{31}{section.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Representation}{31}{subsection.3.2.1}}
+\newlabel{sec:rep}{{3.2.1}{31}{Representation}{subsection.3.2.1}{}}
 \citation{ReLU}
 \citation{ActivationFunction}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Simple neural network.\relax }}{30}{figure.caption.15}}
-\newlabel{fig:neuralnet}{{3.2}{30}{Simple neural network.\relax }{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Node computation.\relax }}{31}{figure.caption.16}}
-\newlabel{fig:neuralnet_out}{{3.3}{31}{Node computation.\relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Linear rectified unit plot.\relax }}{31}{figure.caption.17}}
-\newlabel{fig:relu}{{3.4}{31}{Linear rectified unit plot.\relax }{figure.caption.17}{}}
-\newlabel{eq:nn}{{3.9}{32}{Representation}{equation.3.2.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Vectorization}{32}{subsection.3.2.2}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Naive algorithm for computing NN output of $m$ samples.\relax }}{32}{algocf.2}}
-\newlabel{algo:naive_sample_algo}{{2}{32}{Vectorization}{algocf.2}{}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Vectorized algorithm for computing NN output of $m$ samples.\relax }}{33}{algocf.3}}
-\newlabel{algo:vectorized_sample}{{3}{33}{Vectorization}{algocf.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Deep Neural Networks}{33}{subsection.3.2.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Learning}{33}{section.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Neural network with multiple layer.\relax }}{34}{figure.caption.18}}
-\newlabel{fig:deepnn}{{3.5}{34}{Neural network with multiple layer.\relax }{figure.caption.18}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Cost Function}{34}{subsection.3.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Simple neural network.\relax }}{32}{figure.caption.15}}
+\newlabel{fig:neuralnet}{{3.2}{32}{Simple neural network.\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Node computation.\relax }}{33}{figure.caption.16}}
+\newlabel{fig:neuralnet_out}{{3.3}{33}{Node computation.\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Linear rectified unit plot.\relax }}{33}{figure.caption.17}}
+\newlabel{fig:relu}{{3.4}{33}{Linear rectified unit plot.\relax }{figure.caption.17}{}}
+\newlabel{eq:nn}{{3.9}{34}{Representation}{equation.3.2.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Vectorization}{34}{subsection.3.2.2}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Naive algorithm for computing NN output of $m$ samples.\relax }}{34}{algocf.3}}
+\newlabel{algo:naive_sample_algo}{{3}{34}{Vectorization}{algocf.3}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Vectorized algorithm for computing NN output of $m$ samples.\relax }}{35}{algocf.4}}
+\newlabel{algo:vectorized_sample}{{4}{35}{Vectorization}{algocf.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Deep Neural Networks}{35}{subsection.3.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Learning}{35}{section.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Neural network with multiple layer.\relax }}{36}{figure.caption.18}}
+\newlabel{fig:deepnn}{{3.5}{36}{Neural network with multiple layer.\relax }{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Cost Function}{36}{subsection.3.3.1}}
 \citation{swirszcz2017local}
 \citation{goodfellow2014qualitatively}
 \citation{lin2017does}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Optimization Algorithms}{35}{subsection.3.3.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2.1}Gradient Descent}{35}{subsubsection.3.3.2.1}}
-\newlabel{eq:grad_desc}{{3.13}{35}{Gradient Descent}{equation.3.3.13}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2.2}Stochastic Gradient Descent}{35}{subsubsection.3.3.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Gradient descent on function g.\relax }}{36}{figure.caption.19}}
-\newlabel{fig:grad_desc}{{3.6}{36}{Gradient descent on function g.\relax }{figure.caption.19}{}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces SGD algorithm.\relax }}{36}{algocf.4}}
-\newlabel{algo:sgd}{{4}{36}{Stochastic Gradient Descent}{algocf.4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2.3}Mini-Batch Gradient Descent}{36}{subsubsection.3.3.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Optimization Algorithms}{37}{subsection.3.3.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2.1}Gradient Descent}{37}{subsubsection.3.3.2.1}}
+\newlabel{eq:grad_desc}{{3.13}{37}{Gradient Descent}{equation.3.3.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2.2}Stochastic Gradient Descent}{37}{subsubsection.3.3.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Gradient descent on function g.\relax }}{38}{figure.caption.19}}
+\newlabel{fig:grad_desc}{{3.6}{38}{Gradient descent on function g.\relax }{figure.caption.19}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces SGD algorithm.\relax }}{38}{algocf.5}}
+\newlabel{algo:sgd}{{5}{38}{Stochastic Gradient Descent}{algocf.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2.3}Mini-Batch Gradient Descent}{38}{subsubsection.3.3.2.3}}
 \bibdata{abnt-options,Referencias/referencias}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Back Propagation}{37}{section.3.4}}
-\newlabel{subsec:back_prop}{{3.4}{37}{Back Propagation}{section.3.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Back Propagation}{39}{section.3.4}}
+\newlabel{subsec:back_prop}{{3.4}{39}{Back Propagation}{section.3.4}{}}
 \bibcite{abbas}{Abdolmaleki \textit  {et al.} 2016}
 \bibciteEXPL{abbas}{Abdolmaleki \textit  {et al.}}
 \bibciteIMPL{abbas}{ABDOLMALEKI \textit  {et al.}}
@@ -195,7 +207,7 @@
 \bibciteEXPL{Backgammon}{Levner}
 \bibciteIMPL{Backgammon}{LEVNER}
 \bibciteYEAR{Backgammon}{1976}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{38}{chapter.4}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{40}{chapter.4}}
 \bibcite{DDPG}{Lillicrap \textit  {et al.} 2015}
 \bibciteEXPL{DDPG}{Lillicrap \textit  {et al.}}
 \bibciteIMPL{DDPG}{LILLICRAP \textit  {et al.}}
@@ -272,20 +284,6 @@
 \bibciteEXPL{ExecuteCurrLearning}{Zaremba e Sutskever}
 \bibciteIMPL{ExecuteCurrLearning}{ZAREMBA; SUTSKEVER}
 \bibciteYEAR{ExecuteCurrLearning}{2014}
-\@writefile{toc}{\SetAppendixTocName  {Appendix}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}T\IeC {\"\i }\IeC {\textquestiondown }\IeC {\textonehalf }picos de Dilema Linear}{41}{appendix.A}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Uma Primeira Se\c c\~ao para o Ap\^endice}{41}{section.A.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Uma figura que est\'a no ap\^endice\relax }}{41}{figure.caption.21}}
-\newlabel{FD}{{A.1}{41}{Uma figura que está no apêndice\relax }{figure.caption.21}{}}
-\@writefile{toc}{\SetAppendixTocName  {Annex}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Exemplo de um Primeiro Anexo}{42}{annex.a}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Uma Se\c c\~ao do Primeiro Anexo}{42}{section.a.1}}
 \newlabel{LastPage}{{}{43}{}{page.43}{}}
 \xdef\lastpage@lastpage{43}
 \xdef\lastpage@lastpageHy{43}
