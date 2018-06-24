@@ -2,7 +2,7 @@
 %how these two fields are combined in powerful state-of-the-art algorithms for solving complex reinforcement learning problems.
 %In this work, we use all the algorithms presented in this chapter.
 
-The previous chapter described a summarized background for RL concepts and classical algorithms. This chapter aims to go more deeper towards the techniques we are actually going to use in this work. First, we must build the background for Neural Networks (NN) and Multi Layer Perceptrons (MLP), which are commonly used as policy and value function approximations in modern RL algorithms. Then, we will present two state of the art RL techniques which we plan to use in our problem.
+The previous chapter described a summarized background for RL concepts and classical algorithms. This chapter aims to go deeper towards the techniques we are actually going to use in this work. First, we must build the background for Neural Networks (NN) and Multi Layer Perceptrons (MLP), which are commonly used as policy and value function approximations in modern RL algorithms. Then, we will present two state of the art RL techniques which we plan to use in our problem.
 
 \section{Neural Networks}
 
@@ -191,10 +191,60 @@ Finally, by making use of the partial derivatives already computed, we can emplo
     \label{algo:gradient_descent}
 \end{algorithm}
 
-
-\subsection{Optimizations}
+%\subsection{Optimizations}
 
 \section{Trust Region Policy Optimization}
 
+Given all the RL and NN background necessary, we will introduce two state of the art techniques combining both fields.
+
+The point of contact relies on the fact that we need complex non-linear functions to efficiently estimate policies and value-functions. Therefore, the most common used structure for this approximation is MLP. Aiming also to fit stochastic policies distributions in continuous action spaces, we define our policy $\pi_{\theta}(s|a)$ by a normal distribution $\mathcal{N}(\mu,\sigma)$, where the mean $\mu$ and log standard deviation $\sigma$ are outputs of a neural network \cite{TRPO}.
+
+Moreover, in order to work with continuous action spaces, we must employ policy search or actor-critic methods. The classic vanilla policy gradient methods, however, bring some limitations that are handled in the recent techniques. We can cite the main limitation as the vulnerability to the step size in the optimization procedure. This fact brings even bigger impacts due to the non-stationary nature of the input data, which means that a small error in the policy update affects the visitation distribution and consequently the future policy updates.
+
+%The Trust Region Policy Optimization tries to address this limitation. TRPO consists in an on-policy approach that transforms a RL problem into an optimization problem, making policy $\pi$ improves through REINFORCE \cite{REINFORCE} by computing an ascent direction based on data sampled from $\pi$. However, the novel idea introduced by this algorithm is limiting the policy step size to lie within a so called trust region, and thus avoid divergence.
+
+The Trust Region Policy Optimization tries to address this limitation. The novel idea introduced by this algorithm is limiting the policy step size to lie within a so called trust region, and thus avoid divergence. This trust region is computed through the Kullback-Leibler (KL) divergence. The KL divergence is basically a measure of the deviation between two probability distributions, and it is defined as the relative entropy between two continuous random variables $P$, $Q$. Let $p(x)$ and $q(x)$ be the probability density functions of $P$ and $Q$ respectively, the KL divergence, $KL[P,Q]$, is then given by equation \ref{eq:KL_divergence}.
+
+%The trust region is computed through the Kullback-Leibler (KL) divergence. The KL divergence is basically a measure of the deviation between two probability distributions, and it is defined as the relative entropy between two continuous random variables $P$, $Q$. Let $p(x)$ and $q(x)$ be the probability density functions of $P$ and $Q$ respectively, the KL divergence, $KL[P,Q]$, is then given by equation \ref{eq:KL_divergence}.
+
+\begin{equation}
+KL[P,Q] = \int_{-\infty}^{\infty}{p(x)\log{\frac{p(x)}{q(x)}}}
+\label{eq:KL_divergence}
+\end{equation}
+
+TRPO therefore limits the policy gradient step size by applying a KL based constraint (Eq. \ref{eq:TRPO_1}) to an optimization problem on a slightly modified cost function (Eq. \ref{eq:TRPO_2}). The overall algorithm is iteratively, we run episodes and collect data from $\pi_{\theta_{old}}$, compute $\pi_{\theta}$ from the optimization problem and then update $\pi_{\theta_{old}} \leftarrow \pi_{\theta}$. This method is described in Algorithm \ref{algo:TRPO}.
+
+%consists in a constrained optimization problem, given by equations
+
+\begin{align}
+\underset{\theta}{\textrm{maximize }} \mathbb{\hat{E}}_{s_t,a_t \sim \pi_{\theta_{old}} } \left[ \frac{\pi_{\theta}(a_t|s_t)}{
+\pi_{\theta_{old}}(a_t|s_t)}\hat{A}_t \right]
+\label{eq:TRPO_1}
+\\
+\textrm{subject to } \mathbb{\hat{E}}_{s_t,a_t \sim \pi_{\theta_{old}} } \left[ KL[\pi_{\theta_{old}},\pi_{\theta}(.|s_t)] \right] \leq \delta
+\label{eq:TRPO_2}
+\end{align}
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+    \SetAlgoLined
+    \For{ iteration = $1$, $2$, ... }{
+    	Run policy for N trajectories\;
+    	Estimate advantage function $\hat{A(.)}$ at all $n$ timesteps\;
+    	$\underset{\theta}{\textrm{maximize }} \sum_{n=1}^{N} {\frac{\pi_{\theta}(a_n|s_n)}{\pi_{\theta_{old}}(a_n|s_n)}\hat{A}_n }$\;
+    	$\textrm{subject to } \overline{KL}[\pi_{\theta_{old}},\pi_{\theta}(.|s_t)] \leq \delta$\;
+    	$\pi_{\theta_{old}} \leftarrow \pi_{\theta}$\;
+    }
+    \Return{$\pi_{\theta}$}
+    \caption{TRPO}
+    \label{algo:TRPO}
+\end{algorithm}
+
+In this algorithm, we must compute an estimate for the advantage function $\hat{A}_t$. The advantage function is given by $A(s_t,a_t) = Q(s_t,a_t) - V(s_t)$, and it is basically the standard critic function $Q(s_t,a_t)$ subtracted by a unbiased baseline $V(s_t)$ (state-value function) in order to reduce variance. For solving the constrained optimization problem, the conjugate gradient method is generally used.
+
+TRPO presents a great improvement under data efficiency and convergence properties. However, it has a great computational cost, and its implementation through conjugate gradients can be relatively complicated \cite{PPO}.
 
 \section{Proximal Policy Optimization (PPO)}
+
+
+
