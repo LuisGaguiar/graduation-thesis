@@ -24,9 +24,9 @@
 \contentsline {section}{\numberline {3.1}Neural Networks}{30}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Representation}{30}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Vectorization}{32}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Forward Propagation}{32}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Backward Propagation}{32}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Optimizations}{32}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}Trust Region Policy Optimization}{32}{section.3.2}
-\contentsline {section}{\numberline {3.3}Proximal Policy Optimization (PPO)}{32}{section.3.3}
-\contentsline {chapter}{Bibliography}{33}{chapter.4}
+\contentsline {subsection}{\numberline {3.1.3}Forward Propagation}{33}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Backward Propagation}{33}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Optimizations}{35}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}Trust Region Policy Optimization}{35}{section.3.2}
+\contentsline {section}{\numberline {3.3}Proximal Policy Optimization (PPO)}{35}{section.3.3}
+\contentsline {chapter}{Bibliography}{36}{chapter.4}

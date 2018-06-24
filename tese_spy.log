@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.28)  23 JUN 2018 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.28)  23 JUN 2018 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1386,7 +1386,7 @@ pdftex: bookmark at 7: {3.1} {\numberline{3.1}Neural Networks} {section.3.1}{1}
 Package hyperref Info: Anchor `subsection.3.1.1' on input line 13.
 pdftex: bookmark at 13: {3.1.1} {\numberline{3.1.1}Representation} {subsection.
 3.1.1}{2}{toc}
-Package hyperref Info: Anchor `page.30' on input line 24.
+Package hyperref Info: Anchor `page.30' on input line 23.
 [30
 
 ]
@@ -1414,38 +1414,91 @@ Package pdftex.def Info: Chapter4/neuralnet.pdf used on input line 53.
 
 pdftex: bookmark at 54: {3.1} {\numberline{3.1}{\ignorespaces Shallow Neural Ne
 twork Architecture\relax }} {figure.caption.14}{0}{lof}
-Package hyperref Info: Anchor `subsection.3.1.2' on input line 67.
-pdftex: bookmark at 67: {3.1.2} {\numberline{3.1.2}Vectorization} {subsection.3
-.1.2}{2}{toc}
-Package hyperref Info: Anchor `page.31' on input line 70.
+Package hyperref Info: Anchor `page.31' on input line 59.
 [31
 Package `hyperref' Info: End of reference (link) `equation.3.1.1', line 32.
 Package `hyperref' Info: End of reference (link) `equation.3.1.2', line 41.
 Package `hyperref' Info: End of reference (link) `equation.3.1.3', line 41.
 Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
  <./Chapter4/neuralnet.pdf>]
-Package hyperref Info: Anchor `subsection.3.1.3' on input line 77.
+Package hyperref Info: Reference (link) `equation.3.1.4' on input line 60.
+Package hyperref Info: Reference (link) `equation.3.1.5' on input line 60.
+Package hyperref Info: Anchor `equation.3.1.4' on input line 62.
+Package hyperref Info: Anchor `equation.3.1.5' on input line 67.
+Package hyperref Info: Anchor `subsection.3.1.2' on input line 81.
 
-pdftex: bookmark at 77: {3.1.3} {\numberline{3.1.3}Forward Propagation} {subsec
-tion.3.1.3}{2}{toc}
-Package hyperref Info: Anchor `subsection.3.1.4' on input line 79.
-pdftex: bookmark at 79: {3.1.4} {\numberline{3.1.4}Backward Propagation} {subse
-ction.3.1.4}{2}{toc}
-Package hyperref Info: Anchor `subsection.3.1.5' on input line 81.
-pdftex: bookmark at 81: {3.1.5} {\numberline{3.1.5}Optimizations} {subsection.3
-.1.5}{2}{toc}
-Package hyperref Info: Anchor `section.3.2' on input line 83.
-pdftex: bookmark at 83: {3.2} {\numberline{3.2}Trust Region Policy Optimization
-} {section.3.2}{1}{toc}
-Package hyperref Info: Anchor `section.3.3' on input line 86.
-pdftex: bookmark at 86: {3.3} {\numberline{3.3}Proximal Policy Optimization (PP
-O)} {section.3.3}{1}{toc}
+pdftex: bookmark at 81: {3.1.2} {\numberline{3.1.2}Vectorization} {subsection.3
+.1.2}{2}{toc}
+Package hyperref Info: Reference (link) `equation.3.1.6' on input line 85.
+Package hyperref Info: Anchor `equation.3.1.6' on input line 87.
+Package hyperref Info: Reference (link) `equation.3.1.7' on input line 97.
+Package hyperref Info: Anchor `equation.3.1.7' on input line 99.
+Package hyperref Info: Reference (link) `equation.3.1.8' on input line 116.
+Package hyperref Info: Reference (link) `equation.3.1.9' on input line 116.
+Package hyperref Info: Anchor `page.32' on input line 117.
+[32
+Package `hyperref' Info: End of reference (link) `equation.3.1.4', line 60.
+Package `hyperref' Info: End of reference (link) `equation.3.1.5', line 60.
+Package `hyperref' Info: End of reference (link) `equation.3.1.6', line 85.
+Package `hyperref' Info: End of reference (link) `equation.3.1.7', line 97.
+]
+Package hyperref Info: Anchor `equation.3.1.8' on input line 124.
+Package hyperref Info: Anchor `equation.3.1.9' on input line 124.
+Package hyperref Info: Anchor `subsection.3.1.3' on input line 126.
+
+pdftex: bookmark at 126: {3.1.3} {\numberline{3.1.3}Forward Propagation} {subse
+ction.3.1.3}{2}{toc}
+Package hyperref Info: Anchor `algocfline.3' on input line 130.
+Package hyperref Info: Anchor `algocf.3' on input line 139.
+pdftex: bookmark at 139: {3} {\numberline{3}{\ignorespaces Forward Propagation\
+relax }} {algocf.3}{0}{loa}
+Package hyperref Info: Anchor `subsection.3.1.4' on input line 143.
+pdftex: bookmark at 143: {3.1.4} {\numberline{3.1.4}Backward Propagation} {subs
+ection.3.1.4}{2}{toc}
+Package hyperref Info: Reference (link) `equation.3.1.10' on input line 145.
+Package hyperref Info: Reference (link) `equation.3.1.13' on input line 145.
+Package hyperref Info: Anchor `equation.3.1.10' on input line 155.
+Package hyperref Info: Anchor `equation.3.1.11' on input line 155.
+Package hyperref Info: Anchor `equation.3.1.12' on input line 155.
+Package hyperref Info: Anchor `equation.3.1.13' on input line 155.
+Package hyperref Info: Reference (link) `algocf.4' on input line 157.
+Package hyperref Info: Anchor `page.33' on input line 158.
+[33
+Package `hyperref' Info: End of reference (link) `equation.3.1.8', line 116.
+Package `hyperref' Info: End of reference (link) `equation.3.1.9', line 116.
+Package `hyperref' Info: End of reference (link) `equation.3.1.10', line 145.
+Package `hyperref' Info: End of reference (link) `equation.3.1.13', line 145.
+]
+Package hyperref Info: Anchor `algocfline.4' on input line 159.
+Package hyperref Info: Anchor `algocf.4' on input line 171.
+
+pdftex: bookmark at 171: {4} {\numberline{4}{\ignorespaces Backward Propagation
+\relax }} {algocf.4}{0}{loa}
+Package hyperref Info: Reference (link) `algocf.5' on input line 175.
+Package hyperref Info: Anchor `algocfline.5' on input line 177.
+Package hyperref Info: Anchor `algocf.5' on input line 190.
+pdftex: bookmark at 190: {5} {\numberline{5}{\ignorespaces Gradient Descent\rel
+ax }} {algocf.5}{0}{loa}
+Package hyperref Info: Anchor `subsection.3.1.5' on input line 195.
+pdftex: bookmark at 195: {3.1.5} {\numberline{3.1.5}Optimizations} {subsection.
+3.1.5}{2}{toc}
+Package hyperref Info: Anchor `section.3.2' on input line 197.
+pdftex: bookmark at 197: {3.2} {\numberline{3.2}Trust Region Policy Optimizatio
+n} {section.3.2}{1}{toc}
+Package hyperref Info: Anchor `section.3.3' on input line 200.
+pdftex: bookmark at 200: {3.3} {\numberline{3.3}Proximal Policy Optimization (P
+PO)} {section.3.3}{1}{toc}
 ) (./tese_spy.bbl (./tese_spy.brf)
 \tf@brf=\write10
 \openout10 = `tese_spy.brf'.
 
-Package hyperref Info: Anchor `page.32' on input line 3.
- [32]
+Package hyperref Info: Anchor `page.34' on input line 3.
+ [34
+Package `hyperref' Info: End of reference (link) `algocf.4', line 157.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+]
+Package hyperref Info: Anchor `page.35' on input line 3.
+ [35]
 Package hyperref Info: Anchor `chapter*.15' on input line 3.
 Package hyperref Info: Anchor `chapter.4' on input line 3.
 
@@ -1502,14 +1555,14 @@ You need to provide a definition with \DeclareInputText
 or \DeclareInputMath before using this key.
 
 Package hyperref Info: Anchor `cite.Backgammon' on input line 89.
-Package hyperref Info: Anchor `page.33' on input line 97.
-[33
+Package hyperref Info: Anchor `page.36' on input line 97.
+[36
 
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
 ]
 Package hyperref Info: Anchor `cite.DDPG' on input line 97.
 Package hyperref Info: Anchor `cite.lin2017does' on input line 104.
@@ -1522,14 +1575,14 @@ Package hyperref Info: Anchor `cite.deepmimic' on input line 154.
 Package hyperref Info: Anchor `cite.TRPO' on input line 162.
 Package hyperref Info: Anchor `cite.PPO' on input line 170.
 Package hyperref Info: Anchor `cite.AlphaGoZero' on input line 179.
-Package hyperref Info: Anchor `page.34' on input line 185.
- [34
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package hyperref Info: Anchor `page.37' on input line 185.
+ [37
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
 ]
 Package hyperref Info: Anchor `cite.Sutton1998' on input line 185.
 Package hyperref Info: Anchor `cite.swirszcz2017local' on input line 191.
@@ -1540,9 +1593,9 @@ Package hyperref Info: Anchor `cite.REINFORCE' on input line 216.
 Package hyperref Info: Anchor `cite.ActivationFunction' on input line 221.
 Package hyperref Info: Anchor `cite.ExecuteCurrLearning' on input line 228.
 )
-Package hyperref Info: Anchor `page.35' on input line 235.
- [35
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 41.
+Package hyperref Info: Anchor `page.38' on input line 235.
+ [38
+Package `hyperref' Info: End of reference (link) `algocf.5', line 175.
 ]
 \bottommargin=\skip87
 \rightmarginn=\skip88
@@ -1554,8 +1607,8 @@ Overfull \hbox (74.53033pt too wide) in paragraph at lines 235--235
 
 
 AED: lastpage setting LastPage
-Package hyperref Info: Anchor `page.36' on input line 237.
-[36
+Package hyperref Info: Anchor `page.39' on input line 237.
+[39
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 237.
@@ -1580,10 +1633,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 237.
  ) 
 Here is how much of TeX's memory you used:
- 11647 strings out of 493029
- 172056 string characters out of 6136234
- 284194 words of memory out of 5000000
- 14674 multiletter control sequences out of 15000+600000
+ 11677 strings out of 493029
+ 172611 string characters out of 6136234
+ 284694 words of memory out of 5000000
+ 14685 multiletter control sequences out of 15000+600000
  64316 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,15n,45p,893b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1598,21 +1651,22 @@ fonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmu10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfrm1200.pfb>
-Output written on tese_spy.pdf (37 pages, 3201955 bytes).
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmu
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfrm1200.pfb>
+Output written on tese_spy.pdf (40 pages, 3221545 bytes).
 PDF statistics:
- 679 PDF objects out of 1000 (max. 8388607)
- 594 compressed objects within 6 object streams
- 155 named destinations out of 1000 (max. 500000)
+ 725 PDF objects out of 1000 (max. 8388607)
+ 635 compressed objects within 7 object streams
+ 174 named destinations out of 1000 (max. 500000)
  381 words of extra memory for PDF output out of 10000 (max. 10000000)
 

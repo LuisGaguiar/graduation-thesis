@@ -14,7 +14,7 @@ Also known as Multi Layer Perceptron (MLP), it has a multiple layer architecture
 
 Regarding the representations and notations used for NN, we can describe its basic elements consisting of inputs, outputs, parameters and activate functions.
 
-For each one of the $m$ training examples, we define the input $x^(i)$, corresponding to the $i$ example, as a n-dimensional feature column vector, so with dimensions $(n,1)$. It is also called the input layer, with index $0$, and also represented as $a^{[0](i)}$ with dimensions $(n^{[0]},1)$.
+For each one of the $m$ training examples, we define the input $x^{(i)}$, corresponding to the $i$ example, as a n-dimensional feature column vector, so with dimensions $(n,1)$. It is also called the input layer, with index $0$, and also represented as $a^{[0](i)}$ with dimensions $(n^{[0]},1)$. Moreover, we also define the final expected output for each training example, given by the vector $y$ with dimensions $(n_F,1)$.
 
 For each layer $l$, also called hidden-layers, with $1<l<L$ in a total of $L$ layers, we have a specific structure:
 \begin{itemize}
@@ -23,7 +23,7 @@ For each layer $l$, also called hidden-layers, with $1<l<L$ in a total of $L$ la
 	The layer $l$ has a total of $n^{[l]}$ hidden units, each $j$th unit receives all the inputs $a^{[l-1](i)}$ from layer $l-1$, and output a scalar $a^{[l](i)}_j$. The total output of the layer is then composed by all hidden units outputs, given by the vector $a^{[l](i)}$, with dimensions $(n^{[l]},1)$.
 	
 \item
-	Each $j$th hidden unit has a row-vector linear parameter $w^{[l]}_j$ with dimensions $(1,n^{[l-1]})$. The total linear parameters $w^{[l]}$ of the layer is given by all hidden units parameters in a $(n^{[l]},n^{[l-1]})$ matrix.
+	Each $j$th hidden unit has a row-vector linear parameter $w^{[l]}_j$ with dimensions $(1,n^{[l-1]})$. The total linear parameters $W^{[l]}$ of the layer is given by all hidden units parameters in a $(n^{[l]},n^{[l-1]})$ matrix.
 	
 \item
 	Each $j$th hidden unit also has a scalar bias-parameter given by $b^{[l]}_j$, and all units bias-parameters compose the layer bias vector $b^{[l]}$, with dimensions $(n^{[l]},1)$
@@ -41,10 +41,10 @@ sigmoid(z) = \frac{1}{1+e^{-z}} \text{ ; } tanh(z) = \frac{e^z - e^{-z}}{e^z + e
 All these elements of the layer are related through the update equations \ref{eq:linear_update_nn} and \ref{eq:non_linear_update_nn}, which, for each layer $l$, receives the previous layer output $a^{[l-1]}$ and generates the current layer output $a^{[l]}$. The figure \ref{fig:nn_basic_architecture} illustrates this representation for a shallow one hidden-layer NN.
 
 \begin{align}
-z^{[l](i)} = w^{[l]}a^{[l-1](i)} + b^{[l]}
+z^{[l](i)} = W^{[l]}a^{[l-1](i)} + b^{[l]}
 \label{eq:linear_update_nn}
 \\
-a^{[l](i)} = g^{[l]}(z)
+a^{[l](i)} = g^{[l]}(z^{[l](i)})
 \label{eq:non_linear_update_nn}
 \end{align}
 
@@ -54,6 +54,20 @@ a^{[l](i)} = g^{[l]}(z)
     \caption{Shallow Neural Network Architecture}
     \label{fig:nn_basic_architecture}
 \end{figure}
+
+One last basic definition for NN is the cost function $J(W^{[1]},b^{[1]},...,W^{[L]},b^{[L]})$. The cost function basically measure how good our estimator is to our dataset. The lower the cost function, the less error we obtain when predicting the desired function. Therefore, it represents the target function to be minimized, with respect to all the parameters used in the NN $\{ W^{[1]},b^{[1]},...,W^{[L]},b^{[L]} \}$.
+
+It is possible to employ several different cost functions according to each specific problem. However, we can mention the most common ones, that are the Quadratic Cost, given by equation \ref{eq:quadratic_cost}, and the Cross-Entropy Cost, given by equation \ref{eq:cross_entropy_cost}.
+
+\begin{equation}
+J(W^{[1]},b^{[1]},...,W^{[L]},b^{[L]}) = \frac{1}{m} \sum_{i=1}^{m}{\sum_{j=1}^{n^{[L]}}{ (y_j^{(i)} - a_j^{[L](i)})^2 }}
+\label{eq:quadratic_cost}
+\end{equation}
+
+\begin{equation}
+J(W^{[1]},b^{[1]},...,W^{[L]},b^{[L]}) = \frac{1}{m} \sum_{i=1}^{m}{\sum_{j=1}^{n^{[L]}}{ \left[ y_j^{(i)}\log{a_j^{[L](i)}} - (1-y_j^{(i)}) \log{ (1 - a_j^{[L](i)}) } \right] }}
+\label{eq:cross_entropy_cost}
+\end{equation}
 
 % describe:
 % para cada exemplo de 1 a m, temos um vetor de input x (n[0],1)
@@ -68,15 +82,115 @@ a^{[l](i)} = g^{[l]}(z)
 
 The previous equations are capable of fully defining update rules for any MLP, however, in order to avoid the naively computation over each training example, and therefore reach more efficient algorithms exploring the use of parallelization in modern GPUs architectures, we must introduce a vectorization notion.
 
-Let's first define the $X$ matrix as the concatenation of each training example $x^{(i)}$ composing its columns, in a way that:
+Let's first define the $X$ matrix as the concatenation of each training example $x^{(i)}$ composing its columns, as shown in equation \ref{eq:vectorization_concatenation_X}. The matrix $X$ now assumes the dimensions $(n^{[0]},m)$.
 
-\begin{equation*}
-X = \left[ x^{(1)}, x^{(2)}, ..., x^{(m)} \right]
-\end{equation*}
+\begin{equation}
+X = 
+\begin{bmatrix}
+\vdots & \vdots &  & \vdots \\
+x^{(1)} & x^{(2)} & \dots & x^{(m)} \\
+\vdots & \vdots &  & \vdots
+\end{bmatrix}
+\label{eq:vectorization_concatenation_X}
+\end{equation}
+
+In this sense, we can analogously define the matrices $A^{[l]}$ and $Z^{[l]}$, as a concatenation of the values for each example $a^{[l](i)}$ and $z^{[l](i)}$, described in equation \ref{eq:vectorization_concatenation}. The matrices $A^{[l]}$ and $Z^{[l]}$ now assume the dimensions $(n^{[l]},m)$.
+
+\begin{equation}
+A^{[l]} = 
+\begin{bmatrix}
+\vdots & \vdots &  & \vdots \\
+a^{[l](1)} & a^{[l](2)} & \dots & a^{[l](m)} \\
+\vdots & \vdots &  & \vdots \\
+\end{bmatrix}
+\text{ }
+Z^{[l]} = 
+\begin{bmatrix}
+\vdots & \vdots &  & \vdots \\
+z^{[l](1)} & z^{[l](2)} & \dots & z^{[l](m)} \\
+\vdots & \vdots &  & \vdots \\
+\end{bmatrix}
+\label{eq:vectorization_concatenation}
+\end{equation}
+
+The update equations for each layer, in the vectorized representation, is therefore modified and given by the equations \ref{eq:linear_update_nn_vectorized} and \ref{eq:non_linear_update_nn_vectorized}.
+
+\begin{align}
+Z^{[l]} = W^{[l]}A^{[l-1]} + b^{[l]}
+\label{eq:linear_update_nn_vectorized}
+\\
+A^{[l](i)} = g^{[l]}(Z^{[l]})
+\label{eq:non_linear_update_nn_vectorized}
+\end{align}
 
 \subsection{Forward Propagation}
 
+Given all the definitions of the basic structures of a NN and the main calculations involved, we can derive the algorithm for the forward propagation. The forward Propagation algorithm consists in: given all the dataset composed by the matrix $X$, compute all layers outputs $A^{[l]}$ and $Z^{[l]}$, including the final layer and the final output for the NN, which are $A^{[L]}$ and $Z^{[L]}$.
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+    \SetAlgoLined
+    \For{ $l$ = $1$, ..., $L$ }{
+        $Z^{[l]} = W^{[l]} A^{[l-1]} + b^{[l]}$\;
+        $A^{[l]} = g^{[l]}(Z^{[l]})$\;
+        cache $Z^{[l]}$ and $A^{[l]}$\;
+    }
+    \Return{$A^{[L]}$}
+    \caption{Forward Propagation}
+    \label{algo:forward_propagation}
+\end{algorithm}
+
 \subsection{Backward Propagation}
+
+The ultimate goal in Supervised Learning is minimizing the cost function. For this purpose, one of the most famous optimization techniques used is gradient descent. However, in order to make use of gradient descent, we must compute the derivatives of the cost function with respect to all the parameters $W^{[1]}, b^{[1]}, ..., W^{[L]}, b^{[L]}$. The notation used for these partial derivatives is given in equations from \ref{eq:partial_derivatives_notation_first} to \ref{eq:partial_derivatives_notation_final}.
+
+\begin{align}
+\frac{\partial J(\theta)}{\partial W^{[l]}} = dW^{[l]}
+\label{eq:partial_derivatives_notation_first}
+\\
+\frac{\partial J(\theta)}{\partial b^{[l]}} = db^{[l]} \\
+\frac{\partial J(\theta)}{\partial A^{[l]}} = dA^{[l]} \\
+\frac{\partial J(\theta)}{\partial Z^{[l]}} = dZ^{[l]}
+\label{eq:partial_derivatives_notation_final}
+\end{align}
+
+Finding a closed expression for each partial derivative would be a massive analytical work, hence an elegant solution is to employ a iterative algorithm called Backward Propagation, or Backpropagation. The main idea involved in this algorithm is computing each partial derivative from the next layer output derivative $dA^{[l]}$ and the cached data $A^{[l-1]}$ and $Z^{[l]}$ from the forward propagation algorithm. The Backpropagation algorithm is then given in Algorithm \ref{algo:backward_propagation}.
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+    \SetAlgoLined
+    $dA^{L} = \sum_{i=1}^m{\frac{-y^{(i)}}{a^{[L](i)}} + \frac{(1-y^{(i)})}{(1-a^{[L](i)})}}$\;
+    \For{ $l$ = $L$, ..., $1$ }{
+        input $dA^{[l]}$ and cached values $A^{[l-1]}$ and $Z^{[l]}$\;
+        $dZ^{[l]} = dA^{[l]} * g'^{[l]}(Z^{[l]})$\;
+        $dW^{[l]} = \frac{1}{m} dZ^{[l]} A^{[l-1]T}$\;
+        $db^{[l]} = \frac{1}{m}$ sum over rows of $dZ^{[l]}$\;
+        $dA^{[l-1]} = W^{[l]T}dZ^{[l]}$\;
+    }
+    \Return{($dW^{[1]}, db^{[1]}, ..., dW^{[L]}, db^{[L]}$)}
+    \caption{Backward Propagation}
+    \label{algo:backward_propagation}
+\end{algorithm}
+
+Finally, by making use of the partial derivatives already computed, we can employ the classical Gradient Descent, described in Algorithm \ref{algo:gradient_descent}. Notice that, until convergence, we update all the parameters by the derivatives computed from all the training examples in each step, consisting in the Batch Gradient Descent.
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+    \SetAlgoLined
+    Initialize $W^{[1]},b^{[1]},...,W^{[L]},b^{[L]}$ with random values near $0$\;
+    \While{ An approximate minimum is not obtained }{
+	    Forward Propagation()\;
+	    Backward Propagation()\;
+   		\For{ $l$ = $1$, ..., $L$ }{
+   			$W^{[l]} = W^{[l]} - \alpha dW^{[l]}$\;
+   			$b^{[l]} = b^{[l]} - \alpha db^{[l]}$\;
+        }
+    }
+    \Return{($W^{[1]}, b^{[1]}, ..., W^{[L]}, b^{[L]}$)}
+    \caption{Gradient Descent}
+    \label{algo:gradient_descent}
+\end{algorithm}
+
 
 \subsection{Optimizations}
 
