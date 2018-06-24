@@ -246,5 +246,40 @@ TRPO presents a great improvement under data efficiency and convergence properti
 
 \section{Proximal Policy Optimization (PPO)}
 
+The Proximal Policy Optimization \cite{PPO} is a recent technique that follows a similar approach used for TRPO, which consists in solving an optimization problem by computing an update at each step that minimizes the cost function while ensuring a relatively small deviation from the previous policy. However, the great breakthroughs introduced are enhancements in the ease of implementation and the ease of hyperparameters tuning, while achieving an even better performance.
 
+The main idea behind TRPO is to use an adaptive KL penalty to control the change of the policy at each iteration. PPO introduces a novel objective function, which intrinsically address this constraint in a first-order optimization.
+
+Let $r_t(\theta)$ be the ratio between the new and old policy, given by the equation \ref{eq:def_r_t}, the PPO's objective function is then described by the equation \ref{eq:PPO_objective_function}.
+
+\begin{equation}
+r_t(\theta) = \frac{\pi_{\theta}(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}
+\label{eq:def_r_t}
+\end{equation}
+
+\begin{equation}
+L(\theta) = \mathbb{\hat{E}}_t \left[ min(r_t(\theta)\hat{A}_t, clip(r_t(\theta),1-\epsilon,1+\epsilon)\hat{A}_t) \right]
+\label{eq:PPO_objective_function}
+\end{equation}
+
+In equation \ref{eq:PPO_objective_function}, $\theta$ is the policy parameter, $\mathbb{\hat{E}}_t$ is the empirical expectation over all $t$ timesteps, $\hat{A}_t$ is the estimate for the advantage function, as already described, $\epsilon$ is a new hyperparameter, and finally the clip function is explained in equation \ref{eq:clip_function}.
+
+\begin{equation}
+clip(x,min,max) = \begin{cases}
+        min, & \mbox{if } x < min \\
+        x, & \mbox{if } min \leq x \leq max \\
+        max, & \mbox{if } x > max
+        \end{cases}
+\label{eq:clip_function}
+\end{equation}
+
+PPO does not need complex conjugate gradient techniques, and can be solved with classical stochastic gradient descents. Besides, it has displayed the best performance on continuous control tasks, even compared to TRPO, it also allows parallel implementations and it is very data efficient.
+
+%ease of implementation, sample complexity, and ease of tuning
+%compute an update at each step that minimizes the cost function while ensuring the deviation from the previous policy is relatively small.
+%TRPO uses an apdtive KL penalty to control the change of the policy at each iteration
+%PPO uses a novel objective function which already address this contraint
+%present the objective function
+%doesnt need complex conjugate gradient techniques, can be solved with the standard stochastic gradient descent
+%it has displayed the best performance on continuous control tasks, even compared to TRPO, allows parallel implementations and is very data efficient
 

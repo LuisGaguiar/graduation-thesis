@@ -28,4 +28,4 @@
 \contentsline {subsection}{\numberline {3.1.4}Backward Propagation}{33}{subsection.3.1.4}
 \contentsline {section}{\numberline {3.2}Trust Region Policy Optimization}{34}{section.3.2}
 \contentsline {section}{\numberline {3.3}Proximal Policy Optimization (PPO)}{36}{section.3.3}
-\contentsline {chapter}{Bibliography}{37}{chapter.4}
+\contentsline {chapter}{Bibliography}{38}{chapter.4}
