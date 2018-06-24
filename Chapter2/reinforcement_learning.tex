@@ -45,7 +45,7 @@ Besides this basic tuple representation, there are four more concepts very used 
 	G_t = R_{t+1} + \gamma R_{t+2} + ... = \sum_{k=0}^{\infty}{\gamma^k R_{t+k+1}}
 	\end{equation}
 	Notice that by introducing the discount factor $\gamma$, it is possible to set the agent preference between short-term and long-term rewards.
-
+\item
 	The \textbf{policy} $\pi(a \mid s)$ is a probability distribution function over actions given states, defined by:
 	\begin{equation}
 	\pi(a \mid s) = \mathbb{P}[A_t=a | S_t=s]
@@ -178,7 +178,7 @@ V(S_t) = V(S_t) + \alpha(R_{t+1} + \gamma V(S_{t+1}) - V(S_t))
 \label{eq:TD0_update}
 \end{equation}
 
-For Temporal-Difference control, it is also commonly employed a policy iteration approach. We use TD to compute action-value function estimates $Q(S,A)$ given the policy $\pi$, and then use $\epsilon$-greedy to improve the policy. This method is known as SARSA, due to the process of, given a state $S$, take an action $A$, receive a reward $R$, end in a next state $S'$, and then choose another action $A'$ in order to compute the TD target. The algorithm \ref{algo:sarsa} fully describes this method.
+For Temporal-Difference control, it is also commonly employed a policy iteration approach. We use TD to compute action-value function estimates $Q(S,A)$ given the policy $\pi$, and then use $\epsilon$-greedy to improve the policy. This method is known as SARSA, due to the process of, given a state $S$, take an action $A$, receive a reward $R$, end in a next state $S'$, and then choose another action $A'$ in order to compute the TD target. The Algorithm \ref{algo:sarsa} fully describes this method.
 
 \begin{algorithm}[H]
     \DontPrintSemicolon
@@ -198,7 +198,7 @@ For Temporal-Difference control, it is also commonly employed a policy iteration
     \label{algo:sarsa}
 \end{algorithm}
 
-The SARSA algorithm is most famous for another variation, that is able to bootstrap into more future steps. The SARSA($\lambda$) method computes a different TD target $Q_t^{\lambda}$ making use of a discount weight $(1-\lambda) \lambda^{n-1}$ over n steps action-values $Q_t^{(n)}$, as shown in equation \ref{eq:sarsa_lambda}.
+The SARSA algorithm is more famous for another variation, that is able to bootstrap into more future steps. The SARSA($\lambda$) method computes a different TD target $Q_t^{\lambda}$ making use of a discount weight $(1-\lambda) \lambda^{n-1}$ over n steps action-values $Q_t^{(n)}$, as shown in equation \ref{eq:sarsa_lambda}.
 
 \begin{align}
 Q_t^{\lambda} = (1 - \lambda) \sum_{i=1}^{n}{\lambda^{n-1}Q_t^{(n)}} \\
@@ -229,7 +229,7 @@ Q(S,A) \leftarrow Q(S,A) + \alpha (R + \gamma \underset{a'}{\textrm{max }}Q(S',a
 
 \subsection{Policy Search Methods}
 
-Policy search methods are model-free control algorithms which directly compute the optimal value function, without the use of value functions estimates, as shown in previous algorithms. In this sense, the approach consists in using a parametrized function approximation $\pi_{\theta}(a|s)$ for the policy, and the goal is to reach the desired parameters $\theta^*$ that best estimate the optimal policy, in a way that $\pi_{\theta^*}(a|s) \thickapprox \pi_*(a|s)$. Furthermore, the strategy for achieving this goal is solving an optimization problem, which comes from another perspective for the optimal policy, that is the policy that maximizes the expected total return running over several trajectories $\tau$, as defined in equations \ref{eq:tau_def} and \ref{eq:theta_max}.
+Policy search methods are model-free control algorithms which directly compute the optimal value function without the use of value functions estimates, as shown in previous algorithms. In this sense, the approach consists in using a parametrized function approximation $\pi_{\theta}(a|s)$ for the policy, and the goal is to reach the desired parameters $\theta^*$ that best estimate the optimal policy, in a way that $\pi_{\theta^*}(a|s) \thickapprox \pi_*(a|s)$. Furthermore, the strategy for achieving this goal is solving an optimization problem, which comes from another perspective for the optimal policy, that is the policy that maximizes the expected total return running over several trajectories $\tau$, as defined in equations \ref{eq:tau_def} and \ref{eq:theta_max}.
 
 \begin{align}
 P_{\theta}(\tau) = P_{\theta}(s_1,a_1,...,s_T,a_T) = P(s_1)\prod_{t=1}^T{\pi_{\theta}(a_t|s_t) P(s_{t+1}|s_t,a_t)} 
@@ -254,7 +254,7 @@ J(\theta) = \mathbb{E}_{\tau \sim P_{\theta}(\tau)} \underbrace{ \left[ \sum_t{R
 \label{eq:grad_with_scorefunc}
 \end{equation}
 
-Using the gradient $\nabla_{\theta} J(\theta)$, computed in \ref{eq:grad_with_scorefunc}, the main idea presented in \cite{REINFORCE} is making use of stochastic gradient ascent to reach $\theta^*$. The algorithm is therefore presented in \ref{algo:reinforce}.
+Using the gradient $\nabla_{\theta} J(\theta)$, computed in \ref{eq:grad_with_scorefunc}, the main idea presented in \cite{REINFORCE} is making use of stochastic gradient ascent to reach $\theta^*$. The algorithm is therefore presented in Algorithm \ref{algo:reinforce}.
 
 \begin{algorithm}[H]
     \DontPrintSemicolon
