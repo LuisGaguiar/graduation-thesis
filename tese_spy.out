@@ -7,33 +7,32 @@
 \BOOKMARK [0][]{resumo.0}{Resumo}{}% 7
 \BOOKMARK [0][]{abstract.0}{Abstract}{}% 8
 \BOOKMARK [0][]{listafiguras.0}{List of Figures}{}% 9
-\BOOKMARK [0][]{listatabelas.0}{List of Tables}{}% 10
-\BOOKMARK [0][]{listaabreviaturas.0}{List of Abbreviations and Acronyms}{}% 11
-\BOOKMARK [0][]{listasimbolos.0}{List of Symbols}{}% 12
-\BOOKMARK [0][]{contents.0}{Contents}{}% 13
-\BOOKMARK [0][]{chapter.1}{1 Introduction}{}% 14
-\BOOKMARK [1][]{section.1.1}{1.1 Motivation}{chapter.1}% 15
-\BOOKMARK [1][]{section.1.2}{1.2 Problem Statement}{chapter.1}% 16
-\BOOKMARK [1][]{section.1.3}{1.3 Approach}{chapter.1}% 17
-\BOOKMARK [1][]{section.1.4}{1.4 Literature Review}{chapter.1}% 18
-\BOOKMARK [1][]{section.1.5}{1.5 Contributions}{chapter.1}% 19
-\BOOKMARK [1][]{section.1.6}{1.6 Outline of this Dissertation}{chapter.1}% 20
-\BOOKMARK [0][]{chapter.2}{2 Reinforcement Learning}{}% 21
-\BOOKMARK [1][]{section.2.1}{2.1 Model Introduction}{chapter.2}% 22
-\BOOKMARK [1][]{section.2.2}{2.2 Markov Decision Processes}{chapter.2}% 23
-\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Optimality in Reinforcement Learning}{section.2.2}% 24
-\BOOKMARK [1][]{section.2.3}{2.3 RL Algorithms}{chapter.2}% 25
-\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Categorizing RL}{section.2.3}% 26
-\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Value Function Methods}{section.2.3}% 27
-\BOOKMARK [2][]{subsection.2.3.3}{2.3.3 Policy Search Methods}{section.2.3}% 28
-\BOOKMARK [2][]{subsection.2.3.4}{2.3.4 Actor-Critic}{section.2.3}% 29
-\BOOKMARK [0][]{chapter.3}{3 Deep Reinforcement Learning}{}% 30
-\BOOKMARK [1][]{section.3.1}{3.1 Neural Networks}{chapter.3}% 31
-\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Representation}{section.3.1}% 32
-\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Vectorization}{section.3.1}% 33
-\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Forward Propagation}{section.3.1}% 34
-\BOOKMARK [2][]{subsection.3.1.4}{3.1.4 Backward Propagation}{section.3.1}% 35
-\BOOKMARK [1][]{section.3.2}{3.2 Trust Region Policy Optimization}{chapter.3}% 36
-\BOOKMARK [1][]{section.3.3}{3.3 Proximal Policy Optimization \(PPO\)}{chapter.3}% 37
-\BOOKMARK [0][]{chapter.4}{Bibliography}{}% 38
-\BOOKMARK [0][]{bla.0}{Folha de Registro do Documento}{}% 39
+\BOOKMARK [0][]{listaabreviaturas.0}{List of Abbreviations and Acronyms}{}% 10
+\BOOKMARK [0][]{listasimbolos.0}{List of Symbols}{}% 11
+\BOOKMARK [0][]{contents.0}{Contents}{}% 12
+\BOOKMARK [0][]{chapter.1}{1 Introduction}{}% 13
+\BOOKMARK [1][]{section.1.1}{1.1 Motivation}{chapter.1}% 14
+\BOOKMARK [1][]{section.1.2}{1.2 Problem Statement}{chapter.1}% 15
+\BOOKMARK [1][]{section.1.3}{1.3 Approach}{chapter.1}% 16
+\BOOKMARK [1][]{section.1.4}{1.4 Literature Review}{chapter.1}% 17
+\BOOKMARK [1][]{section.1.5}{1.5 Contributions}{chapter.1}% 18
+\BOOKMARK [1][]{section.1.6}{1.6 Outline of this Dissertation}{chapter.1}% 19
+\BOOKMARK [0][]{chapter.2}{2 Reinforcement Learning}{}% 20
+\BOOKMARK [1][]{section.2.1}{2.1 Model Introduction}{chapter.2}% 21
+\BOOKMARK [1][]{section.2.2}{2.2 Markov Decision Processes}{chapter.2}% 22
+\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Optimality in Reinforcement Learning}{section.2.2}% 23
+\BOOKMARK [1][]{section.2.3}{2.3 RL Algorithms}{chapter.2}% 24
+\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Categorizing RL}{section.2.3}% 25
+\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Value Function Methods}{section.2.3}% 26
+\BOOKMARK [2][]{subsection.2.3.3}{2.3.3 Policy Search Methods}{section.2.3}% 27
+\BOOKMARK [2][]{subsection.2.3.4}{2.3.4 Actor-Critic}{section.2.3}% 28
+\BOOKMARK [0][]{chapter.3}{3 Deep Reinforcement Learning}{}% 29
+\BOOKMARK [1][]{section.3.1}{3.1 Neural Networks}{chapter.3}% 30
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Representation}{section.3.1}% 31
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Vectorization}{section.3.1}% 32
+\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Forward Propagation}{section.3.1}% 33
+\BOOKMARK [2][]{subsection.3.1.4}{3.1.4 Backward Propagation}{section.3.1}% 34
+\BOOKMARK [1][]{section.3.2}{3.2 Trust Region Policy Optimization}{chapter.3}% 35
+\BOOKMARK [1][]{section.3.3}{3.3 Proximal Policy Optimization \(PPO\)}{chapter.3}% 36
+\BOOKMARK [0][]{chapter.4}{Bibliography}{}% 37
+\BOOKMARK [0][]{bla.0}{Folha de Registro do Documento}{}% 38
