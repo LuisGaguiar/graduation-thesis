@@ -1,0 +1,539 @@
+% $Header: /Users/joseph/Documents/LaTeX/beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 90e850259b8b 2007/01/28 20:48:30 tantau $
+
+\documentclass{beamer}
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\usefonttheme{serif}
+\usepackage{xcolor}% or package color
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamertemplate{headline}{}
+  
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{caption}[numbered]
+\beamertemplatenavigationsymbolsempty
+
+% or whatever
+
+%\usepackage[utf8]{inputenc}
+% or whatever
+
+% \usepackage{times}
+%\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{subfigure}
+\usepackage{amsmath,mathtools}
+\usepackage{lmodern}			% for the fone to be bold and italic at the same time
+\usepackage{tikz}
+\usepackage{bigstrut}
+\usepackage{pgfplots}
+\usepackage{icomma}
+\usetikzlibrary{positioning,arrows,shapes.geometric}
+\usetikzlibrary{patterns}
+%\usepackage{cite}
+\usepackage[style=authoryear,backend=bibtex]{biblatex}
+\addbibresource{../References/referencias.bib}
+%\usepackage{color}
+\usepackage{hyperref}
+%\hypersetup{
+%     colorlinks   = true,
+%     allcolors    = blue,
+%     citecolor = red,
+%}
+% \tikzstyle{int} = [draw, fill=blue!20, minimum size=2em]
+% \tikzstyle{init} = [pin edge={to-,thin,black}] % end first type of initializations%
+% \tikzstyle{block} = [draw, fill=blue!20, rectangle, rounded corners, 
+%     minimum height=3em, minimum width=4em]
+% \tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+% \tikzstyle{input} = [coordinate]
+% \tikzstyle{output} = [coordinate]
+% \tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, thick,%fill=blue!20, 
+    text width=6em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -triangle 45]
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
+\title[Simulated Humanoid Robot Control With Reinforcement Learning] % (optional, use only with long paper titles)
+{Simulated Humanoid Robot Control With Reinforcement Learning}%{Decisão Automática de Duração de Passo de Caminhada Humanoide usando Programação Misto-inteira}
+
+%\subtitle
+%{Include Only If Paper Has a Subtitle}
+
+\author % (optional, use only with lots of authors)
+{Luis Guilherme G. Aguiar\inst{1}, Takashi Yoneyama \inst{1} e Marcos R. O. A. Maximo \inst{2}}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[Instituto Tecnológico de Aeronáutica (ITA)] % (optional, but mostly needed)
+{
+\inst{1}%  \inst{2}%
+  Divisão de Engenharia Eletrônica, Instituto Tecnológico de Aeronáutica (ITA) \\
+\inst{2}%
+  Laboratório de Sistemas Computacionais Autônomos (LAB-SCA), Divisão de Ciência da Computação (IEC), Instituto Tecnológico de Aeronáutica (ITA)
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date % (optional, should be abbreviation of conference name)
+{Exame de Tese, 29/06/2018}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+% \subject{Multi-agent Systems}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\pgfdeclareimage[height=0.5cm]{university-logo}{figures/ita}
+\logo{\pgfuseimage{university-logo}}
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Roteiro}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% \AtBeginSubsection[]
+% {
+%   \begin{frame}<beamer>{Outline}
+%     \tableofcontents[currentsection,currentsubsection]
+%   \end{frame}
+% }
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+% \beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\newcommand{\originalsystem}[1][]{ %1 optional param. for options of the tikz picture
+\scalebox{0.8} {
+	\begin{tikzpicture}[auto, node distance=3.5cm, scale = 0.9, every node/.style={transform shape}]
+    		\node [input, name=input] {};
+    		\node [block, right of=input] (system) {$f$};
+    		\node [output, right of=system] (output) {};
+
+    		\draw [draw,->] (input) -- node {$ \upsilon_2^i $} (system);
+    		\draw [->] (system) -- node [name=y] {$ \dfrac{\partial{\tilde{\lambda}_2}}{\partial{p_i}} $}(output);
+	
+	\end{tikzpicture}
+	}
+}
+
+\newcommand{\modifiedsystem}[1][]{
+\scalebox{0.8} {
+	\begin{tikzpicture}[auto, node distance=3.5 cm, scale = 0.9, every node/.style={transform shape}]     
+		\node [input, name=input] {};
+    		\node [block, right of=input] (system) {$f$};
+    		\node [block, right of=system] (delay) {$\delta$};
+    		\node [output, right of=delay] (output) {};
+
+    		\draw [draw,->] (input) -- node {$ \upsilon_2^i $} (system);
+   		\draw [->] (system) --node [name=y2] {$  $}(delay);
+    		\draw [->] (delay) --node [name=y4] {$ \dfrac{\partial{\tilde{\lambda}_2}}{\partial{p_i}} $} (output);
+	\end{tikzpicture}
+	}
+}
+
+\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Roteiro}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% ================================================================================
+\section{Introdução}
+
+\begin{frame}{Motivação}
+\begin{columns}[T] % align columns
+\begin{column}{.5\textwidth}
+% \begin{itemize}
+%  \item Locomoção por pernas é um dos problemas mais difíceis da Robótica Móvel.
+%  \item Características de um problema difícil de controle: dinâmica não-linear, sub-atuada e com alta dimensionalidade.
+%  \item Técnicas bem sucedidas usam modelos reduzidos de dinâmica.
+% \end{itemize}
+\end{column}
+\begin{column}{.5\textwidth}
+%  \begin{figure}[h!]
+%   \centering
+%       \includegraphics[width=0.8\textwidth]{Darwin_OP_6.jpg}
+% \caption{Robô DARwIn-OP.}
+% \end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ================================================================================
+\section{Revisão da Literatura}
+
+\begin{frame}{Revisão da Literatura}
+\begin{itemize}
+\item Técnicas livres de modelo usam Otimização Metaheurística ou Aprendizado de Máquina \parencite{2017-TOG-deepLoco}.
+\end{itemize}
+\end{frame}
+
+% ================================================================================
+\section{Reinforcement Learning}
+
+\begin{frame}{Teoria}
+\end{frame}
+
+% ================================================================================
+\section{Deep Reinforcement Learning}
+
+\begin{frame}{Tarefa $1$}
+\end{frame}
+
+% ================================================================================
+\section{Implementação}
+
+\begin{frame}{Tarefa $1$}
+\end{frame}
+
+% ================================================================================
+\section{Aprendendo Comportamentos de Futebol}
+
+\begin{frame}{Tarefa $1$}
+\end{frame}
+
+
+% ================================================================================
+\section{Conclusões}
+
+\begin{frame}{Conclusões}
+\begin{itemize}
+  \item Minha conclusão
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Trabalho Futuro}
+  \begin{itemize}
+    \item Trabalhos futuros
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Agradecimentos}
+\begin{itemize}
+\item Os autores agradecem o suporte da Fundação de Amparo à Pesquisa do Estado de São Paulo -- FAPESP (processo 2016/03647-3).
+\end{itemize}
+\end{frame}
+
+% ================================================================================
+\begin{frame}[allowframebreaks]{Bibliografia}
+\printbibliography
+%\bibliography{references}{}
+%\bibliographystyle{plain}
+%\bibliography{refs_exemplo}
+\end{frame}
+
+
+% Structuring a talk is a difficult task and the following structure
+% may not be suitable. Here are some rules that apply for this
+% solution: 
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+% - A conference audience is likely to know very little of what you
+%   are going to talk about. So *simplify*!
+% - In a 20min talk, getting the main ideas across is hard
+%   enough. Leave out details, even if it means being less precise than
+%   you think necessary.
+% - If you omit details that are vital to the proof/implementation,
+%   just say so once. Everybody will be happy with that.
+
+% \section{Problem Description}
+% 
+% \subsection{Connectivity Maintenance Approaches}
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item In the literature, there are several strategies for connectivity maintenance in a group of agents
+% 		\begin{itemize}
+% 			\item \textbf{\alert{Local} Connectivity Maintenance}: once a communication link is active at $t = 0$, it will be active $\forall t > 0$. \emph{Costly}.
+% 			\newline
+% 			\item \textbf{\alert{Global} Connectivity Maintenance}: maintain a path between any pair of nodes, with possible elimination of redundant links. \emph{More convenient}. 
+% 				\begin{itemize} 
+% 					\item L. Sabattini, C. Secchi, N. Chopra and A. Gasparri, \textit{Distributed Global Connectivity Maintenance for Multi-Robot Systems}, , AUTOMATICA IT CONGRESS, Benevento, Italy, 2012\newline
+% 				\end{itemize}						 
+% 		\end{itemize}
+% 		
+% 		\item When dealing with real systems, supposing instant data transmission is often a too optimistic approach. What is the impact of communication delay in the global connectivity maintenance?
+% 	\end{itemize}
+% \end{frame}
+% 
+% \subsection{Background on Graph Theory}
+% \begin{frame}
+% 	\begin{columns}
+% 		\begin{column}{.6\linewidth}
+% 			\begin{itemize}
+% 				\item $N$ mobile robots: instantaneous communication links modeled as an undirected graph
+% 				\item $\mathcal{N}_i$: neighborhood of $i$-th robot
+% 				\item $A \in \mathbb{R}^{N \times N}$: adjacency matrix ($a_{ij}>0$ if $j \in \mathcal{N}_i$; $0$ otherwise)
+% 				\item $L = D - A$, where $D = \textit{diag}\left( \left\lbrace d_i \right\rbrace\right)$ and $d_i = \sum\limits_{j=1}^{N}a_{ij}$
+% 				\item $0 = \lambda_1 \leq \lambda_2 \leq \ldots \leq \lambda_N$ are the eigenvalues of $L$.
+% 				\begin{itemize}
+% 					\item $\lambda_2 > 0 \leftrightarrow$ the graph is connected: $\lambda_2$ is then defined as the \textbf{algebraic connectivity of the graph}.
+% 				\end{itemize}				 
+% 			\end{itemize}
+% 		\end{column}
+% 		\begin{column}{.4\linewidth}
+% 			a. \includegraphics[scale=0.10]{figures/t1.png} \\
+% 			b. \includegraphics[scale=0.10]{figures/t2.png} \\
+% 			c. \includegraphics[scale=0.10]{figures/t3.png}
+% 		\end{column}
+% 	\end{columns}
+% \end{frame}
+% 
+% 
+% \section{Connectivity Maintenance Control Strategies}
+% 
+% \subsection{Centralized Control Strategy}
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item $\lambda_2$ \textbf{is easily obtained by estimating } $\upsilon_2$
+% 	\end{itemize}
+% 	
+% 	\begin{equation} \label{eq:control_law0}
+% 		\dot{p}_i = u_i^c = csch^2(\lambda_2 - \epsilon).\dfrac{\partial{\lambda}_2}{\partial{p}_i}
+% 	\end{equation}
+% 	
+% 	\begin{equation} \label{eq:dlambda2_descentralizado}
+% 		\dfrac{\partial{\lambda_2}}{\partial{p_i}} = {\sum\limits_{j \epsilon N_i}-a_{ij}\left( \upsilon_2^i - \upsilon_2^j  \right)^2.\frac{p_i - p_j}{\sigma^2}}
+% 	\end{equation}
+% 	
+% 	\begin{equation}
+% 		a_{ij} = \begin{cases}
+% 	\ e^{\dfrac{-(\Vert p_i - p_j\Vert)^2}{(2.\sigma^2)}} & , \Vert p_i-p_j \Vert \leq R \\
+% 	 0 	 	& , otherwise
+% 	\end{cases} 
+% 	\end{equation}
+% 	
+% 	\begin{equation}\label{eq:updatelaw_5}
+% 		\begin{alignedat}{2}
+% 		& \dot{\tilde{\upsilon}}_2^i = -k_1.z_1^i -k_2.\sum\limits_{j \ \epsilon N_i}a_{ij}.\left(\tilde{\upsilon}_2^i - \tilde{\upsilon}_2^j\right) - k_3.\left(z_2^i-1\right).\tilde{\upsilon}_2^i -k_4.\vert\tilde{\upsilon}_2^i\vert\tilde{\upsilon}_2^i
+% 		\end{alignedat}
+% 	\end{equation}
+% \end{frame}
+% 
+% \subsection{Decentralized Control Strategy}
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item \textbf{$\lambda_2$ should be \textit{locally estimated}.}
+% 	\end{itemize}
+% 
+% 	\begin{equation} \label{eq:control_law_decentralized}
+% 		\dot{p}_i = u_i^c + u_i^d
+% 	\end{equation}
+% 	
+% 	\begin{equation} \label{eq:u^c_final}
+% 		u_i^c = csch^2(\lambda_2 - \epsilon).\dfrac{\partial{\tilde{\lambda}}_2}{\partial{p}_i}
+% 	\end{equation}
+% 
+% 	\begin{equation}	\label{eq:lambda2_decentralized}
+% 	\tilde{\lambda}_2 = \dfrac{k_3}{k_2}.\left[1 - Ave\left({(\tilde{\upsilon}_2^i)^2   }\right) \right]
+% \end{equation}
+% 
+% 	\begin{itemize}
+% 		\item Decentralized Estimation:
+% 		\begin{equation}
+% 			\dfrac{\partial{\tilde{\lambda}_2}}{\partial{p_i}} = \sum\limits_{j \in \mathcal{N}_i}{ -a_{ij}\left( \tilde{\upsilon}_2^i - \tilde{\upsilon}_2^j\right)^2.\frac{p_i - p_j}{\sigma^2} }
+% 		\end{equation}
+% 	\end{itemize}
+% 	
+% 	\begin{center}
+% 		\originalsystem
+% 	\end{center}
+% \end{frame}
+% 
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item Formation Control:
+% 	\end{itemize}
+% 	\begin{equation}
+% 		\bar{a}_{ij}\left( \lambda_2^i \right) = \gamma_i.\textit{csch}^2(\lambda_2^i-\bar\epsilon).\frac{1}{\sigma_2}.\left(\tilde{\upsilon}_2^i - \tilde{\upsilon}_2^j \right)^2.a_{ij}
+% 	\end{equation}
+% 	\begin{equation}
+% 		\dot{p} = -\bar{L}.p + u^{d}
+% 	\end{equation}
+% 
+% 	\begin{itemize}
+% 		\item Consensus-Based Formation Control: 
+% 			\begin{equation}
+% 				u^d = -L*p + b_i(p)
+% 			\end{equation}
+% 			\ \ where
+% 
+% 			\begin{equation} \label{eq:b_formationcontrol}
+% 				b_i(p) = \begin{cases}
+% 					\ \sum\limits_{j \epsilon N_i}\left( 1+\bar{a}_{ij}(\lambda_2^i) \right).\left( \bar{p}_i - \bar{p}_j \right) & , \ if \ \lambda_2^i > k.\tilde{\epsilon}  \\
+% 	 				\ \sum\limits_{j \epsilon N_i}\left( 1+\bar{a}_{ij}(k.\tilde{\epsilon}) \right).\left( \bar{p}_i - \bar{p}_j \right) &  \ , \ otherwise
+% 				\end{cases} 
+% 			\end{equation}	
+% 	\end{itemize}
+% 
+% \end{frame}
+% 
+% \subsection{Decentralized Control Strategy with Communication Delay}
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item Modelling Communication Delay:
+% 			\begin{equation}
+% 				\upsilon_2^{i^\prime}(t) = \upsilon_2^i(t-\delta)	 \ , \ for \ \delta > 0
+% 			\end{equation}					
+% 			\begin{equation}
+% 				\upsilon_2^{i^\prime} \longrightarrow \lambda_2^{i^\prime}		
+% 			\end{equation}
+% 		
+% 		\item Connectivity estimates error is limited:
+% 			\begin{equation}
+% 				\vert\lambda_2^{i^\prime} - \lambda_2^\prime\vert \leq \Xi, \forall i = 1, \ldots, N
+% 			\end{equation}
+% 			\begin{equation}
+% 				\vert \lambda_2^{i^\prime} - \tilde{\lambda}_2\vert \leq \Xi^\prime,  \forall i = 1, \ldots, N
+% 			\end{equation}
+% 		
+% 			\begin{center}
+% 				\modifiedsystem
+% 			\end{center}
+% 	\end{itemize}
+% \end{frame}
+% 
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item Tipically-real agents:
+% 			\begin{equation}
+% 				u^c \sim 10 \ rad/s
+% 			\end{equation}
+% 		\item First-order LP Filter:
+% 			\begin{equation}
+% 				H(s) = \frac{10}{s + 10}
+% 			\end{equation}
+% 			
+% 		\item Cases considered:
+% 			\begin{equation}
+% 				\delta = 5 \ ms
+% 			\end{equation}
+% 			\begin{equation}
+% 				\delta = 10 \ ms
+% 			\end{equation}
+% 	\end{itemize}
+% \end{frame}
+% 
+% 
+% 
+% \section{Results}
+% 
+% \subsection{Simulation Results}
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item[A.] $\lambda_2$ for $N = 5$ with $\delta = 5 \ ms$
+% 		\includegraphics[scale=0.5]{figures/lmbd_2-N5_fail0_delay5E-3_noise0_Nobst150_t5_1sim_Fs10k_lpFilt}
+% 	\end{itemize}
+% 	
+% \end{frame}
+% 
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item[B.] $\lambda_2$ for $N = 5$ with $\delta = 10 \ ms$
+% 		\includegraphics[scale=0.5]{figures/lmbd_2-N5_fail0_delay1E-2_noise0_Nobst150_t5_1sim_Fs10k_lpFilt}
+% 	\end{itemize}
+% \end{frame}
+% 
+% \begin{frame}
+% 	\begin{table}[htbp]
+% 	\begin{center}
+% 		\begin{tabular}{|l|l|l|}
+% 			\hline
+% 			Measure & A & B \\ \cline{1-3}
+% 			$t \ (enter \  obstacle \ set) $ & $0.99 \ s$ & $0.94 \ s$ \\
+% 			$t \ (exit \ obstacle \ set)$ & $3.51 \ s$ & $3.97 \ s$ \\
+% 			$u^{c^{min}} (obstacles \ crossing)$ & $0.05$ & $0$  \\
+% 			$u^{c^{max}} (obstacles \ crossing)$ & $0.84$ & $0$ \\
+% 			min. $\lambda_2^i \ (t=5s)$ & $3.55$ & $-18.6$ \\
+% 			max. $\lambda_2^i \ (t=5s)$ & $3.55$ & $11.0$ \\
+% 			\cline{1-3}
+% 		\end{tabular}			
+% 	\end{center}
+% 	\end{table}
+% \end{frame}
+% 
+% \subsection{Conclusions and Future Work}
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item $\lambda_2 > 0$ only for $\delta \approx 0$
+% 		\newline
+% 		\newline
+% 		\item $\lambda_2^i$ cannot be trusted if $\delta > 0$, as $u^c$ is unable to prevent $\lambda_2 = 0$
+% 		\newline
+% 		\newline
+% 		\item As \textit{Future Work}, one can relate the analysis of the algorithms described in [Secchi, 2012] and [Secchi, 2013], that propose a solution to deal with time delay in the communication between agents.
+% 	\end{itemize}
+% 	
+% \end{frame}
+% 
+% \begin{frame}
+% 	\begin{center}
+% 		\emph{Thank you!}
+% 	\end{center} 
+% \end{frame}
+
+\end{document}
+
+
