@@ -12,27 +12,11 @@
 \textbf{20th RoboCup International Symposium, Leipzig, Germany, July 2016.},
   July 2016.}
 
-\bibitem[Bansal \textit{et al.} 2017]{OpenAISelfPlay}
-\abntrefinfo{Bansal \textit{et al.}}{BANSAL \textit{et al.}}{2017}
-{BANSAL, T.; PACHOCKI, J.; SIDOR, S.; SUTSKEVER, I.; MORDATCH, I. Emergent
-  complexity via multi-agent competition.
-\textbf{CoRR}, abs/1710.03748, 2017.
-Dispon{\'\i}vel em:
-  \htmladdnormallink{$<$http:\-/\-/arxiv\-.org\-/abs\-/1710\-.03748$>$}{http://arxiv.org/abs/1710.03748}.}
-
 \bibitem[Barto \textit{et al.} 1983]{TDLearning}
 \abntrefinfo{Barto \textit{et al.}}{BARTO \textit{et al.}}{1983}
 {BARTO, A.~G.; SUTTON, R.~S.; ANDERSON, C.~W. Neuronlike adaptive elements that
   can solve difficult learning control problems.
 1983.}
-
-\bibitem[Bengio \textit{et al.} 2012]{CurseOfDimensionality}
-\abntrefinfo{Bengio \textit{et al.}}{BENGIO \textit{et al.}}{2012}
-{BENGIO, Y.; COURVILLE, A.~C.; VINCENT, P. Unsupervised feature learning and
-  deep learning: {A} review and new perspectives.
-\textbf{CoRR}, abs/1206.5538, 2012.
-Dispon{\'\i}vel em:
-  \htmladdnormallink{$<$http:\-/\-/arxiv\-.org\-/abs\-/1206\-.5538$>$}{http://arxiv.org/abs/1206.5538}.}
 
 \bibitem[Bengio \textit{et al.} 2009]{BengioCurrLearning}
 \abntrefinfo{Bengio \textit{et al.}}{BENGIO \textit{et al.}}{2009}
@@ -41,32 +25,6 @@ Dispon{\'\i}vel em:
   Learning}. New York, NY, USA: ACM, 2009.  (ICML '09), p. 41--48.
 ISBN 978-1-60558-516-1. Dispon{\'\i}vel em:
   \htmladdnormallink{$<$http:\-/\-/doi\-.acm\-.org\-/10\-.1145\-/1553374\-.1553380$>$}{http://doi.acm.org/10.1145/1553374.1553380}.}
-
-\bibitem[Brockman \textit{et al.} 2016]{OpenAIGym}
-\abntrefinfo{Brockman \textit{et al.}}{BROCKMAN \textit{et al.}}{2016}
-{BROCKMAN, G.; CHEUNG, V.; PETTERSSON, L.; SCHNEIDER, J.; SCHULMAN, J.; TANG,
-  J.; ZAREMBA, W. \textbf{OpenAI Gym}. 2016.
-Acesso em: 10 maio de 2018.}
-
-\bibitem[Florensa \textit{et al.} 2017]{ReverseCurrLearning}
-\abntrefinfo{Florensa \textit{et al.}}{FLORENSA \textit{et al.}}{2017}
-{FLORENSA, C.; HELD, D.; WULFMEIER, M.; ABBEEL, P. Reverse curriculum
-  generation for reinforcement learning.
-\textbf{CoRR}, abs/1707.05300, 2017.
-Dispon{\'\i}vel em:
-  \htmladdnormallink{$<$http:\-/\-/arxiv\-.org\-/abs\-/1707\-.05300$>$}{http://arxiv.org/abs/1707.05300}.}
-
-\bibitem[Goodfellow \textit{et al.} 2014]{goodfellow2014qualitatively}
-\abntrefinfo{Goodfellow \textit{et al.}}{GOODFELLOW \textit{et al.}}{2014}
-{GOODFELLOW, I.~J.; VINYALS, O.; SAXE, A.~M. Qualitatively characterizing
-  neural network optimization problems.
-\textbf{arXiv preprint arXiv:1412.6544}, 2014.}
-
-\bibitem[Goodfellow e Courville 2016]{DeepLearningBook}
-\abntrefinfo{Goodfellow e Courville}{GOODFELLOW; COURVILLE}{2016}
-{GOODFELLOW, Y.~B. I.; COURVILLE, A. \textbf{Deep Learning}. MIT Press, 2016.
-  Dispon{\'\i}vel em:
-  \htmladdnormallink{$<$http:\-/\-/www\-.deeplearningbook\-.org$>$}{http://www.deeplearningbook.org}.}
 
 \bibitem[Heess \textit{et al.} 2017]{deepmind1}
 \abntrefinfo{Heess \textit{et al.}}{HEESS \textit{et al.}}{2017}
@@ -81,12 +39,6 @@ july 2017.}
   \textbf{Advances in Neural Information Processing Systems}. [S.l.: s.n.],
   2016. p. 4565–4573.}
 
-\bibitem[Levner 1976]{Backgammon}
-\abntrefinfo{Levner}{LEVNER}{1976}
-{LEVNER, D. \textbf{Is Brute Force Backgammon Possible?} 1976.
-Dispon{\'\i}vel em:
-  $<$www\-.bkgm\-.com\-/articles\-/Levner\-/BruteForceBackgammon\-/$>$.}
-
 \bibitem[Lillicrap \textit{et al.} 2015]{DDPG}
 \abntrefinfo{Lillicrap \textit{et al.}}{LILLICRAP \textit{et al.}}{2015}
 {LILLICRAP, T.~P.; HUNT, J.~J.; PRITZEL, A.; HEESS, N.; EREZ, T.; TASSA, Y.;
@@ -95,26 +47,18 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \htmladdnormallink{$<$http:\-/\-/arxiv\-.org\-/abs\-/1509\-.02971$>$}{http://arxiv.org/abs/1509.02971}.}
 
-\bibitem[Lin \textit{et al.} 2017]{lin2017does}
-\abntrefinfo{Lin \textit{et al.}}{LIN \textit{et al.}}{2017}
-{LIN, H.~W.; TEGMARK, M.; ROLNICK, D. Why does deep and cheap learning work so
-  well?
-\textbf{Journal of Statistical Physics}, Springer, v.~168, n.~6, p. 1223--1247,
-  2017.}
-
 \bibitem[Lin 1992]{ReplayBuffer}
 \abntrefinfo{Lin}{LIN}{1992}
 {LIN, L.-J. Self-improving reactive agents based on reinforcement learning,
   planning and teaching.
 1992.}
 
-\bibitem[Matiisen \textit{et al.} 2017]{TSCurrLearning}
-\abntrefinfo{Matiisen \textit{et al.}}{MATIISEN \textit{et al.}}{2017}
-{MATIISEN, T.; OLIVER, A.; COHEN, T.; SCHULMAN, J. Teacher-student curriculum
-  learning.
-\textbf{CoRR}, abs/1707.00183, 2017.
+\bibitem[Marr]{AIapplications}
+\abntrefinfo{Marr}{MARR}{}
+{MARR, B. \textbf{The Top 10 AI And Machine Learning Use Cases Everyone Should
+  Know About}.
 Dispon{\'\i}vel em:
-  \htmladdnormallink{$<$http:\-/\-/arxiv\-.org\-/abs\-/1707\-.00183$>$}{http://arxiv.org/abs/1707.00183}.}
+  $<$https:\-/\-/www\-.forbes\-.com\-/sites\-/bernardmarr\-/2016\-/09\-/30\-/what-are-the-top-10-use-cases-for-machine-learning-and-ai\-/#1b87569994c9$>$.}
 
 \bibitem[Merel \textit{et al.} 2017]{deepmind2}
 \abntrefinfo{Merel \textit{et al.}}{MEREL \textit{et al.}}{2017}
@@ -136,15 +80,6 @@ ISSN 0028-0836.
 Letter.
 Dispon{\'\i}vel em:
   \htmladdnormallink{$<$http:\-/\-/dx\-.doi\-.org\-/10\-.1038\-/nature14236$>$}{http://dx.doi.org/10.1038/nature14236}.}
-
-\bibitem[Nair e Hinton 2010]{ReLU}
-\abntrefinfo{Nair e Hinton}{NAIR; HINTON}{2010}
-{NAIR, V.; HINTON, G.~E. Rectified linear units improve restricted boltzmann
-  machines. In:  \textbf{Proceedings of the 27th International Conference on
-  International Conference on Machine Learning}. USA: Omnipress, 2010.
-  (ICML'10), p. 807--814.
-ISBN 978-1-60558-907-7. Dispon{\'\i}vel em:
-  \htmladdnormallink{$<$http:\-/\-/dl\-.acm\-.org\-/citation\-.cfm?id=3104322\-.3104425$>$}{http://dl.acm.org/citation.cfm?id=3104322.3104425}.}
 
 \bibitem[Peng \textit{et al.} 2018]{deepmimic}
 \abntrefinfo{Peng \textit{et al.}}{PENG \textit{et al.}}{2018}
@@ -168,6 +103,13 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \htmladdnormallink{$<$http:\-/\-/arxiv\-.org\-/abs\-/1707\-.06347$>$}{http://arxiv.org/abs/1707.06347}.}
 
+\bibitem[Silver]{lecture1DS}
+\abntrefinfo{Silver}{SILVER}{}
+{SILVER, D. \textbf{Lecture 1: Introduction to Reinforcement Learning}.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/www0\-.cs\-.ucl\-.ac\-.uk\-/staff\-/D\-.Silver\-/web\-/Teaching\-.html$>$}{http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html}.
+  Acesso em: 25 Junho de 2018.}
+
 \bibitem[Silver \textit{et al.} 2017]{AlphaGoZero}
 \abntrefinfo{Silver \textit{et al.}}{SILVER \textit{et al.}}{2017}
 {SILVER, D.; SCHRITTWIESER, J.; SIMONYAN, K.; ANTONOGLOU, I.; HUANG, A.; GUEZ,
@@ -182,19 +124,6 @@ Dispon{\'\i}vel em:
 {SUTTON, R.~S.; BARTO, A.~G. \textbf{Introduction to Reinforcement Learning}.
   1st. ed. Cambridge, MA, USA: MIT Press, 1998.
 ISBN 0262193981.}
-
-\bibitem[Swirszcz \textit{et al.} 2017]{swirszcz2017local}
-\abntrefinfo{Swirszcz \textit{et al.}}{SWIRSZCZ \textit{et al.}}{2017}
-{SWIRSZCZ, G.; CZARNECKI, W.~M.; PASCANU, R. Local minima in training of neural
-  networks.
-\textbf{stat}, v.~1050, p.~17, 2017.}
-
-\bibitem[Tromp e Farnebäck 2016]{GoGame}
-\abntrefinfo{Tromp e Farnebäck}{TROMP; FARNEBäCK}{2016}
-{TROMP, J.; FARNEBäCK, G. Combinatorics of go.
-2016.
-Dispon{\'\i}vel em:
-  $<$https:\-/\-/tromp\-.github\-.io\-/go\-/gostate\-.pdf$>$.}
 
 \bibitem[Wang \textit{et al.} 2017]{deepmind3}
 \abntrefinfo{Wang \textit{et al.}}{WANG \textit{et al.}}{2017}
@@ -213,17 +142,5 @@ Tese (Doutorado) --- King's College, 1989.}
 {WILIAMS, R.~J. Simple statistical gradient-following algorithms for
   connectionist reinforcement learning.
 1992.}
-
-\bibitem[Xu e Li 2016]{ActivationFunction}
-\abntrefinfo{Xu e Li}{XU; LI}{2016}
-{XU, R.~H. B.; LI, M. Revise saturated activation functions.
-2016.}
-
-\bibitem[Zaremba e Sutskever 2014]{ExecuteCurrLearning}
-\abntrefinfo{Zaremba e Sutskever}{ZAREMBA; SUTSKEVER}{2014}
-{ZAREMBA, W.; SUTSKEVER, I. Learning to execute.
-\textbf{CoRR}, abs/1410.4615, 2014.
-Dispon{\'\i}vel em:
-  \htmladdnormallink{$<$http:\-/\-/arxiv\-.org\-/abs\-/1410\-.4615$>$}{http://arxiv.org/abs/1410.4615}.}
 
 \end{thebibliography}

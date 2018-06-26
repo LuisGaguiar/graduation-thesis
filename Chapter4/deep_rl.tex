@@ -6,7 +6,7 @@ The previous chapter described a summarized background for RL concepts and class
 
 \section{Neural Networks}
 
-Neural Networks are mathematical structures that receive inputs and calculate outputs. In this sense, can be described as a mathematical fitter to very complex and non-linear functions.
+Neural Networks are mathematical structures that receive inputs and calculate outputs. In this sense, can be described as a mathematical technique to fit very complex and non-linear functions.
 
 Also known as Multi Layer Perceptron (MLP), it has a multiple layer architecture, where each layer is composed by several nodes called neurons. These nodes, in an analogy to human brain neurons, are still mathematical units which receives some numerical inputs and outputs one single number. All of these mathematical units make use of a specific set of parameters.
 
@@ -29,16 +29,16 @@ For each layer $l$, also called hidden-layers, with $1<l<L$ in a total of $L$ la
 	Each $j$th hidden unit also has a scalar bias-parameter given by $b^{[l]}_j$, and all units bias-parameters compose the layer bias vector $b^{[l]}$, with dimensions $(n^{[l]},1)$
 	
 \item
-	The layer also has a specific activation function $g^{[l]}(z)$, which can assume different mathematical functions, such as the \textit{sigmoid} function, the \textit{tanh} function, and, the most common, the \textit{ReLU} function, shown in equation \ref{eq:common_activation_functions}.
+	The layer also has a specific activation function $g^{[l]}(z)$, which can assume different mathematical functions, such as the \textit{sigmoid} function, the \textit{tanh} function, and, the \textit{ReLU} function, shown in Equation \eqref{eq:common_activation_functions}.
 
 \begin{equation}
-sigmoid(z) = \frac{1}{1+e^{-z}} \text{ ; } tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}} \text{ ; } Relu(z) = max(z,0)
+sigmoid(z) = \frac{1}{1+e^{-z}} \text{ ; } tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}} \text{ ; } ReLU(z) = max(z,0)
 \label{eq:common_activation_functions}
 \end{equation}
 
 \end{itemize}
 
-All these elements of the layer are related through the update equations \ref{eq:linear_update_nn} and \ref{eq:non_linear_update_nn}, which, for each layer $l$, receives the previous layer output $a^{[l-1](i)}$ and generates the current layer output $a^{[l](i)}$. The figure \ref{fig:nn_basic_architecture} illustrates this representation for a shallow one hidden-layer NN.
+All these elements of the layer are related through the update Equations \eqref{eq:linear_update_nn} and \eqref{eq:non_linear_update_nn}, which, for each layer $l$, receives the previous layer output $a^{[l-1](i)}$ and generates the current layer output $a^{[l](i)}$. The Figure \ref{fig:nn_basic_architecture} illustrates this representation for a shallow one hidden-layer NN.
 
 \begin{align}
 z^{[l](i)} = W^{[l]}a^{[l-1](i)} + b^{[l]}
@@ -51,13 +51,13 @@ a^{[l](i)} = g^{[l]}(z^{[l](i)})
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Chapter4/neuralnet.pdf}
-    \caption{Shallow Neural Network Architecture}
+    \caption{Shallow Neural Network Architecture.}
     \label{fig:nn_basic_architecture}
 \end{figure}
 
 One last basic definition for NN is the cost function $J(W^{[1]},b^{[1]},...,W^{[L]},b^{[L]})$. The cost function basically measures how good our estimator is to our dataset. The lower the cost function, the less error we obtain when predicting the desired function. Therefore, it represents the target function to be minimized, with respect to all the parameters used in the NN $\{ W^{[1]},b^{[1]},...,W^{[L]},b^{[L]} \}$.
 
-It is possible to employ several different cost functions according to each specific problem. However, we can mention the most common ones, that are the Quadratic Cost, given by equation \ref{eq:quadratic_cost}, and the Cross-Entropy Cost, given by equation \ref{eq:cross_entropy_cost}.
+It is possible to employ several different cost functions according to each specific problem. However, we can mention the most common ones, that are the Quadratic Cost, given by Equation \eqref{eq:quadratic_cost}, and the Cross-Entropy Cost, given by Equation \eqref{eq:cross_entropy_cost}.
 
 \begin{equation}
 J(W^{[1]},b^{[1]},...,W^{[L]},b^{[L]}) = \frac{1}{m} \sum_{i=1}^{m}{\sum_{j=1}^{n^{[L]}}{ (y_j^{(i)} - a_j^{[L](i)})^2 }}
@@ -82,7 +82,7 @@ J(W^{[1]},b^{[1]},...,W^{[L]},b^{[L]}) = \frac{1}{m} \sum_{i=1}^{m}{\sum_{j=1}^{
 
 The previous equations are capable of fully defining update rules for any MLP, however, in order to avoid the naively computation over each training example, and therefore reach more efficient algorithms exploring the use of parallelization in modern GPUs architectures, we must introduce a vectorization notion.
 
-Let's first define the $X$ matrix as the concatenation of each training example $x^{(i)}$ composing its columns, as shown in equation \ref{eq:vectorization_concatenation_X}. The matrix $X$ now assumes the dimensions $(n^{[0]},m)$.
+Let's first define the $X$ matrix as the concatenation of each training example $x^{(i)}$ composing its columns, as shown in Equation \eqref{eq:vectorization_concatenation_X}. The matrix $X$ now assumes the dimensions $(n^{[0]},m)$.
 
 \begin{equation}
 X = 
@@ -94,7 +94,7 @@ x^{(1)} & x^{(2)} & \dots & x^{(m)} \\
 \label{eq:vectorization_concatenation_X}
 \end{equation}
 
-In this sense, we can analogously define the matrices $A^{[l]}$ and $Z^{[l]}$, as a concatenation of the values for each example $a^{[l](i)}$ and $z^{[l](i)}$, described in equation \ref{eq:vectorization_concatenation}. The matrices $A^{[l]}$ and $Z^{[l]}$ now assume the dimensions $(n^{[l]},m)$.
+In this sense, we can analogously define the matrices $A^{[l]}$ and $Z^{[l]}$, as a concatenation of the values for each example $a^{[l](i)}$ and $z^{[l](i)}$, described in Equation \eqref{eq:vectorization_concatenation}. The matrices $A^{[l]}$ and $Z^{[l]}$ now assume the dimensions $(n^{[l]},m)$.
 
 \begin{equation}
 A^{[l]} = 
@@ -113,7 +113,7 @@ z^{[l](1)} & z^{[l](2)} & \dots & z^{[l](m)} \\
 \label{eq:vectorization_concatenation}
 \end{equation}
 
-The update equations for each layer, in the vectorized representation, is therefore modified and given by the equations \ref{eq:linear_update_nn_vectorized} and \ref{eq:non_linear_update_nn_vectorized}.
+The update equations for each layer, in the vectorized representation, is therefore modified and given by the Equations \eqref{eq:linear_update_nn_vectorized} and \eqref{eq:non_linear_update_nn_vectorized}.
 
 \begin{align}
 Z^{[l]} = W^{[l]}A^{[l-1]} + b^{[l]}
@@ -142,7 +142,7 @@ Given all the definitions of the basic structures of a NN and the main calculati
 
 \subsection{Backward Propagation}
 
-The ultimate goal in Supervised Learning is minimizing the cost function. For this purpose, one of the most famous optimization techniques used is gradient descent. However, in order to make use of gradient descent, we must compute the derivatives of the cost function with respect to all the parameters $W^{[1]}, b^{[1]}, ..., W^{[L]}, b^{[L]}$. The notation we are going to use for these partial derivatives is given in equations from \ref{eq:partial_derivatives_notation_first} to \ref{eq:partial_derivatives_notation_final}.
+The ultimate goal in Supervised Learning is minimizing the cost function. For this purpose, one of the most famous optimization techniques used is gradient descent. However, in order to make use of gradient descent, we must compute the derivatives of the cost function with respect to all the parameters $W^{[1]}, b^{[1]}, ..., W^{[L]}, b^{[L]}$. The notation we are going to use for these partial derivatives is given in Equations from \eqref{eq:partial_derivatives_notation_first} to \eqref{eq:partial_derivatives_notation_final}.
 
 \begin{align}
 \frac{\partial J(\theta)}{\partial W^{[l]}} = dW^{[l]}
@@ -212,7 +212,7 @@ KL[P,Q] = \int_{-\infty}^{\infty}{p(x)\log{\frac{p(x)}{q(x)}}}
 \label{eq:KL_divergence}
 \end{equation}
 
-TRPO therefore limits the policy gradient step size by applying a KL based constraint (Eq. \ref{eq:TRPO_1}) to an optimization problem on a slightly modified cost function (Eq. \ref{eq:TRPO_2}). The overall algorithm is iteratively, we run episodes and collect data from $\pi_{\theta_{old}}$, compute $\pi_{\theta}$ from the optimization problem and then update $\pi_{\theta_{old}} \leftarrow \pi_{\theta}$. This method is described in Algorithm \ref{algo:TRPO}.
+TRPO therefore limits the policy gradient step size by applying a KL based constraint \eqref{eq:TRPO_2} to an optimization problem on a slightly modified cost function \eqref{eq:TRPO_1}. The overall algorithm is iteratively, we run episodes and collect data from $\pi_{\theta_{old}}$, compute $\pi_{\theta}$ from the optimization problem and then update $\pi_{\theta_{old}} \leftarrow \pi_{\theta}$. This method is described in Algorithm \ref{algo:TRPO}.
 
 %consists in a constrained optimization problem, given by equations
 
@@ -250,7 +250,7 @@ The Proximal Policy Optimization \cite{PPO} is a recent technique that follows a
 
 The main idea behind TRPO is to use an adaptive KL penalty to control the change of the policy at each iteration. PPO introduces a novel objective function, which intrinsically address this constraint in a first-order optimization.
 
-Let $r_t(\theta)$ be the ratio between the new and old policy, given by the equation \ref{eq:def_r_t}, the PPO's objective function is then described by the equation \ref{eq:PPO_objective_function}.
+Let $r_t(\theta)$ be the ratio between the new and old policy, given by the Equation \eqref{eq:def_r_t}, the PPO's objective function is then described by the Equation \eqref{eq:PPO_objective_function}.
 
 \begin{equation}
 r_t(\theta) = \frac{\pi_{\theta}(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}
@@ -262,7 +262,7 @@ L(\theta) = \mathbb{\hat{E}}_t \left[ min(r_t(\theta)\hat{A}_t, clip(r_t(\theta)
 \label{eq:PPO_objective_function}
 \end{equation}
 
-In equation \ref{eq:PPO_objective_function}, $\theta$ is the policy parameters, $\mathbb{\hat{E}}_t$ is the empirical expectation over all $t$ timesteps, $\hat{A}_t$ is the estimate for the advantage function, as already described, $\epsilon$ is a new hyperparameter, and finally the clip function is explained in equation \ref{eq:clip_function}.
+In Equation \eqref{eq:PPO_objective_function}, $\theta$ is the policy parameters, $\mathbb{\hat{E}}_t$ is the empirical expectation over all $t$ timesteps, $\hat{A}_t$ is the estimate for the advantage function, as already described, $\epsilon$ is a new hyperparameter, and finally the clip function is explained in Equation \eqref{eq:clip_function}.
 
 \begin{equation}
 clip(x,min,max) = \begin{cases}
