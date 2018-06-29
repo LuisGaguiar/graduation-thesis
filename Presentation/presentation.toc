@@ -6,14 +6,12 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {1}{Introdu\IeC {\c c}\IeC {\~a}o}{3}{0}{1}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {2}{Revis\IeC {\~a}o da Literatura}{5}{0}{2}
+\beamer@sectionintoc {2}{Aprendizado por refor\IeC {\c c}o}{11}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {3}{Reinforcement Learning}{7}{0}{3}
+\beamer@sectionintoc {3}{Redes Neurais}{16}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{Deep Reinforcement Learning}{9}{0}{4}
+\beamer@sectionintoc {4}{Deep Reinforcement Learning}{19}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{Implementa\IeC {\c c}\IeC {\~a}o}{11}{0}{5}
+\beamer@sectionintoc {5}{Setup e Ferramentas}{22}{0}{5}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {6}{Aprendendo Comportamentos de Futebol}{13}{0}{6}
-\defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {7}{Conclus\IeC {\~o}es}{15}{0}{7}
+\beamer@sectionintoc {6}{Cronograma}{25}{0}{6}

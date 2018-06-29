@@ -197,7 +197,7 @@ Finally, by making use of the partial derivatives already computed, we can emplo
 
 Given all the RL and NN background necessary, we will introduce two state of the art techniques combining both fields.
 
-The intersection relies on the fact that we need complex non-linear functions to efficiently estimate policies and value-functions. Therefore, the most common used structure for this approximation is MLP. Aiming also to fit stochastic policies distributions in continuous action spaces, we define our policy $\pi_{\theta}(s|a)$ by a normal distribution $\mathcal{N}(\mu,\sigma)$, where the mean $\mu$ and log standard deviation $\sigma$ are outputs of a neural network \cite{TRPO}.
+The intersection relies on the fact that we need complex non-linear functions to efficiently estimate policies and value-functions. Therefore, the most common used structure for this approximation is MLP. Aiming also to fit stochastic policies distributions in continuous action spaces, we define our policy $\pi_{\theta}(a|s)$ by a normal distribution $\mathcal{N}(\mu,\sigma)$, where the mean $\mu$ and log standard deviation $\sigma$ are outputs of a neural network \cite{TRPO}.
 
 Moreover, in order to work with continuous action spaces, we must employ policy search or actor-critic methods. The classic vanilla policy gradient methods, however, bring some limitations that are handled in the recent techniques. We can cite the main limitation as the vulnerability to the step size in the optimization procedure. This fact brings even bigger impacts due to the non-stationary nature of the input data, which means that a small error in the policy update affects the visitation distribution and consequently the future policy updates.
 

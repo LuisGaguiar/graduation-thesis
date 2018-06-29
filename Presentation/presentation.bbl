@@ -1,0 +1,570 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{abbas}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Abdolmaleki}{A.}%
+     {Abbas}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Simões}{S.}%
+     {David}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lau}{L.}%
+     {Nuno}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Neumann}{N.}%
+     {Luis Paulo~Reis}{L.~P.~R.}%
+     {andGerhard}{a.}%
+     {}{}}%
+  }
+  \strng{namehash}{AA+1}
+  \strng{fullhash}{AASDLNNLPRa1}
+  \field{labelyear}{2016}
+  \field{sortinit}{A}
+  \field{title}{Learning a Humanoid Kick With Controlled Distance}
+  \field{journaltitle}{20th RoboCup International Symposium, Leipzig, Germany,
+  July 2016.}
+  \field{year}{2016}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{BengioCurrLearning}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Bengio}{B.}%
+     {Yoshua}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Louradour}{L.}%
+     {J{\'e}r\^{o}me}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Collobert}{C.}%
+     {Ronan}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Weston}{W.}%
+     {Jason}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{BY+1}
+  \strng{fullhash}{BYLJCRWJ1}
+  \field{labelyear}{2009}
+  \field{sortinit}{B}
+  \field{booktitle}{Proceedings of the 26th Annual International Conference on
+  Machine Learning}
+  \verb{doi}
+  \verb 10.1145/1553374.1553380
+  \endverb
+  \field{isbn}{978-1-60558-516-1}
+  \field{pages}{41\bibrangedash 48}
+  \field{series}{ICML '09}
+  \field{title}{Curriculum Learning}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/1553374.1553380
+  \endverb
+  \list{location}{1}{%
+    {Montreal, Quebec, Canada}%
+  }
+  \field{year}{2009}
+  \warn{\item Can't use 'location' + 'address'}
+\endentry
+
+\entry{DDPG}{article}{}
+  \name{author}{8}{}{%
+    {{}%
+     {Lillicrap}{L.}%
+     {Timothy~P.}{T.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hunt}{H.}%
+     {Jonathan~J.}{J.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pritzel}{P.}%
+     {Alexander}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Heess}{H.}%
+     {Nicolas}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Erez}{E.}%
+     {Tom}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tassa}{T.}%
+     {Yuval}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Silver}{S.}%
+     {David}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wierstra}{W.}%
+     {Daan}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LTP+1}
+  \strng{fullhash}{LTPHJJPAHNETTYSDWD1}
+  \field{labelyear}{2015}
+  \field{sortinit}{L}
+  \field{title}{Continuous control with deep reinforcement learning}
+  \verb{url}
+  \verb http://arxiv.org/abs/1509.02971
+  \endverb
+  \field{volume}{abs/1509.02971}
+  \field{journaltitle}{CoRR}
+  \field{year}{2015}
+\endentry
+
+\entry{RLNature2015}{article}{}
+  \name{author}{19}{}{%
+    {{}%
+     {Mnih}{M.}%
+     {Volodymyr}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kavukcuoglu}{K.}%
+     {Koray}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Silver}{S.}%
+     {David}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rusu}{R.}%
+     {Andrei~A.}{A.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Veness}{V.}%
+     {Joel}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bellemare}{B.}%
+     {Marc~G.}{M.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Graves}{G.}%
+     {Alex}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Riedmiller}{R.}%
+     {Martin}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fidjeland}{F.}%
+     {Andreas~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ostrovski}{O.}%
+     {Georg}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Petersen}{P.}%
+     {Stig}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Beattie}{B.}%
+     {Charles}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sadik}{S.}%
+     {Amir}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Antonoglou}{A.}%
+     {Ioannis}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {King}{K.}%
+     {Helen}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kumaran}{K.}%
+     {Dharshan}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wierstra}{W.}%
+     {Daan}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Legg}{L.}%
+     {Shane}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hassabis}{H.}%
+     {Demis}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Nature Publishing Group, a division of Macmillan Publishers Limited. All
+  Rights Reserved.}%
+  }
+  \strng{namehash}{MV+1}
+  \strng{fullhash}{MVKKSDRAAVJBMGGARMFAKOGPSBCSAAIKHKDWDLSHD1}
+  \field{labelyear}{2015}
+  \field{sortinit}{M}
+  \field{issn}{0028-0836}
+  \field{note}{Letter}
+  \field{number}{7540}
+  \field{pages}{529\bibrangedash 533}
+  \field{title}{Human-level control through deep reinforcement learning}
+  \verb{url}
+  \verb http://dx.doi.org/10.1038/nature14236
+  \endverb
+  \field{volume}{518}
+  \field{journaltitle}{Nature}
+  \field{year}{2015}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{TGMuzio}{thesis}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Muzio}{M.}%
+     {Alexandre}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yoneyama}{Y.}%
+     {Takashi}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {M\'aximo}{M.}%
+     {Marcos}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MAYTMM1}
+  \strng{fullhash}{MAYTMM1}
+  \field{labelyear}{2017}
+  \field{sortinit}{M}
+  \field{note}{{(In Portuguese)}}
+  \field{title}{{Deep reinforcement learning applied to humanoid robots}}
+  \list{location}{1}{%
+    {S\~{a}o Jos\'{e} dos Campos, SP, Brazil}%
+  }
+  \list{institution}{1}{%
+    {Instituto Tecnol\'{o}gico de Aeron\'{a}utica}%
+  }
+  \field{type}{{Bachelor's Thesis}}
+  \field{year}{2017}
+\endentry
+
+\entry{deepmimic}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Peng}{P.}%
+     {Xue~Bin}{X.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Abbeel}{A.}%
+     {Pieter}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Levine}{L.}%
+     {Sergey}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Panne}{P.}%
+     {Michiel Van~De}{M.~V.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PXB+1}
+  \strng{fullhash}{PXBAPLSPMVD1}
+  \field{labelyear}{2018}
+  \field{sortinit}{P}
+  \field{title}{DeepMimic: Example-Guided Deep Reinforcement Learning of
+  Physics-Based Character Skills}
+  \field{year}{2018}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{TRPO}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Schulman}{S.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Levine}{L.}%
+     {Sergey}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Moritz}{M.}%
+     {Philipp}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jordan}{J.}%
+     {Michael~I.}{M.~I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Abbeel}{A.}%
+     {Pieter}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SJ+1}
+  \strng{fullhash}{SJLSMPJMIAP1}
+  \field{labelyear}{2015}
+  \field{sortinit}{S}
+  \verb{eprint}
+  \verb 1502.05477
+  \endverb
+  \field{title}{Trust Region Policy Optimization}
+  \verb{url}
+  \verb http://arxiv.org/abs/1502.05477
+  \endverb
+  \field{volume}{abs/1502.05477}
+  \field{journaltitle}{CoRR}
+  \field{eprinttype}{arXiv}
+  \field{year}{2015}
+\endentry
+
+\entry{PPO}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Schulman}{S.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wolski}{W.}%
+     {Filip}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dhariwal}{D.}%
+     {Prafulla}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Radford}{R.}%
+     {Alec}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Klimov}{K.}%
+     {Oleg}{O.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SJ+1}
+  \strng{fullhash}{SJWFDPRAKO1}
+  \field{labelyear}{2017}
+  \field{sortinit}{S}
+  \verb{eprint}
+  \verb 1707.06347
+  \endverb
+  \field{title}{Proximal Policy Optimization Algorithms}
+  \verb{url}
+  \verb http://arxiv.org/abs/1707.06347
+  \endverb
+  \field{volume}{abs/1707.06347}
+  \field{journaltitle}{CoRR}
+  \field{eprinttype}{arXiv}
+  \field{year}{2017}
+\endentry
+
+\entry{AlphaGoZero}{article}{}
+  \name{author}{17}{}{%
+    {{}%
+     {Silver}{S.}%
+     {David}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schrittwieser}{S.}%
+     {Julian}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Simonyan}{S.}%
+     {Karen}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Antonoglou}{A.}%
+     {Ioannis}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Huang}{H.}%
+     {Aja}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Guez}{G.}%
+     {Arthur}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hubert}{H.}%
+     {Thomas}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Baker}{B.}%
+     {Lucas}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lai}{L.}%
+     {Matthew}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bolton}{B.}%
+     {Adrian}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chen}{C.}%
+     {Yutian}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lillicrap}{L.}%
+     {Timothy}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hui}{H.}%
+     {Fan}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sifre}{S.}%
+     {Laurent}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Driessche}{D.}%
+     {George}{G.}%
+     {van~den}{v.~d.}%
+     {}{}}%
+    {{}%
+     {Graepel}{G.}%
+     {Thore}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hassabis}{H.}%
+     {Demis}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Macmillan Publishers Limited, part of Springer Nature. All rights
+  reserved.}%
+  }
+  \strng{namehash}{SD+1}
+  \strng{fullhash}{SDSJSKAIHAGAHTBLLMBACYLTHFSLDGvdGTHD1}
+  \field{labelyear}{2017}
+  \field{sortinit}{S}
+  \field{title}{Mastering the game of Go without human knowledge}
+  \field{volume}{550}
+  \field{journaltitle}{Nature}
+  \field{month}{10}
+  \field{year}{2017}
+\endentry
+
+\entry{Sutton1998}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Sutton}{S.}%
+     {Richard~S.}{R.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Barto}{B.}%
+     {Andrew~G.}{A.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {MIT Press}%
+  }
+  \strng{namehash}{SRSBAG1}
+  \strng{fullhash}{SRSBAG1}
+  \field{labelyear}{1998}
+  \field{sortinit}{S}
+  \field{edition}{1st}
+  \field{isbn}{0262193981}
+  \field{title}{Introduction to Reinforcement Learning}
+  \list{location}{1}{%
+    {Cambridge, MA, USA}%
+  }
+  \field{year}{1998}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

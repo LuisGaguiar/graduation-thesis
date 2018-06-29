@@ -8,7 +8,7 @@ In the last decades, the advances in computers architecture and computer science
 
 Besides, most recently, the cutting edge achievements in AI have shown algorithms capable of overcome top human intelligence in difficult problems. In 2015, Google DeepMind created an AI that learned how to play 49 Atari games using the same learning algorithm (including the same hyper parameters), using as the input only the pixels from the screen. The algorithm, called Deep Q-Learning \cite{RLNature2015}, was a breakthrough achievement in the mission of accomplishing a general purpose machine learning agent in a wide variety of games.
 
-In the same year, DeepMind left another big mark in the human history. A computer program called AlphaGo defeated Lee Sedol, the best human Go player, for the first time. Go consists of a very complex board game, with more than $10^{170}$ configurations, and represents one of the biggest challenges to human intelligence and an unconceivable problem to a computer until then. Going even further, in 2017, \citen{AlphaGoZero} introduced AlphaGo Zero, an evolution of the previous version, capable of leaning how to play without any outside data from human games, but just playing with itself. Figure \ref{fig:deepmind_examples} illustrates these successful examples.
+In the same year, DeepMind left another big mark in the human history. A computer program called AlphaGo defeated Lee Sedol, the best human Go player, for the first time. Go consists of a very complex board game, with more than $10^{170}$ configurations, and represents one of the biggest challenges to human intelligence and an unconceivable problem to a computer until then. Going even further, in 2017, \cite{AlphaGoZero} introduced AlphaGo Zero, an evolution of the previous version, capable of leaning how to play without any outside data from human games, but just playing with itself. Figure \ref{fig:deepmind_examples} illustrates these successful examples.
 
 \begin{figure}[ht]
   	\centering
@@ -113,7 +113,7 @@ The most famous work that address the specific mission of kicking the ball towar
 
 However, we can see some limitations of this work that is possible to tackle. In \cite{abbas}, the authors still make use of a Keyframe based movement, and the policy $\pi(\theta | s)$ only outputs the initial and final frame position given the desired distance $s$. We propose a neural network based policy which inputs and outputs all the joints positions in run time, performing a closed loop behavior. Besides, there are more recent and cutting-edge RL algorithms that can be used to learn this task, such as DDPG, TRPO and PPO, and also, by making use of the approach described in \cite{deepmimic}, it is possible to overcome the initial challenge of learning a basic but complete behavior at first.
 
-At last, we must cite the work (cite), which is one of the first works covering deep reinforcement learning and the SS3D, with similar tasks regarding humanoid locomotion. More specifically, this work handles the problem of developing a behavior for dribbling the ball against a single opponent, and provide successful solutions using DDPG, TRPO and PPO.
+At last, we must cite the work \cite{TGMuzio}, which is one of the first works covering deep reinforcement learning and the SS3D, with similar tasks regarding humanoid locomotion. More specifically, this work handles the problem of developing a behavior for dribbling the ball against a single opponent, and provide successful solutions using DDPG, TRPO and PPO.
 
 \section{Contributions}
 

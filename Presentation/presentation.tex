@@ -53,18 +53,21 @@
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{subfigure}
+%\usepackage{subfigure}
 \usepackage{amsmath,mathtools}
 \usepackage{lmodern}			% for the fone to be bold and italic at the same time
 \usepackage{tikz}
 \usepackage{bigstrut}
 \usepackage{pgfplots}
 \usepackage{icomma}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{subcaption}
 \usetikzlibrary{positioning,arrows,shapes.geometric}
 \usetikzlibrary{patterns}
 %\usepackage{cite}
 \usepackage[style=authoryear,backend=bibtex]{biblatex}
-\addbibresource{../References/referencias.bib}
+\addbibresource{../Referencias/referencias}
 %\usepackage{color}
 \usepackage{hyperref}
 %\hypersetup{
@@ -199,79 +202,426 @@
 % ================================================================================
 \section{Introdução}
 
-\begin{frame}{Motivação}
-\begin{columns}[T] % align columns
-\begin{column}{.5\textwidth}
+%\begin{frame}{Motivação}
+%\begin{columns}[T] % align columns
+%\begin{column}{.5\textwidth}
 % \begin{itemize}
 %  \item Locomoção por pernas é um dos problemas mais difíceis da Robótica Móvel.
 %  \item Características de um problema difícil de controle: dinâmica não-linear, sub-atuada e com alta dimensionalidade.
 %  \item Técnicas bem sucedidas usam modelos reduzidos de dinâmica.
 % \end{itemize}
-\end{column}
-\begin{column}{.5\textwidth}
+%\end{column}
+%\begin{column}{.5\textwidth}
 %  \begin{figure}[h!]
 %   \centering
 %       \includegraphics[width=0.8\textwidth]{Darwin_OP_6.jpg}
 % \caption{Robô DARwIn-OP.}
 % \end{figure}
-\end{column}
-\end{columns}
+%\end{column}
+%\end{columns}
+%\end{frame}
+
+\begin{frame}{Motivação}
+\begin{itemize}
+\item
+	Usando DQN, uma IA aprendeu a jogar 49 jogos Atari.
+\item
+	Paper na Nature (\cite{RLNature2015})
+	\begin{figure}
+	\centering
+    \includegraphics[width=0.6\textwidth]{figures/atari.jpg} 
+    \caption{DQN e diferentes jogos Atari.}
+    \label{fig:alphago}
+\end{figure}	
+\end{itemize}
 \end{frame}
 
-% ================================================================================
-\section{Revisão da Literatura}
-
-\begin{frame}{Revisão da Literatura}
+\begin{frame}{Motivação}
 \begin{itemize}
-\item Técnicas livres de modelo usam Otimização Metaheurística ou Aprendizado de Máquina \parencite{2017-TOG-deepLoco}.
+\item
+	No mesmo ano, AlphaGo derrotou Lee Sedol, campeão mundial de Go.
+\item
+	Em 2017, (\cite{AlphaGoZero}) introduziu Alpha Go zero.
+	\begin{figure}
+	\centering
+    \includegraphics[width=0.6\textwidth]{figures/alphago.png} 
+    \caption{AlphaGo contra Lee Sedol.}
+    \label{fig:alphago}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Motivação}
+\begin{itemize}
+\item
+	Controle de movimento é um grande desafio para IA.
+%	Aprendizado de movimentos reais é uma classe de problemas muito mais difíceis.
+\item
+	Em 2018, (\cite{deepmimic}) introduziu Deep Mimic.
+\item
+	%It was able to learn different movements in a simulated scenario.
+	Aprendizado de diversos movimentos em ambiente simulado (correr, chutar, acrobacias, etc)
+	\begin{figure}
+	\centering
+    \includegraphics[width=0.5\textwidth]{figures/deepmimic.png} 
+    \caption{Humanoid chutando em DeepMimic.}
+    \label{fig:alphago}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Motivação}
+\begin{itemize}
+\item
+	RoboCup 3D Soccer Simulation
+\begin{figure}[ht]
+  	\centering
+  	\begin{subfigure}[b]{0.8\textwidth}
+              \centering
+	 		\includegraphics[height=0.3\textheight]{figures/RoboCup.png}	
+     \end{subfigure}
+     
+	 \begin{subfigure}[b]{0.45\textwidth}
+              \centering
+	 		\includegraphics[height=0.3\textheight]{figures/SS3D.png}
+	 \end{subfigure}
+	     
+	 \caption{Símbolo da Robocup e uma partida da liga Soccer 3D.}
+	\label{fig:robocup}
+\end{figure}	
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Problema}
+\begin{itemize}
+\setlength\itemsep{1em}
+\item
+	Chutar uma bola a uma distância final do agente planejada.
+	%Kick the ball towards a planned final distance from the agent.
+\item
+	%Learn a complete behavior.
+	Aprender um comportamento de baixo nível completo.
+\item
+	Input: estado do agente. Output: sinais de controle para as juntas.
+	%Input agent state, output control signals to the joints.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Abordagem}
+\begin{itemize}
+\setlength\itemsep{1em}
+\item
+	Técnicas recentes de Deep Reinforcement Learning.
+	%Modern Deep Reinforcement Learning techniques.
+\item
+	Inicialmente, aprender por imitação (\cite{deepmimic}).
+	%Learn from imitation first \cite{deepmimic}.
+\item
+	Curriculum learning (\cite{BengioCurrLearning}).
+	%Curriculum learning \cite{BengioCurrLearning}.
+\item
+	Fornecer a distância planejada como entrada da política. Treinar para diversos valores.
+	%Input the target distance to the policy NN, train for several values.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Revisão Literária}
+\begin{itemize}
+\setlength\itemsep{1em}
+\item
+	Técnicas recentes, como DDPG (\cite{DDPG}), TRPO (\cite{TRPO}), PPO (\cite{PPO}).
+\item
+	Trabalho passado nesse problema: (\cite{abbas}).
+\item
+	Ainda faz uso de um movimento keyframe. Utilizou CREPS-CMA para aprender $\pi(\theta|s)$.
+\item
+	(\cite{TGMuzio}) desenvolveu comportamentos de alto nivel para movimentos de drible e roubo de bola no SS3D usando DRL.	
 \end{itemize}
 \end{frame}
 
 % ================================================================================
-\section{Reinforcement Learning}
+\section{Aprendizado por reforço}
 
-\begin{frame}{Teoria}
+\begin{frame}{Introdução ao modelo}
+\begin{itemize}
+\item
+	Interagir com o ambiente, obter recompensas, aprender.
+	%Interact with the environment, get rewards, learn.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/RL_basic_model.png} 
+    \caption{Agente interagindo com o ambiente.}
+    \label{fig:RL_basic_model}
+\end{figure}
+\end{itemize}
 \end{frame}
+
+\begin{frame}{Markov Decision Processes}
+\begin{itemize}
+\item
+	Cadeia de Markov $P(S_{t+1} | S_t) = P(S_{t+1} \mid S_1, ..., S_t)$
+\item
+	Tupla $<\textbf{S}, \textbf{A}, P, R, \gamma>$
+	\begin{itemize}
+	\item
+		$\textbf{S}$ é um conjunto finito de estados que um agente pode assumir.
+		%$\textbf{S}$ is a finite set of states the agent can assume in the environment.
+	\item
+		$\textbf{A}$ é um conjunto finito de ações que um agente pode tomar.
+		%$\textbf{A}$ is a finite set of actions the agent can take.
+	\item
+		$P$ é a função probabilidade de transição para o estado, representado por $P_{ss'}^a = \mathbb{P}[S_{t+1}=s' \mid S_t = s, A_t = a]$.
+		%$P$ is a state transition probability function, represented as $P_{ss'}^a = \mathbb{P}[S_{t+1}=s' \mid S_t = s, A_t = a]$
+	\item
+		$R$ é a função de recompensa imediata, com valor esperado dado por $R_s^a = \mathbb{E}[R_{t+1} \mid S_t = s, A_t = a]$.
+		%$R$ is the immediate reward function, with expected value given by $R_s^a = \mathbb{E}[R_{t+1} \mid S_t = s, A_t = a]$
+	\item
+		$\gamma$ é o fator de disconto, tal que $\gamma \in [0,1]$.
+		%$\gamma$ is a discount factor, such that $\gamma \in [0,1]$, used to compute the cumulative total reward.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Outros Conceitos}
+\begin{itemize}
+\setlength\itemsep{1em}
+\item
+	Retorno total $G_t = R_{t+1} + \gamma R_{t+2} + ... = \sum_{k=0}^{\infty}{\gamma^k R_{t+k+1}}$
+\item
+	Política $\pi(a \mid s) = \mathbb{P}[A_t=a | S_t=s]$
+\item
+	State value function $v_{\pi}(s) = \mathbb{E}_{\pi}[G_t \mid S_t = s]$
+\item
+	Action value function $q_{\pi}(s,a) = \mathbb{E}_{\pi}(G_t \mid S_t = s, A_t = a)$	
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Algoritmos Clássicos}
+\begin{itemize}
+\setlength\itemsep{1em}
+\item
+	Métodos Monte Carlo.
+\item
+	Temporal-Difference e Sarsa
+\item
+	Policy Search
+\item
+	Actor Critic
+\item
+	(\cite{Sutton1998})
+\end{itemize}
+\end{frame}
+
+% ================================================================================
+%\section{RL Classic algorithms}
+
+%\begin{frame}{Temporal Difference}
+%\end{frame}
+
+%\begin{frame}{Policy Search}
+%\end{frame}
+
+%\begin{frame}{Actor-Critic}
+%\end{frame}
+
+% ================================================================================
+\section{Redes Neurais}
+
+\begin{frame}{Motivação}
+\begin{itemize}
+\item
+	Em espaço de ações contínuo, precisamos estimar value functions complexas e não-lineares.
+	%In continuous action space, we need to fit complex and non-linear value functions
+	\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/deep_neural_net.png} 
+    \caption{Deep Neural Network.}
+    \label{fig:RL_basic_model}
+	\end{figure}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Métodos}
+\begin{itemize}
+\item
+	Técnicas consagradas.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/Feed-Forward-Neural-Network-with-Back-Propagation.png} 
+    \caption{Forward and Backward propagation.}
+    \label{fig:RL_basic_model}
+\end{figure}
+\item
+	Otimizações: Regularization, RMSprop, Adam Optimizer
+\end{itemize}
+\end{frame}
+
+%\begin{frame}{Otimizações}
+%\end{frame}
 
 % ================================================================================
 \section{Deep Reinforcement Learning}
 
-\begin{frame}{Tarefa $1$}
-\end{frame}
-
-% ================================================================================
-\section{Implementação}
-
-\begin{frame}{Tarefa $1$}
-\end{frame}
-
-% ================================================================================
-\section{Aprendendo Comportamentos de Futebol}
-
-\begin{frame}{Tarefa $1$}
-\end{frame}
-
-
-% ================================================================================
-\section{Conclusões}
-
-\begin{frame}{Conclusões}
+\begin{frame}{TRPO}
 \begin{itemize}
-  \item Minha conclusão
- \end{itemize}
+\item
+	Representa $\pi_{\theta}(a|s)$ como uma distribuição $\mathcal{N}(\mu,\sigma)$. $\mu$ e $\sigma$ output da rede neural.
+\item
+	Vulnerabilidde ao tamanho do passo de atualização de métodos tradicionais em policy gradient.
+	%Vulnerability to the step size in the vanilla policy gradient methods.
+\item
+	Restringir o tamanho do passo a uma região de confiança
+	%Constraining the step size to lie within a trust region.
+\begin{equation}
+\underset{\theta}{\textrm{maximize }} \mathbb{\hat{E}}_{s_t,a_t \sim \pi_{\theta_{old}} } \left[ \frac{\pi_{\theta}(a_t|s_t)}{
+\pi_{\theta_{old}}(a_t|s_t)}\hat{A}_t \right]
+\label{eq:TRPO_1}
+\end{equation}
+\begin{equation}
+\textrm{subject to } \mathbb{\hat{E}}_{s_t,a_t \sim \pi_{\theta_{old}} } \left[ KL[\pi_{\theta_{old}},\pi_{\theta}(.|s_t)] \right] \leq \delta
+\label{eq:TRPO_2}
+\end{equation}
+\end{itemize}
 \end{frame}
 
-\begin{frame}{Trabalho Futuro}
+\begin{frame}{PPO}
+\begin{itemize}
+\item
+	Ainda podemos manter essa restrição, mas através de uma implementação mais simples.
+	%We can still constrain the step-size, but with a easier implementation.
+\item
+	Otimização de primeira ordem, com uma função objetivo modificada.
+	%First-order optimization, with a modified objective function.
+\begin{equation}
+r_t(\theta) = \frac{\pi_{\theta}(a_t|s_t)}{\pi_{\theta_{old}}(a_t|s_t)}
+\label{eq:def_r_t}
+\end{equation}
+
+\begin{equation}
+L(\theta) = \mathbb{\hat{E}}_t \left[ min(r_t(\theta)\hat{A}_t, clip(r_t(\theta),1-\epsilon,1+\epsilon)\hat{A}_t) \right]
+\label{eq:PPO_objective_function}
+\end{equation}
+\end{itemize}
+\end{frame}
+
+% ================================================================================
+\section{Setup e Ferramentas}
+
+\begin{frame}{Ambiente e Ferramentas}
+\begin{columns}[T] % align columns
+\begin{column}{.5\textwidth}
+ \begin{itemize}
+ \setlength\itemsep{1em}
+  \item Simulador SimSpark (SimSpark 2004)
+  \item C++
+  \item Python
+  \begin{figure}[h!]
+   \centering
+       \includegraphics[width=0.8\textwidth]{figures/simspark.png}
+ \caption{Simulador SimSpark.}
+\end{figure}
+ \end{itemize}
+\end{column}
+\begin{column}{.5\textwidth}
+  
+  \begin{figure}[h!]
+   \centering
+       \includegraphics[width=0.7\textwidth]{figures/tensorflow.png}
+ \caption{Logo TensorFlow.}
+\end{figure}
+  \begin{figure}[h!]
+   \centering
+       \includegraphics[width=0.7\textwidth]{figures/openai.png}
+ \caption{Logo OpenAI.}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Arquitetura}
+\begin{itemize}
+\item
+	Implementada em (\cite{TGMuzio}).
+\begin{figure}[h!]
+   \centering
+       \includegraphics[width=0.6\textwidth]{figures/architecture.png}
+\caption{Arquitetura a ser usada.}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+% ================================================================================
+\section{Cronograma}
+
+\begin{frame}{Feito}
+\begin{itemize}
+\item
+	Aprender aprendizado supervisionado.
+	%Study Supervised Learning.
+\item
+	Aprender aprendizado por reforço.
+	%Study Reinforcement Learning.
+\item
+	Revisão bibliográfica.
+	%Get up-to-date with RL literature.
+\item
+	Implementar técnicas tradicionais de RL para alguns problemas simples de controle da OpenAI gym.
+	%Implement classical RL techniques to some OpenAI gym simple control problems.
+\begin{figure}[h!]
+   \centering
+       \includegraphics[width=0.3\textwidth]{figures/gym.png}
+ \caption{Logo OpenAI Gym.}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Problemas Gym}
+\begin{itemize}
+\item
+	CartPole com Deep Q-Networks.
+\begin{figure}[h!]
+   \centering
+       \includegraphics[width=0.35\textwidth]{figures/cartpole.jpg}
+ \caption{Cart Pole Gym.}
+\end{figure}
+
+\item MountainCar com policy gradient.
+\begin{figure}[h!]
+   \centering
+       \includegraphics[width=0.35\textwidth]{figures/mountaincar.jpg}
+ \caption{Mountain Car Gym.}
+\end{figure}
+
+\end{itemize}
+\end{frame}
+
+%\begin{frame}{Conclusões}
+%\begin{itemize}
+%  \item Minha conclusão
+% \end{itemize}
+%\end{frame}
+
+\begin{frame}{Trabalhos Futuros}
   \begin{itemize}
-    \item Trabalhos futuros
+  \setlength\itemsep{1em}
+    \item
+    Aprender um behavior que imita o movimento Keyframe atual para o chute.
+    %Learn a behavior that imitates the current keyframe for the kick movement.
+    \item
+    Inputar uma distância fixa para a política e aprender a alcançar essa distância.
+    %Input a fixed distance in the policy and learn to reach that distance.
+    \item
+    %Try to learn for several discrete distances.
+    Aprender para várias distâncias num range discreto.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Agradecimentos}
-\begin{itemize}
-\item Os autores agradecem o suporte da Fundação de Amparo à Pesquisa do Estado de São Paulo -- FAPESP (processo 2016/03647-3).
-\end{itemize}
-\end{frame}
+%\begin{frame}{Agradecimentos}
+%\begin{itemize}
+%\item Os autores agradecem o suporte da Fundação de Amparo à Pesquisa do Estado de São Paulo -- FAPESP (processo 2016/03647-3).
+%\end{itemize}
+%\end{frame}
 
 % ================================================================================
 \begin{frame}[allowframebreaks]{Bibliografia}

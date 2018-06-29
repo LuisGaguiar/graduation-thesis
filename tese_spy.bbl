@@ -81,6 +81,14 @@ Letter.
 Dispon{\'\i}vel em:
   \htmladdnormallink{$<$http:\-/\-/dx\-.doi\-.org\-/10\-.1038\-/nature14236$>$}{http://dx.doi.org/10.1038/nature14236}.}
 
+\bibitem[Muzio \textit{et al.} 2017]{TGMuzio}
+\abntrefinfo{Muzio \textit{et al.}}{MUZIO \textit{et al.}}{2017}
+{MUZIO, A.; YONEYAMA, T.; M\'AXIMO, M.
+\textbf{{Deep reinforcement learning applied to humanoid robots}}.
+Dissertação ({Bachelor's Thesis}) --- Instituto Tecnol\'{o}gico de
+  Aeron\'{a}utica, S\~{a}o Jos\'{e} dos Campos, SP, Brazil, 2017. {(In
+  Portuguese)}.}
+
 \bibitem[Peng \textit{et al.} 2018]{deepmimic}
 \abntrefinfo{Peng \textit{et al.}}{PENG \textit{et al.}}{2018}
 {PENG, X.~B.; ABBEEL, P.; LEVINE, S.; PANNE, M. V.~D. Deepmimic: Example-guided

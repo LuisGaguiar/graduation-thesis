@@ -23,103 +23,151 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {4}{4}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {2}{Revis\IeC {\~a}o da Literatura}{5}{Revis\IeC {\~a}o da Literatura}{0}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {3}{4}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {3}{4}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {2}{0}{1}{5/5}{}{0}}
+\headcommand {\slideentry {1}{0}{3}{5/5}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {5}{5}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {2}{0}{2}{6/6}{}{0}}
+\headcommand {\slideentry {1}{0}{4}{6/6}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {6}{6}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {3}{Reinforcement Learning}{7}{Reinforcement Learning}{0}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {5}{6}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {5}{6}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {3}{0}{1}{7/7}{}{0}}
+\headcommand {\slideentry {1}{0}{5}{7/7}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {7}{7}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {3}{0}{2}{8/8}{}{0}}
+\headcommand {\slideentry {1}{0}{6}{8/8}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {8}{8}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {4}{Deep Reinforcement Learning}{9}{Deep Reinforcement Learning}{0}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {7}{8}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {7}{8}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {4}{0}{1}{9/9}{}{0}}
+\headcommand {\slideentry {1}{0}{7}{9/9}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {9}{9}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {4}{0}{2}{10/10}{}{0}}
+\headcommand {\slideentry {1}{0}{8}{10/10}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {10}{10}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {5}{Implementa\IeC {\c c}\IeC {\~a}o}{11}{Implementa\IeC {\c c}\IeC {\~a}o}{0}}
+\headcommand {\sectionentry {2}{Aprendizado por refor\IeC {\c c}o}{11}{Aprendizado por refor\IeC {\c c}o}{0}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {9}{10}}
+\headcommand {\beamer@sectionpages {3}{10}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {9}{10}}
+\headcommand {\beamer@subsectionpages {3}{10}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {5}{0}{1}{11/11}{}{0}}
+\headcommand {\slideentry {2}{0}{1}{11/11}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {11}{11}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {5}{0}{2}{12/12}{}{0}}
+\headcommand {\slideentry {2}{0}{2}{12/12}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {12}{12}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {6}{Aprendendo Comportamentos de Futebol}{13}{Aprendendo Comportamentos de Futebol}{0}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {11}{12}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {11}{12}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {6}{0}{1}{13/13}{}{0}}
+\headcommand {\slideentry {2}{0}{3}{13/13}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {13}{13}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {6}{0}{2}{14/14}{}{0}}
+\headcommand {\slideentry {2}{0}{4}{14/14}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {14}{14}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\sectionentry {7}{Conclus\IeC {\~o}es}{15}{Conclus\IeC {\~o}es}{0}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {13}{14}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {13}{14}}
-\defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {7}{0}{1}{15/15}{}{0}}
+\headcommand {\slideentry {2}{0}{5}{15/15}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {15}{15}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {7}{0}{2}{16/16}{}{0}}
+\headcommand {\sectionentry {3}{Redes Neurais}{16}{Redes Neurais}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {11}{15}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {11}{15}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {3}{0}{1}{16/16}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {16}{16}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {7}{0}{3}{17/17}{}{0}}
+\headcommand {\slideentry {3}{0}{2}{17/17}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {17}{17}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {7}{0}{4}{18/18}{}{0}}
+\headcommand {\slideentry {3}{0}{3}{18/18}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {18}{18}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {7}{0}{5}{19/19}{}{0}}
+\headcommand {\sectionentry {4}{Deep Reinforcement Learning}{19}{Deep Reinforcement Learning}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {16}{18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {16}{18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{0}{1}{19/19}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\beamer@partpages {1}{19}}
-\headcommand {\beamer@subsectionpages {15}{19}}
-\headcommand {\beamer@sectionpages {15}{19}}
-\headcommand {\beamer@documentpages {19}}
-\headcommand {\def \inserttotalframenumber {19}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{0}{2}{20/20}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {20}{20}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{0}{3}{21/21}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {21}{21}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {5}{Setup e Ferramentas}{22}{Setup e Ferramentas}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {19}{21}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {19}{21}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {5}{0}{1}{22/22}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {22}{22}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {5}{0}{2}{23/23}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {23}{23}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {5}{0}{3}{24/24}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {24}{24}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {6}{Cronograma}{25}{Cronograma}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {22}{24}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {22}{24}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {6}{0}{1}{25/25}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {25}{25}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {6}{0}{2}{26/26}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {26}{26}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {6}{0}{3}{27/27}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {27}{27}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {6}{0}{4}{28/28}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {28}{28}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {7}{Refer\^encias}{29}{Refer\^encias}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {25}{28}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {25}{28}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {7}{0}{0}{29/29}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {29}{29}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {7}{0}{0}{29/30}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {29}{30}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {7}{0}{0}{29/31}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {29}{31}}
+\headcommand {\beamer@partpages {1}{31}}
+\headcommand {\beamer@subsectionpages {25}{31}}
+\headcommand {\beamer@sectionpages {25}{31}}
+\headcommand {\beamer@documentpages {31}}
+\headcommand {\def \inserttotalframenumber {31}}

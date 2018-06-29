@@ -41,7 +41,7 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="1">
+  <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
       <file>presentation.aux</file>
@@ -61,7 +61,7 @@
       <file>brazilian.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="1">
+  <external package="biblatex" priority="5" active="0">
     <generic>bibtex</generic>
     <cmdline>
       <binary>bibtex</binary>
@@ -82,7 +82,7 @@
       <file>presentation-blx.bib</file>
     </requires>
     <requires type="editable">
-      <file>../References/referencias.bib</file>
+      <file>../Referencias/referencias</file>
     </requires>
     <requires type="static">
       <file>biblatex.bst</file>

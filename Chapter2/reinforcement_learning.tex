@@ -30,7 +30,7 @@ Markov decision processes, however, have a more complete definition, they are a 
 \item
 	$P$ is a state transition probability function, represented as $P_{ss'}^a = \mathbb{P}[S_{t+1}=s' \mid S_t = s, A_t = a]$
 \item
-	$R$ is a reward function, given by $R_s^a = \mathbb{E}[R_{t+1} \mid S_t = s, A_t = a]$
+	$R$ is the immediate reward function, with expected value given by $R_s^a = \mathbb{E}[R_{t+1} \mid S_t = s, A_t = a]$
 \item
 	$\gamma$ is a discount factor, such that $\gamma \in [0,1]$, used to compute the cumulative total reward.
 	
