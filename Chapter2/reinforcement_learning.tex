@@ -1,8 +1,8 @@
 \section{Model Introduction}
 
-Reinforcement Learning is a new branch and paradigm in the Machine Learning field. But different than the classical Supervised Learning, in RL there is no supervisor, only a reward signal. In this sense, we have an agent which interacts with the environment and receives instant rewards. Therefore, in RL, we can say that the agent's actions affect the subsequent data it receives, and that time really matters, since this data is sequential non i.i.d, and moreover, the total feedback, given by the sum of all rewards, is delayed, not instantaneous \cite{Sutton1998}. All these features make RL a quite unique research field, and it can also finds a wide range of applications, from playing board games to machines control.
+Reinforcement Learning is a new branch and paradigm in the Machine Learning field. But differently from the classical Supervised Learning, in RL there is no supervisor, only a reward signal. In this sense, we have an agent which interacts with the environment and receives instant rewards. Therefore, in RL, we can say that the agent's actions affect the subsequent data it receives, and that time really matters, since this data is sequential non i.i.d, and moreover, the total feedback, given by the sum of all rewards, is delayed, not instantaneous \cite{Sutton1998}. All these features make RL a quite unique research field, and it can also find a wide range of applications, from playing board games to machines control.
 
-The basic model for a RL approach makes use of a discrete state space for representing the agent's state $S_t$, its actions $A_t$ and its full or partial environment observations $O_t$. Thus, at each timestep $t$, the agent receives an observation $O_t$, takes an action $A_t$ and ends up in the next state $S_{t+1}$, receiving an scalar reward $R_{t+1}$. Therefore, the agent's final goal is to maximize the total future reward it gets. Figure \ref{fig:RL_basic_model} illustrates this dynamics representation.
+The basic model for a RL approach makes use of a discrete state space for representing the agent's state $S_t$, its actions $A_t$ and its full or partial environment observations $O_t$. Thus, at each timestep $t$, the agent receives an observation $O_t$, takes an action $A_t$ and ends up in the next state $S_{t+1}$, receiving an scalar reward $R_{t+1}$. Therefore, the agent's final goal is to maximize the total future reward it gets. Figure \ref{fig:RL_basic_model}, from \cite{lecture1DS}, illustrates this dynamics representation.
 
 \begin{figure}[H]
     \centering
@@ -28,9 +28,9 @@ Markov decision processes, however, have a more complete definition, they are a 
 \item
 	$\textbf{A}$ is a finite set of actions the agent can take.
 \item
-	$P$ is a state transition probability function, represented as $P_{ss'}^a = \mathbb{P}[S_{t+1}=s' \mid S_t = s, A_t = a]$
+	$P$ is a state transition probability function, represented as $P_{ss'}^a = \mathbb{P}[S_{t+1}=s' \mid S_t = s, A_t = a]$.
 \item
-	$R$ is the immediate reward function, with expected value given by $R_s^a = \mathbb{E}[R_{t+1} \mid S_t = s, A_t = a]$
+	$R$ is the immediate reward function, with expected value given by $R_s^a = \mathbb{E}[R_{t+1} \mid S_t = s, A_t = a]$.
 \item
 	$\gamma$ is a discount factor, such that $\gamma \in [0,1]$, used to compute the cumulative total reward.
 	
@@ -59,7 +59,7 @@ Besides this basic tuple representation, there are four more concepts very used 
 	\end{equation}
 	In other words, it can be seen as a measure of how good the current agent's state is.
 \item
-	The \textbf{action-value function} $q_{\pi}(s,a)$ is the expected return starting from state $s$, taking action $a$, and then following policy $\pi$
+	The \textbf{action-value function} $q_{\pi}(s,a)$ is the expected return starting from state $s$, taking action $a$, and then following policy $\pi$.
 	\begin{equation}
 	q_{\pi}(s,a) = \mathbb{E}_{\pi}(G_t \mid S_t = s, A_t = a)
 	\label{eq:action_value_function_definition}
@@ -116,7 +116,7 @@ Furthermore, a deterministic optimal policy always exists, and can be easily def
 
 \section{RL Algorithms}
 
-In order to base our future approaches in the main task, we must start presenting the classical reinforcement learning algorithms in the literature and, first of all, categorizing its different natures. The following subsections will be responsible for that.
+In order to base our future approaches in the main task, we must start presenting the classical reinforcement learning algorithms in the literature and, first of all, categorizing their different natures. The following subsections will be responsible for that.
 
 \subsection{Categorizing RL}
 
@@ -124,11 +124,11 @@ RL algorithms can be classified into several types related to their problems and
 
 %RL algorithms can be classified into model free or model based, prediction or control, and value based, policy based or actor critic.
 
-Model based algorithms are used when the model of the environment is known, and therefore, the agent can performs computations without external interaction to improves its policy. Model free algorithms, however, do not use any environment model, and it improves its policy by only interacting with the environment. These two problems conditions are respectively classified as planning and reinforcement learning problems.
+Model based algorithms are used when the model of the environment is known, and therefore, the agent can perform computations without external interaction to improves its policy. Model free algorithms, however, do not use any environment model, and it improve its policy by only interacting with the environment. These two problems conditions are respectively classified as planning and reinforcement learning problems.
 
 Moreover, RL algorithms can also be classified as value based, policy based or actor critic. Value based algorithms are methods based on computing optimal value functions, whereas policy based algorithms make use of optimal policy search approaches. Between them, we also have an hybrid solution which combines both value function and policy search approaches. Figure \ref{fig:categorizing_RL}, extracted from \cite{lecture1DS}, illustrates this classical RL categories division.
 
-Regarding their solution nature, we also have two more classifications. Prediction algorithms are basically policy evaluation algorithms, which does not obtain any optimal policy solution, but instead, given a policy computes value functions. Control algorithms, whereas, aims to achieve an optimal policy. Besides, we still have two other classifications regarding the solution approach, that are on-policy algorithms, which learns by interacting with the world with its own policy, and off-policy algorithms, which learns an optimal policy by interacting with the world with another policy.
+Regarding their solution nature, we also have two more classifications. Prediction algorithms are basically policy evaluation algorithms, which does not obtain any optimal policy solution, but instead, given a policy computes value functions. Control algorithms, whereas, aim to achieve an optimal policy. Besides, we still have two other classifications regarding the solution approach, that are on-policy algorithms, which learns by interacting with the world with its own policy; and off-policy algorithms, which learns an optimal policy by interacting with the world with another policy.
 
 %Explica on e off-policy
 
@@ -142,7 +142,7 @@ Regarding their solution nature, we also have two more classifications. Predicti
 
 \subsection{Value Function Methods}
 
-As already mentioned, value function methods employ techniques that aims to compute or estimate value functions. These algorithms are the most classic in the RL literature, and their implementation differ basically in relation to concepts like bootstrapping, bias, variance, on-policy and off-policy. In this section, we will focus on presenting only model-free algorithms, since it is from the same nature of our problem.
+As already mentioned, value function methods employ techniques that aim to compute or estimate value functions. These algorithms are the most classic in the RL literature, and their implementation differ basically in relation to concepts like bootstrapping, bias, variance, on-policy and off-policy. In this section, we will focus on presenting only model-free algorithms, since it is from the same nature of our problem.
 
 \subsubsection{Monte Carlo Methods}
 
@@ -152,7 +152,7 @@ Therefore, for Monte Carlo prediction, the MC version for policy evaluation, we 
 
 For the control method, the main idea is to employ policy iteration, which is a basic framework for control problems which consists in an iterative solution that evaluates a given policy, by computing the value functions, and then updates this policy by acting greedy with respect to these computed value functions. Acting greedy would be choosing a deterministic policy given by Equation \eqref{eq:policy_from_greedy}. This loop repeats until convergence to optimal policy and optimal value functions.
 
-In Monte Carlo model-free control, in particular, the usual approach is to use Monte-Carlo prediction to evaluate action-value functions $Q_{\pi}(s,a)$ under the policy $\pi$, then update the policy acting $\epsilon$-greedy. $\epsilon$-greedy is a simple policy update technique very similar to the greedy approach from \eqref{eq:policy_from_greedy}, but it is able to ensure continual exploration. The solution for this is choosing the greedy action with $1-\epsilon$ probability, and all the others actions with the same non-zero probability. This calculation is presented in Equation \eqref{eq:epsilon-greedy}.
+In Monte Carlo model-free control, in particular, the usual approach is to use Monte-Carlo prediction to evaluate action-value functions $Q_{\pi}(s,a)$ under the policy $\pi$, then update the policy acting $\epsilon$-greedy. $\epsilon$-greedy is a simple policy update technique very similar to the greedy approach from Equation \eqref{eq:policy_from_greedy}, but it is able to ensure continual exploration. The solution for this is choosing the greedy action with $1-\epsilon$ probability, and all the others actions with the same non-zero probability. This calculation is presented in Equation \eqref{eq:epsilon-greedy}.
 
 \begin{equation}
  \pi_*(a | s) = 
@@ -171,7 +171,7 @@ In Monte Carlo model-free control, in particular, the usual approach is to use M
 
 \subsubsection{Temporal-Difference and Sarsa}
 
-Temporal-Difference methods \cite{Sutton1998} and \cite{TDLearning} are model-free methods that are able to learn from incomplete episodes, by bootstrapping. This idea consists in updating an estimate by using another estimate obtained after taking some decision steps. In its most simple version for policy evaluation, $TD(0)$, it is possible to learn $v_{\pi}$ online while experiencing under $\pi$, by updating the estimate $V(S_t)$ toward the estimated return $R_{t+1} + \gamma V(S_{t+1})$, as given in Equation \eqref{eq:TD0_update}.
+Temporal-Difference methods \cite{Sutton1998} and \cite{TDLearning} are model-free methods that are able to learn from incomplete episodes, by bootstrapping. This idea consists in updating an estimate by using another estimate obtained after taking some decision steps. In its most simple version for policy evaluation, $TD(0)$, it is possible to learn $v_{\pi}$ online while experiencing under $\pi$, by updating the estimate $V(S_t)$ towards the estimated return $R_{t+1} + \gamma V(S_{t+1})$, as given in Equation \eqref{eq:TD0_update}.
 
 \begin{equation}
 V(S_t) = V(S_t) + \alpha(R_{t+1} + \gamma V(S_{t+1}) - V(S_t))
@@ -206,7 +206,7 @@ Q(S,A) = Q(S,A) + \alpha( Q_t^{\lambda} - Q(S,A))
 \label{eq:sarsa_lambda}
 \end{align}
 
-The main difference between SARSA and MC control algorithms is that SARSA can learns before the end of the episode, and have low variance and some bias, whereas MC can only learn from complete episodes, and therefore has high variance and zero bias. Besides, MC has better convergence properties.
+The main difference between SARSA and MC control algorithms is that SARSA can learn before the end of the episode, and has low variance and some bias, whereas MC can only learn from complete episodes, and therefore has high variance and zero bias. Besides, MC has better convergence properties.
 
 % TD lambda para prediction
 % TD lambda para control com Sarsa slides 23 ao 25 lecture 5, apresentar algoritmo
@@ -240,7 +240,7 @@ P_{\theta}(\tau) = P_{\theta}(s_1,a_1,...,s_T,a_T) = P(s_1)\prod_{t=1}^T{\pi_{\t
 \label{eq:theta_max}
 \end{align}
 
-This optimization problem is solved through gradient ascent methods, and therefore we must compute the gradient of the objective function $J(\theta)$. For this propose, we can rewrite $J(\theta)$ as in \ref{eq:rewrite_objective}, and compute its gradient $\nabla_{\theta} J(\theta)$ using the manipulation described in \ref{eq:grad_with_scorefunc}, in order to work with the score function $\nabla_{\theta}\log{\pi_{\theta}(a|s)}$.
+This optimization problem is solved through gradient ascent methods, and therefore we must compute the gradient of the objective function $J(\theta)$. For this propose, we can rewrite $J(\theta)$ as in Equation \eqref{eq:rewrite_objective}, and compute its gradient $\nabla_{\theta} J(\theta)$ using the manipulation described in Equation \eqref{eq:grad_with_scorefunc}, in order to work with the score function $\nabla_{\theta}\log{\pi_{\theta}(a|s)}$.
 
 \begin{equation}
 J(\theta) = \mathbb{E}_{\tau \sim P_{\theta}(\tau)} \underbrace{ \left[ \sum_t{R_t(s_t,a_t)} \right] }_{r(\tau)} = \int{\pi_{\theta}(\tau)r(\tau)d \tau}
@@ -254,7 +254,7 @@ J(\theta) = \mathbb{E}_{\tau \sim P_{\theta}(\tau)} \underbrace{ \left[ \sum_t{R
 \label{eq:grad_with_scorefunc}
 \end{equation}
 
-Using the gradient $\nabla_{\theta} J(\theta)$, computed in \ref{eq:grad_with_scorefunc}, the main idea presented in \cite{REINFORCE} is making use of stochastic gradient ascent to reach $\theta^*$. The algorithm is therefore presented in Algorithm \ref{algo:reinforce}.
+Using the gradient $\nabla_{\theta} J(\theta)$, computed in Equation \eqref{eq:grad_with_scorefunc}, the main idea presented in \cite{REINFORCE} is making use of stochastic gradient ascent to reach $\theta^*$. The algorithm is therefore presented in Algorithm \ref{algo:reinforce}.
 
 \begin{algorithm}[H]
     \DontPrintSemicolon
@@ -280,12 +280,12 @@ In comparison with value function methods, the main advantages of policy-based R
 \subsection{Actor-Critic}
 % presenting the critic Qw(s,a) as a function estimate for the total return Gt
 
-In Algorithm \ref{algo:reinforce}, we used the total return $G_t$ as an unbiased sample of $Q^{\pi_{\theta}}(s_t,a_t)$, but we can also rewrite $\nabla_{\theta} J(\theta)$ as in equation \ref{eq:actor_critic_gradient}. In this sense, we could also use an action-value function approximation to derive the objective function gradient, by making use of a \textit{critic} function $Q_W(s,a) \thickapprox Q^{\pi_{\theta}}(s_t,a_t)$.
+In Algorithm \ref{algo:reinforce}, we used the total return $G_t$ as an unbiased sample of $Q^{\pi_{\theta}}(s_t,a_t)$, but we can also rewrite $\nabla_{\theta} J(\theta)$ as in Equation \eqref{eq:actor_critic_gradient}. In this sense, we could also use an action-value function approximation to derive the objective function gradient, by making use of a \textit{critic} function $Q_W(s,a) \thickapprox Q^{\pi_{\theta}}(s_t,a_t)$.
 
 \begin{equation}
 \nabla_{\theta} J(\theta) = \mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} \left[ \nabla_{\theta} \log{\pi_{\theta}(\tau)} Q^{\pi_{\theta}}(s_t,a_t) \right]
 \label{eq:actor_critic_gradient}
 \end{equation}
 
-Therefore, Actor-Critic methods maintain two sets of parameters to be updated toward optimum policy and action-value functions: the parameters $W$ for the \textit{critic} action-value estimate $Q_W(s,a)$, and the parameters $\theta$ for the \textit{actor} policy estimate $\pi_{\theta^*}(a|s)$.
+Therefore, Actor-Critic methods maintain two sets of parameters to be updated towards optimum policy and action-value functions: the parameters $W$ for the \textit{critic} action-value estimate $Q_W(s,a)$, and the parameters $\theta$ for the \textit{actor} policy estimate $\pi_{\theta^*}(a|s)$.
 
