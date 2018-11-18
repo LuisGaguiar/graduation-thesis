@@ -1,0 +1,47 @@
+
+
+\section{Conclusions}
+
+The main goal of this work was to learn a sophisticated kick behavior for a simulated soccer robot, capable of kicking the ball towards a planned final distance given as a variable input.
+
+We tackled this problem using state-of-the-art model-free deep reinforcement learning algorithms, making possible to avoid modeling the complex dynamics involved in this problem.
+
+The approach used was based on the Deep Mimic work \cite{deep_mimic}, following a similar curriculum and reward shaping. The main DRL technique used was the Proximal Policy Optimization with clipped surrogate objective \cite{PPO}.
+
+We took the kick engine based on the Zero Moment Point (ZMP) concept, developed in the work \cite{MestradoManga}, as the base movement to build our behaviors upon. Also, we made use of the DRL framework developed in the work \cite{TGMuzio}, which integrates the OpenAI Baselines \cite{baselines} implementations with the RoboCup Soccer3D domain.
+
+First we learned to imitate the ZMP kick, using supervised learning and reinforcement learning. This was very useful to provide a starting behavior for more complex tasks.
+
+Next, we built the behavior to kick the ball as far as possible. This was useful to test the limits of the movement, and to give us a better intuition and knowledge about the limitations of the problem and simulation environment. Most of the findings in this task were also helpful in learning the following task.
+
+The final learned task was to kick the ball towards a fixed final distance. The experiments we conducted were made for the distances of $0.8m$ and $1.5m$, but could be extended for other distances. This behavior was the closest to the initially intended one.
+
+Despite not reaching the ultimate goal, we have made some significant progress in its direction, achieving some complex behaviors. The development of the variable final distance behavior is left to future works.
+
+\section{Future Work}
+
+This work could be continued in developing any complex kick behavior.
+
+The first goal would be to achieve its original ultimate purpose, by building a kick capable of reaching any desired final position within its original limits.
+
+The second goal would be to reach much far distances, and controlling the final position in a very bold range.
+
+A possible third goal could be training to kick in different orientations, expanding its dimension to include angle.
+
+Finally, a final behavior to achieve would be a complete one, including all joints orientations, time and distance to ball as its input. This behavior could be very robust and lead to very sophisticated movements.
+
+There are also some small modifications that could make this work richer, such as:
+
+\begin{itemize}
+\item Experiment further with some variations of the reward function and RL hyperparameters, in order to achieve more data-efficient solutions quicker to train.
+
+\item Develop a policy evaluation phase to adapt the value function from the Pure Mimic behavior to the new tasks.
+
+\item Train to imitate and reach the goal at the same time from scratch, in the same way that is developed in the Deep Mimic work.
+
+\item Experiment with different state-of-the-art DRL algorithms, such as TRPO and DDPG.
+
+\item Try to reach the desired position also by adjusting the ZMP kick parameters and making use of the same techniques to achieve its policy.
+\end{itemize}
+
+

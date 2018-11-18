@@ -48,6 +48,7 @@ TensorFlow is an open source software library for numerical computation using da
 TensorFlow also provides several useful tools, such as TensorBoard, which consists in a visualization dashboard very helpful for debugging and plotting.
 
 \subsection{Intel AI DevCloud}
+\label{sec:devcloud}
 
 Intel AI DevCloud is a cloud hosted hardware and software platform available to developers, researchers and startups to learn, sandbox and get started on their Artificial Intelligence Projects \cite{devcloud}. It provides access to Intel Xeon Scalable Processors, and therefore a powerful infrastructure for running optimizations and machine learning algorithms.
 
@@ -78,6 +79,7 @@ For this work, we also used \textit{RoboViz}, a publicly available visualization
 The agent in \textit{SimSpark} is a simulated version of the Nao humanoid robot, manufactured by SoftBank Robotics \cite{NaoRobot}, presenting 22 joints and therefore offering 22 degrees of freedom. At each timestep, the simulated agent communicates with the simulator using TLP connections, sending the desired velocities commands for all joints, followed by the server simulation step, which takes $\Delta t = 0.02s$. The server step process all the physical dynamics, and send back to the agent its joints positions with other informations. \cite{SimSparkEffectors}.
 
 \section{ZMP Kick Engine}
+\label{sec:ZMPkick}
 
 The ZMP Kick Engine is an algorithm that performs a complete kicking motion based on the Zero Moment Point dynamic. This engine calculates the joints positions during all the movement and feed this data to PID controllers at each joint to compute the commanded velocities actually sent to the server. In this work, we are not specifically interested in the Kick Engine itself, but it is important to understand some low level aspects of this base movement, since it has a big influence in the learned kick behavior we are interested to develop.
 
@@ -107,6 +109,7 @@ The ZMP Kick engine is fully described at \cite{MestradoManga, CaminhadaManga}, 
 
 
 \section{Metrics}
+\label{sec:metrics}
 
 When working on some reinforcement learning tasks, it is very important to previously define some metrics to assess the learning performance during the training stages. Raising this information, we can evaluate the techniques, identify the problems and consider improvements. In this work, we focused on two main metrics:
 

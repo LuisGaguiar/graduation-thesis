@@ -1,9 +1,12 @@
 
-The major contribution of this work is providing a task modeling and setup for learning humanoid soccer movements in the RoboCup Soccer3D domain using reinforcement learning frameworks. We also introduce the deep mimic approach for this class of problems and a specific curriculum to learn, as well as several implementation considerations, manually tunned and developed after a few processes iterations.
+The major contribution of this work is providing a task modeling and setup for learning humanoid  movements in the RoboCup Soccer3D domain using reinforcement learning frameworks. More specifically, we learned several variations of a kick motion, creating behaviors capable of imitating the ZMP kick, reaching a much farther position for the ball, and reaching a desired fixed final distance for the ball.
+
+
+We also introduce the deep mimic approach for this class of problems and a specific curriculum to learn, as well as several implementation considerations, manually tunned and developed after a few iterations.
 
 \section{Environment and Implementation}
 
-As previously mentioned in section \ref{chap:method}, this work used the RL algorithms implementations from the OpenAI baselines repository \cite{baselines}. More specifically, the high-quality implementation of PPO. Not implementing the DRL algorithms from scratch made it much easier to test, iterate, improve and focus on developing the agent experiments.
+As previously mentioned in Chapter \ref{chap:method}, this work used the RL algorithms implementations from the OpenAI baselines repository \cite{baselines}. More specifically, the high-quality implementation of PPO. Not implementing the DRL algorithms from scratch made it much easier to test, iterate, improve and focus on developing the agent experiments.
 
 The PPO implementation on Baselines was adapted to change the communication with the OpenAI Gym environments to communicate with the Soccer3D agent, maintaining the same function protocols.
 
@@ -31,14 +34,15 @@ This work used the Intel AI DevCloud as its main infrastructure to run all learn
 The cluster is composed by 10 computation nodes using each one a 24 cores Intel Xeon processor. Furthermore, the experiments setup exploited the parallelization feature of PPO, running up to 12 Soccer Agents per node, besides the Learning Client process, and collecting a total number of samples in the magnitude of 100 million.
 
 \section{Deep Mimic Learning}
+\label{sec:deep_mimic}
 
 The Deep Mimic approach \cite{deepmimic} established a great new paradigm in which this work was based on. It introduces a novel idea of allowing the supply of reference motions from motion capture or hand-authored animation data for style, and then generating goal-directed and physically realistic behavior from those reference motions \cite{deepmimic}.
 
-The basic approach presented for this mission consists in rewarding the agent to produce motions that resemble the reference data, as well as to achieve additional task objectives.
+The basic approach presented for this mission consists in rewarding the agent to reproduce motions that resemble the reference data, as well as to achieve additional task objectives.
 
 A control policy $\pi (a_t|s_t,g_t)$ maps the state of the character $s_t$ and a task-specific goal $g_t$ to an action $a_t$. The action distribution is gaussian, with fixed covariance and mean given by a neural network. This policy outputs the desired joints positions, which is later translated into torque commands by each joint PD controller.
 
-The overall reward is spitted into the imitation reward, given by $r_I(s_t,a_t)$, and the task-specific reward, given by $r_G(s_t,a_t)$. The final reward is therefore given by Equation \eqref{eq:deep_mimic_reward}.
+The overall reward is splitted into the imitation reward, given by $r_I(s_t,a_t)$, and the task-specific reward, given by $r_G(s_t,a_t)$. The final reward is therefore given by Equation \eqref{eq:deep_mimic_reward}.
 
 \begin{equation}
 r_t = \omega^I r_t^I + \omega^G r_t^G
@@ -50,7 +54,7 @@ The policies are trained with PPO using the clipped surrogate objective, maintai
 It is worth mentioning that this work introduces also two novel ideas which significantly increased the robustness and performance of the learning behaviors. 
 
 \begin{itemize}
-\item \textit{Reference State Initialization} (RSI) randomly selects a state in which the agent ant its reference actor begins at each episode. In this way, it makes possible to discover high reward future states without the need to learn everything until then, which can be very significant in difficult tasks like backflips.
+\item \textit{Reference State Initialization} (RSI) randomly selects a state in which the agent and its reference actor begins at each episode. In this way, it makes possible to discover high reward future states without the need to learn everything until then, which can be very significant in difficult tasks like backflips.
 
 \item \textit{Early Termination} (ET) finishes the episode when the agent reaches any fruitless condition, such as a fall or joints collision. This process discourage undesirable behaviors and the exploration of bad states, therefore increasing the learning efficiency.
 \end{itemize}
@@ -73,7 +77,7 @@ The second checkpoint to achieve was still learning to imitate the reference mov
 
 \textbf{State space:} Since the reference movement is deterministic and the commanded actions only depend of the point in time, the 1D observation space consists on the episode timestep solely, given by a multiple of the simulator unit step $0.02s$.
 
-\textbf{Action space:} We decided to restrict the action space to the joints with biggest impact in the kick distance, in order to reduce the learning cost in this task. Therefore, the 6D action space consists on the position commands of the 6 joints on the kicking leg. These position commands are sequentially fed into PID controllers on each joint, in order to generate velocity commands to the motors, which are finally sent to Simspark. It is also worth mention that the other 16 joints will be driven by the ZMP kick engine.
+\textbf{Action space:} We decided to restrict the action space to the joints with biggest impact in the kick distance, in order to reduce the learning cost for this task. Therefore, the 6D action space consists on the position commands for the 6 joints of the kicking leg. These position commands are sequentially fed into PID controllers on each joint, in order to generate velocity commands to the motors, which are finally sent to Simspark. It is also worth mention that the other 16 joints will be driven by the ZMP kick engine.
 
 \textbf{Reward signal:} The reward is given by:
 
@@ -81,7 +85,7 @@ The second checkpoint to achieve was still learning to imitate the reference mov
 r_t = -\sum_{j=1}^{6}{|q_t^j-\hat{q}_t^j|^2}
 \end{equation}
 
-Where $q_t^j$ and $\hat{q}_t^j$ represent the commanded positions to the j$th$ joint at instant $t$ from the learning agent and from the reference movement, respectively. Therefore, we basically penalize the square difference for all the 6 joints.
+Where $q_t^j$ and $\hat{q}_t^j$ represent the commanded positions to the j$th$ joint at instant $t$ from the learning agent and from the reference movement, respectively. Therefore, we basically penalize the square difference of the commands given to all 6 joints.
 
 The reference movement used was the ZMP kick, described in the previous chapter. We also used a fully-connected NN with two hidden layers, and 512 leaky-relu units each one, followed by an output layer with 6 units.
 
@@ -90,6 +94,7 @@ Besides, in order to simplify the problem in a first moment, we ran everything o
 Furthermore, the biggest achievement from this task was obtaining a policy network that can also be used as the starting point for the following learning tasks. In this way, it already provides a big learning step in the process of reaching the ultimate goal.
 
 \subsection{Farthest Final Distance Learning}
+\label{sec:far_kick_description}
 
 The following learning task consists in kicking the ball towards the longest possible distance. The purpose is testing the limits of the kick motion, and the deviation the learning process can achieve from the base movement.
 
@@ -104,24 +109,24 @@ r^I_t = \omega^p r^p_t + \omega^e r^e_t + \omega^c r^c_t
 
 The imitation component in \eqref{eq:imitation_reward} is still composed by three other factors.
 
-The pose reward $r^p_t$ is given by Equation \eqref{eq:position_imitation}, where $q_t^j$ and $\hat{q}_t^j$ represent the commanded positions to the j$th$ joint at instant $t$ from the learning agent and from the reference movement, respectively, and encourages the agent to match the joint orientations of the reference motion at each step.
+The pose reward $r^p_t$ is given by Equation \eqref{eq:position_imitation}, where $q_t^j$ and $\hat{q}_t^j$ represent the actual positions during motion of the j$th$ joint at instant $t$ from the learning agent and from the reference movement, respectively, and encourages the agent to match the joint orientations of the reference motion at each step.
 
 \begin{equation}
 r^p_t = exp \left[ -2 \left( \sum_{j=1}^{6}{|q_t^j-\hat{q}_t^j|^2} \right) \right]
 \label{eq:position_imitation}
 \end{equation}
 
-The end-effector reward $r_t^e$ is given by Equation \eqref{eq:end_effector_imitation}, where $p_t^e$ and $\hat{p}_t^e$ represent the kicking feet position from the learning agent and reference movement, respectively, and encourages the agent feet to match the positions from the reference movement.
+The end-effector reward $r_t^e$ is given by Equation \eqref{eq:end_effector_imitation}, where $p_t^e$ and $\hat{p}_t^e$ represent the kicking feet positions from the learning agent and reference movement, respectively, and encourages the agent feet to match the positions from the reference movement.
 
 \begin{equation}
-r^e_t = exp \left[ -40 \left( |p_t^e-\hat{p}_t^e|^2 \right) \right]
+r^e_t = exp \left[ -40 |p_t^e-\hat{p}_t^e|^2 \right]
 \label{eq:end_effector_imitation}
 \end{equation}
 
 At last for imitation, the center-of-mass reward $r_t^c$ is given by Equation \eqref{eq:CM_imitation}, and penalizes the deviation between the agent CM $p_t^c$ and the reference CM $\hat{p}_t^c$.
 
 \begin{equation}
-r^c_t = exp \left[ -10 \left( |p_t^c-\hat{p}_t^c|^2 \right) \right]
+r^c_t = exp \left[ -10 |p_t^c-\hat{p}_t^c|^2 \right]
 \label{eq:CM_imitation}
 \end{equation}
 
@@ -136,9 +141,35 @@ This task was very useful in obtaining a new learned behavior for the first time
 
 \subsection{Fixed Final Distance Learning}
 
-\subsection{0.8m Fixed Distance}
+The next learning task consists in kicking the ball towards a fixed final distance, hardly inputed as a constraint in the reward function.
 
-\subsection{1.5m Fixed Distance}
+Following the same approach described for the Farthest Final Distance task in the previous section, in this task we also started with the policy and value-function MLPs developed in the Pure Mimic task. In this sense, we maintain the same state and action space.
+
+The reward function follows the Deep Mimic design and is composed by a imitation component and a goal oriented component, described in \eqref{eq:deep_mimic_reward}. The imitation component has the same shape presented for the Farthest Final Distance task, introduced by Equations \eqref{eq:imitation_reward}, \eqref{eq:position_imitation}, \eqref{eq:end_effector_imitation} and \eqref{eq:CM_imitation}.
+
+The goal reward component $r^G_t$, however, introduces a new design, specifically hard coded for each fixed distance experiment.
+
+We conducted two experiments for learning to kick the ball towards the final positions of $0.8m$ and $1.5m$, however, it could be analogously replicated for other distances within the limits of the maximum distance reached in the previous task.
+
+The goal reward function for the fixed positions of $0.8m$ and $1.5m$ experiments are given by Equations \eqref{eq:08_fixed_reward} and \eqref{eq:15_fixed_reward}, respectively.
+
+\begin{equation}
+10^4 exp \left( -10 |\text{ballFinalPos}-0.8| \right)
+\label{eq:08_fixed_reward}
+\end{equation}
+
+\begin{equation}
+10^4 exp \left( -10 |\text{ballFinalPos}-1.5| \right)
+\label{eq:15_fixed_reward}
+\end{equation}
+
+The idea is to provide a big encouragement for reaching a final distance close to the desired target. This reward component is usually much bigger than the imitation one, in order to allow some significant deviations from the base movement capable of making possible to reach the goal.
+
+Different than the Farthest Final Distance task, this goal reward component is only given at the end of the episode, after the ball stops, since we wanted to encourage precision rather than speed. This approach makes the reward function very sparse, introducing some challenges in the process.
+
+The experiments implementation details, as well as the reward weights and hyperparameters will be presented in the next chapter.
+
+
 
 
 
