@@ -6,24 +6,24 @@ The previous chapter described a summarized background for RL concepts and class
 
 \section{Neural Networks}
 
-Neural Networks are mathematical structures that receive inputs and calculate outputs. In this sense, can be described as a mathematical technique to fit very complex and non-linear functions.
+Neural Networks are mathematical structures that receive inputs and calculate outputs. In this sense, they can be described as a mathematical technique to fit very complex and non-linear functions.
 
-Also known as Multi Layer Perceptron (MLP), it has a multiple layer architecture, where each layer is composed by several nodes called neurons. These nodes, in an analogy to human brain neurons, are still mathematical units which receives some numerical inputs and outputs one single number. All of these mathematical units make use of a specific set of parameters.
+Also known as Multi Layer Perceptron (MLP), a neural network has a multiple layer architecture, where each layer is composed by several nodes called neurons \cite{neuralnetworks}. These nodes, in an analogy to human brain neurons, are still mathematical units which receives some numerical inputs and outputs one single number. All of these mathematical units make use of a specific set of parameters.
 
 \subsection{Representation}
 
 Regarding the representations and notations used for NN, we can describe its basic elements consisting of inputs, outputs, parameters and activate functions.
 
-For each one of the $m$ training examples, we define the input $x^{(i)}$, corresponding to the $i$th example, as a n-dimensional feature column vector, so with dimensions $(n,1)$. It is also called the input layer, with $0$ index, and also represented as $a^{[0](i)}$ with dimensions $(n^{[0]},1)$. Moreover, we also define the final expected output for each training example, given by the vector $y^{(i)}$ with dimensions $(n_F,1)$.
+For each one of the $m$ training examples, we define the input $x^{(i)}$, corresponding to the $i$-th example, as a $n$-dimensional feature column vector, so with dimensions $(n,1)$. It is also called the input layer, with $0$ index, and also represented as $a^{[0](i)}$ with dimensions $(n^{[0]},1)$. Moreover, we also define the final expected output for each training example, given by the vector $y^{(i)}$ with dimensions $(n_F,1)$.
 
 For each layer $l$, also called hidden-layers, with $1<l<L$ in a total of $L$ layers, we have a specific structure:
 \begin{itemize}
 
 \item
-	The layer $l$ has a total of $n^{[l]}$ hidden units, each $j$th unit receives all the inputs $a^{[l-1](i)}$ from layer $l-1$, and output a scalar $a^{[l](i)}_j$. The total output of the layer is then composed by all hidden units outputs, given by the vector $a^{[l](i)}$, with dimensions $(n^{[l]},1)$.
+	The layer $l$ has a total of $n^{[l]}$ hidden units, each $j$-th unit receives all the inputs $a^{[l-1](i)}$ from layer $l-1$, and output a scalar $a^{[l](i)}_j$. The total output of the layer is then composed by all hidden units outputs, given by the vector $a^{[l](i)}$, with dimensions $(n^{[l]},1)$.
 	
 \item
-	Each $j$th hidden unit has a row-vector linear parameter $w^{[l]}_j$ with dimensions $(1,n^{[l-1]})$. The total linear parameters $W^{[l]}$ of the layer is given by all hidden units parameters in a $(n^{[l]},n^{[l-1]})$ matrix.
+	Each $j$-th hidden unit has a row-vector linear parameter $w^{[l]}_j$ with dimensions $(1,n^{[l-1]})$. The total linear parameters $W^{[l]}$ of the layer is given by all hidden units parameters in a $(n^{[l]},n^{[l-1]})$ matrix.
 	
 \item
 	Each $j$th hidden unit also has a scalar bias-parameter given by $b^{[l]}_j$, and all units bias-parameters compose the layer bias vector $b^{[l]}$, with dimensions $(n^{[l]},1)$
@@ -38,7 +38,7 @@ sigmoid(z) = \frac{1}{1+e^{-z}} \text{ ; } tanh(z) = \frac{e^z - e^{-z}}{e^z + e
 
 \end{itemize}
 
-All these elements of the layer are related through the update Equations \eqref{eq:linear_update_nn} and \eqref{eq:non_linear_update_nn}, which, for each layer $l$, receives the previous layer output $a^{[l-1](i)}$ and generates the current layer output $a^{[l](i)}$. The Figure \ref{fig:nn_basic_architecture} illustrates this representation for a shallow one hidden-layer NN.
+All these elements of the layer are related through the update equations \eqref{eq:linear_update_nn} and \eqref{eq:non_linear_update_nn}, which, for each layer $l$, receives the previous layer output $a^{[l-1](i)}$ and generates the current layer output $a^{[l](i)}$. The Figure \ref{fig:nn_basic_architecture} illustrates this representation for a shallow one hidden-layer NN.
 
 \begin{align}
 z^{[l](i)} = W^{[l]}a^{[l-1](i)} + b^{[l]}
@@ -125,7 +125,7 @@ A^{[l](i)} = g^{[l]}(Z^{[l]})
 
 \subsection{Forward Propagation}
 
-Given all the definitions of the basic structures of a NN and the main calculations involved, we can derive the algorithm for the forward propagation. The forward Propagation algorithm consists in: given all the dataset composed by the matrix $X$, compute all layers outputs $A^{[l]}$ and $Z^{[l]}$, including the final layer and the final output of the NN, which are $A^{[L]}$ and $Z^{[L]}$.
+Given all the definitions of the basic structures of a NN and the main calculations involved, we can derive the algorithm for the forward propagation \cite{neuralnetworks}. The forward Propagation algorithm consists in: given all the dataset composed by the matrix $X$, compute all layers outputs $A^{[l]}$ and $Z^{[l]}$, including the final layer and the final output of the NN, which are $A^{[L]}$ and $Z^{[L]}$.
 
 \begin{algorithm}[H]
     \DontPrintSemicolon
@@ -154,7 +154,7 @@ The ultimate goal in Supervised Learning is minimizing the cost function. For th
 \label{eq:partial_derivatives_notation_final}
 \end{align}
 
-Finding a closed expression for each partial derivative would be a massive analytical work, hence an elegant solution is to employ a iterative algorithm called Backward Propagation, or Backpropagation. The main idea involved in this algorithm is computing each layer output derivative from the next layer output derivative $dA^{[l]}$ and the cached data $A^{[l-1]}$ and $Z^{[l]}$ from the forward propagation algorithm. The Backpropagation algorithm is then given in Algorithm \ref{algo:backward_propagation}.
+Finding a closed expression for each partial derivative would be a massive analytical work, hence an elegant solution is to employ a iterative algorithm called Backward Propagation, or Backpropagation \cite{neuralnetworks, DeepLearningBook}. The main idea involved in this algorithm is computing each layer output derivative from the next layer output derivative $dA^{[l]}$ and the cached data $A^{[l-1]}$ and $Z^{[l]}$ from the forward propagation algorithm. The Backpropagation algorithm is then given in Algorithm \ref{algo:backward_propagation}.
 
 \begin{algorithm}[H]
     \DontPrintSemicolon
@@ -195,7 +195,7 @@ Finally, by making use of the partial derivatives already computed, we can emplo
 
 \section{Trust Region Policy Optimization}
 
-Given all the RL and NN background necessary, we will introduce two state of the art techniques combining both fields.
+Given all the RL and NN background necessary, we will introduce two state-of-the-art techniques combining both fields.
 
 The intersection relies on the fact that we need complex non-linear functions to efficiently estimate policies and value-functions. Therefore, the most common used structure for this approximation is MLP. Aiming also to fit stochastic policies distributions in continuous action spaces, we define our policy $\pi_{\theta}(a|s)$ by a normal distribution $\mathcal{N}(\mu,\sigma)$, where the mean $\mu$ and log standard deviation $\sigma$ are outputs of a neural network \cite{TRPO}.
 
@@ -273,7 +273,7 @@ clip(x,min,max) = \begin{cases}
 \label{eq:clip_function}
 \end{equation}
 
-PPO does not need complex conjugate gradient techniques, and can be solved with classical stochastic gradient descents. Besides, it has displayed the best performance on continuous control tasks, even compared to TRPO, it also allows parallel implementations and it is very data efficient.
+PPO does not need complex conjugate gradient techniques, and can be solved with classical stochastic gradient descents. Besides, it has displayed the best performance on continuous control tasks, even compared to TRPO. It also allows parallel implementations and it is very data efficient.
 
 %ease of implementation, sample complexity, and ease of tuning
 %compute an update at each step that minimizes the cost function while ensuring the deviation from the previous policy is relatively small.

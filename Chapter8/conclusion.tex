@@ -6,7 +6,7 @@ The main goal of this work was to learn a sophisticated kick behavior for a simu
 
 We tackled this problem using state-of-the-art model-free deep reinforcement learning algorithms, making possible to avoid modeling the complex dynamics involved in this problem.
 
-The approach used was based on the Deep Mimic work \cite{deep_mimic}, following a similar curriculum and reward shaping. The main DRL technique used was the Proximal Policy Optimization with clipped surrogate objective \cite{PPO}.
+The approach used was based on the Deep Mimic work \cite{deepmimic}, following a similar curriculum and reward shaping. The main DRL technique used was the Proximal Policy Optimization with clipped surrogate objective \cite{PPO}.
 
 We took the kick engine based on the Zero Moment Point (ZMP) concept, developed in the work \cite{MestradoManga}, as the base movement to build our behaviors upon. Also, we made use of the DRL framework developed in the work \cite{TGMuzio}, which integrates the OpenAI Baselines \cite{baselines} implementations with the RoboCup Soccer3D domain.
 
@@ -16,7 +16,7 @@ Next, we built the behavior to kick the ball as far as possible. This was useful
 
 The final learned task was to kick the ball towards a fixed final distance. The experiments we conducted were made for the distances of $0.8m$ and $1.5m$, but could be extended for other distances. This behavior was the closest to the initially intended one.
 
-Despite not reaching the ultimate goal, we have made some significant progress in its direction, achieving some complex behaviors. The development of the variable final distance behavior is left to future works.
+Despite not reaching the ultimate goal, we have made some significant progress in its direction, achieving some complex behaviors. The development of the variable final distance behavior is left for future works.
 
 \section{Future Work}
 
@@ -28,7 +28,7 @@ The second goal would be to reach much far distances, and controlling the final 
 
 A possible third goal could be training to kick in different orientations, expanding its dimension to include angle.
 
-Finally, a final behavior to achieve would be a complete one, including all joints orientations, time and distance to ball as its input. This behavior could be very robust and lead to very sophisticated movements.
+Finally, a final behavior to achieve would be a complete one with feedback, including all joints orientations, time and distance to ball as its input. This behavior could be very robust and lead to very sophisticated movements.
 
 There are also some small modifications that could make this work richer, such as:
 
@@ -40,8 +40,6 @@ There are also some small modifications that could make this work richer, such a
 \item Train to imitate and reach the goal at the same time from scratch, in the same way that is developed in the Deep Mimic work.
 
 \item Experiment with different state-of-the-art DRL algorithms, such as TRPO and DDPG.
-
-\item Try to reach the desired position also by adjusting the ZMP kick parameters and making use of the same techniques to achieve its policy.
 \end{itemize}
 
 

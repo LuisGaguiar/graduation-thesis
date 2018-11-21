@@ -40,9 +40,9 @@ The Deep Mimic approach \cite{deepmimic} established a great new paradigm in whi
 
 The basic approach presented for this mission consists in rewarding the agent to reproduce motions that resemble the reference data, as well as to achieve additional task objectives.
 
-A control policy $\pi (a_t|s_t,g_t)$ maps the state of the character $s_t$ and a task-specific goal $g_t$ to an action $a_t$. The action distribution is gaussian, with fixed covariance and mean given by a neural network. This policy outputs the desired joints positions, which is later translated into torque commands by each joint PD controller.
+In the original work, a control policy $\pi (a_t|s_t,g_t)$ maps the state of the character $s_t$ and a task-specific goal $g_t$ to an action $a_t$. The action distribution is gaussian, with fixed covariance and mean given by a neural network. This policy outputs the desired joints positions, which is later translated into torque commands by each joint PD controller.
 
-The overall reward is splitted into the imitation reward, given by $r_I(s_t,a_t)$, and the task-specific reward, given by $r_G(s_t,a_t)$. The final reward is therefore given by Equation \eqref{eq:deep_mimic_reward}.
+The overall reward is splitted into the imitation reward, given by $r_I(s_t,a_t)$, and the task-specific reward, given by $r_G(s_t,a_t)$, with corresponding weights given by $\omega^I$ and $\omega^G$, respectively. The final reward is therefore given by Equation \eqref{eq:deep_mimic_reward}.
 
 \begin{equation}
 r_t = \omega^I r_t^I + \omega^G r_t^G
@@ -65,9 +65,9 @@ In this section, we describe the learning experiments conducted in this work. Th
 
 \subsection{Supervised Kick Learning}
 
-The first tentative of learning a kick behavior was basically learning to imitate the reference kick movement using supervised learning techniques. Therefore, for this experiment, there was no need to use the RL setup or to run a learning agent.
+The first trial of learning a kick behavior was basically learning to imitate the reference kick movement using supervised learning techniques. Therefore, for this experiment, there was no need to use the RL setup or to run a learning agent.
 
-Once the reference movement is deterministic, the neural network used has only one input given by time itself. Two fully-connected hidden layers follow, composed by 512 leaky-relu hidden units each one. Finally, we have a output layer given by 22 linear units, providing position commands for all 22 agent joints.
+Once the reference movement is deterministic, the neural network used has only one input given by time itself. Two fully-connected hidden layers follow, composed by 512 LeakyRelu hidden units each one. Finally, we have a output layer given by 22 linear units, providing position commands for all 22 agent joints.
 
 %For training, we used Adam optimization, applying 5 consecutive optimization cycles with 5000 epochs each one and decreasing the learning rate linearly, applying $10e^{-4}$, $8e^{-4}$, $6e^{-4}$, $4e^{-4}$, $2e^{-4}$ respectively for each cycle.
 
@@ -85,13 +85,15 @@ The second checkpoint to achieve was still learning to imitate the reference mov
 r_t = -\sum_{j=1}^{6}{|q_t^j-\hat{q}_t^j|^2}
 \end{equation}
 
-Where $q_t^j$ and $\hat{q}_t^j$ represent the commanded positions to the j$th$ joint at instant $t$ from the learning agent and from the reference movement, respectively. Therefore, we basically penalize the square difference of the commands given to all 6 joints.
+Where $q_t^j$ and $\hat{q}_t^j$ represent the commanded positions to the $j$-$th$ joint at instant $t$ from the learning agent and from the reference movement, respectively. Therefore, we basically penalize the square difference of the commands given to all 6 joints.
 
-The reference movement used was the ZMP kick, described in the previous chapter. We also used a fully-connected NN with two hidden layers, and 512 leaky-relu units each one, followed by an output layer with 6 units.
+The reference movement used was the ZMP kick, described in the previous chapter. We also used a fully-connected NN with two hidden layers, and 512 LeakyRelu units each one, followed by an output layer with 6 units.
 
 Besides, in order to simplify the problem in a first moment, we ran everything offline, by comparing the network output with the reference data in a file, without the need to initialize the simulated agent. In this way, we can avoid the physical restrictions involved, and some limitations such as the robot falls, and therefore speeding up the learning process.
 
 Furthermore, the biggest achievement from this task was obtaining a policy network that can also be used as the starting point for the following learning tasks. In this way, it already provides a big learning step in the process of reaching the ultimate goal.
+
+We also conducted successful experiments which learned to imitate for all 22 joints, but we used the 6D policy in the next experiments, in order to simplify the learning process for more complex tasks.
 
 \subsection{Farthest Final Distance Learning}
 \label{sec:far_kick_description}
@@ -109,31 +111,31 @@ r^I_t = \omega^p r^p_t + \omega^e r^e_t + \omega^c r^c_t
 
 The imitation component in \eqref{eq:imitation_reward} is still composed by three other factors.
 
-The pose reward $r^p_t$ is given by Equation \eqref{eq:position_imitation}, where $q_t^j$ and $\hat{q}_t^j$ represent the actual positions during motion of the j$th$ joint at instant $t$ from the learning agent and from the reference movement, respectively, and encourages the agent to match the joint orientations of the reference motion at each step.
+The pose reward $r^p_t$ is given by Equation \eqref{eq:position_imitation}, where $q_t^j$ and $\hat{q}_t^j$ represent the actual positions during motion of the $j$-$th$ joint at instant $t$ from the learning agent and from the reference movement, respectively, and encourages the agent to match the joint orientation of the reference motion at each step. In \eqref{eq:position_imitation} we sum up to $n$ joints, but we will actually use $n=6$, corresponding to the 6 joints of the kicking leg.
 
 \begin{equation}
-r^p_t = exp \left[ -2 \left( \sum_{j=1}^{6}{|q_t^j-\hat{q}_t^j|^2} \right) \right]
+r^p_t = \exp{ \left[ -2 \left( \sum_{j=1}^{n}{|q_t^j-\hat{q}_t^j|^2} \right) \right] }
 \label{eq:position_imitation}
 \end{equation}
 
 The end-effector reward $r_t^e$ is given by Equation \eqref{eq:end_effector_imitation}, where $p_t^e$ and $\hat{p}_t^e$ represent the kicking feet positions from the learning agent and reference movement, respectively, and encourages the agent feet to match the positions from the reference movement.
 
 \begin{equation}
-r^e_t = exp \left[ -40 |p_t^e-\hat{p}_t^e|^2 \right]
+r^e_t = \exp{ \left[ -40 |p_t^e-\hat{p}_t^e|^2 \right]}
 \label{eq:end_effector_imitation}
 \end{equation}
 
-At last for imitation, the center-of-mass reward $r_t^c$ is given by Equation \eqref{eq:CM_imitation}, and penalizes the deviation between the agent CM $p_t^c$ and the reference CM $\hat{p}_t^c$.
+At last for imitation, the center-of-mass reward $r_t^c$ is given by Equation \eqref{eq:CM_imitation}, and penalizes the deviation between the agent CoM $p_t^c$ and the reference CoM $\hat{p}_t^c$.
 
 \begin{equation}
-r^c_t = exp \left[ -10 |p_t^c-\hat{p}_t^c|^2 \right]
+r^c_t = \exp{ \left[ -10 |p_t^c-\hat{p}_t^c|^2 \right]}
 \label{eq:CM_imitation}
 \end{equation}
 
 Finally, we have the goal reward component $r_t^G$ described in Equation \eqref{eq:goal_reward_farthest}. This expression basically encourages the longest distance between ball's final and initial positions, giving a big exponential reward. It is worth to notice that this reward signal is given at each episode timestep, encouraging also the agent to kick the ball as fast as possible.
 
 \begin{equation}
-r_t^G = exp \left[ 7 (\text{ballPos - ballInitPos}) \right]
+r_t^G = \exp{ \left[ 7 (\text{ballPos - ballInitPos}) \right]}
 \label{eq:goal_reward_farthest}
 \end{equation}
 

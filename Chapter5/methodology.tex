@@ -5,13 +5,13 @@ This chapter will describe all the development tools and infrastructure used. Be
 
 \subsection{C++}
 
-C++ is a general purpose programming language that is highly efficient and flexible. It is famous for introducing a oriented-based paradigm with high performance processing, by allowing low-level memory manipulations and a machine compiled syntax. \cite{C++}
+C++ is a general purpose programming language that is highly efficient and flexible. It is famous for introducing a oriented-based paradigm with high performance processing, by allowing low-level memory manipulations and a machine compiled syntax \cite{C++}.
 
 The ITAndroids Soccer3D base code was already built in C++, and therefore any additional work made which interacts with the soccer simulation server was also developed in C++ in order to integrate seamlessly with the codebase. For this work, we used version 14, which is one of the most recent and stable standardized version.
 
 \subsection{Python}
 
-Python is an interpreted general purpose high-level programming language \cite{Python}. It has a easy-to-read syntax closely resembling pseudo-code, which makes easier and quicker to prototype new ideas and develop. For this reason, Python was widely chosen as one of the most used programming languages in the deep learning community, and many of the AI frameworks and reference algorithms we used was developed in or have a great integration with Python.
+Python is an interpreted general purpose high-level programming language \cite{Python}. It has a easy-to-read syntax closely resembling pseudo-code, which makes easier and quicker to prototype new ideas. For this reason, Python was widely chosen as one of the most used programming languages in the deep learning community, and many of the AI frameworks and reference algorithms we used was developed in or have a great integration with Python.
 
 For this work, we chose version 3.5, since it is one of the most recent and stable versions, and also is used by other frameworks.
 
@@ -39,7 +39,7 @@ Besides the OpenAI Baselines, we also used the OpenAI Gym, which consists of a t
     \label{fig:openai_envs}
 \end{figure}
 
-For these reasons, we made use of the PPO implementation from OpenAI Gym, and adapt the Gym environment to work for the Soccer3D Simulation. This process is further described in the next chapter.
+For these reasons, we made use of the PPO implementation from OpenAI Gym, and adapted the Gym environment to work for the Soccer3D Simulation. This process is further described in the next chapter.
 
 \subsection{Tensorflow}
 
@@ -76,27 +76,30 @@ For this work, we also used \textit{RoboViz}, a publicly available visualization
     \label{fig:roboviz_game}
 \end{figure}
 
-The agent in \textit{SimSpark} is a simulated version of the Nao humanoid robot, manufactured by SoftBank Robotics \cite{NaoRobot}, presenting 22 joints and therefore offering 22 degrees of freedom. At each timestep, the simulated agent communicates with the simulator using TLP connections, sending the desired velocities commands for all joints, followed by the server simulation step, which takes $\Delta t = 0.02s$. The server step process all the physical dynamics, and send back to the agent its joints positions with other informations. \cite{SimSparkEffectors}.
+The agent in \textit{SimSpark} is a simulated version of the Nao humanoid robot, manufactured by SoftBank Robotics \cite{NaoRobot}, presenting 22 joints and therefore offering 22 degrees of freedom. At each timestep, the simulated agent communicates with the simulator using TCP connections, sending the desired velocities commands for all joints, followed by the server simulation step, which takes $\Delta t = 0.02s$. The server step process all the physical dynamics, and send back to the agent its joints positions with other informations. \cite{SimSparkEffectors}.
 
 \section{ZMP Kick Engine}
 \label{sec:ZMPkick}
 
 The ZMP Kick Engine is an algorithm that performs a complete kicking motion based on the Zero Moment Point dynamic. This engine calculates the joints positions during all the movement and feed this data to PID controllers at each joint to compute the commanded velocities actually sent to the server. In this work, we are not specifically interested in the Kick Engine itself, but it is important to understand some low level aspects of this base movement, since it has a big influence in the learned kick behavior we are interested to develop.
 
-The Zero Moment Point (ZMP) is a popular concept in the humanoid literature \cite{ZMP}, and can be thought as the dynamic version of the center of mass (CoM) due to the following stability criterion: a biped is dynamically stable at a given time instant if the ZMP is inside the support polygon, which consists of a convex hull of all contact points on the ground \cite{ZMP}. Moreover, the engine translates the ZMP position control into joints positions commands by approximating the robot dynamics using the Linear Inverted Pendulum  Model \cite{Kajita}.
+The Zero Moment Point (ZMP) is a popular concept in the humanoid literature \cite{ZMP}, and can be thought as the dynamic version of the center of mass (CoM) due to the following stability criterion: a biped is dynamically stable at a given time instant if the ZMP is inside the support polygon, which consists of a convex hull of all contact points on the ground \cite{ZMP}. Moreover, by using the ZMP concept and the Linear Inverted Pendulum Model \cite{Kajita} to approximate the robot dynamics, the engine analytically computes a CoM trajectory which keeps the robot dynamically stable during the kick movement. Finally, this CoM trajectory is translated into joint positions by employing Inverse Kinematics.
 
-The ZMP Kick engine is fully described at \cite{MestradoManga, CaminhadaManga}, but can be briefly summarized by its 5 phases enumerated below. Figure \ref{fig:kicking_phases} illustrates all these 5 steps.
+
+% Moreover, the engine translates the ZMP position control into joints positions commands by approximating the robot dynamics using the Linear Inverted Pendulum  Model \cite{Kajita}.
+
+The ZMP Kick engine is fully described at \cite{MestradoManga}, but can be briefly summarized by its 5 phases enumerated below. Figure \ref{fig:kicking_phases} illustrates all these 5 steps.
 
 \begin{itemize}
 \item Phase A: the robot moves the ZMP to the center of the support foot to allow the kicking foot to be taken off the ground without the robot losing balance.
 
-\item Phase B: The kicking foot is moved backwards at the same time that is taken off the ground. Therefore, preparing to kick the ball.
+\item Phase B: the kicking foot is moved backwards at the same time that is taken off the ground. Therefore, preparing to kick the ball.
 
-\item Phase C: The robot kicks the ball, performing a trajectory for the kicking foot with a horizontal continuous speed.
+\item Phase C: the robot kicks the ball, performing a trajectory for the kicking foot with a horizontal continuous speed.
 
-\item Phase D: In this phase, the kicking foot should do the inverse that was done in Phase B, moving the foot from the air to the ground.
+\item Phase D: in this phase, the kicking foot should do the inverse that was done in Phase B, moving the foot from the air to the ground.
 
-\item Phase E: The robot finally goes back to the stand position, moving the ZMP to the torso projection on the ground.
+\item Phase E: the robot finally goes back to the stand position, moving the ZMP to the torso projection on the ground.
 
 \end{itemize}
 

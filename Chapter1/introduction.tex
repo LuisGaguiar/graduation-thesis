@@ -8,7 +8,7 @@ In the last decades, the advances in computers architecture and computer science
 
 Besides, most recently, the cutting edge achievements in AI have shown algorithms capable of overcoming top human intelligence in difficult problems. In 2015, Google DeepMind created an AI that learned how to play 49 Atari games using the same learning algorithm (including the same hyper parameters), using as the input only the pixels from the screen. The algorithm, called Deep Q-Learning \cite{RLNature2015}, was a breakthrough achievement in the mission of accomplishing a general purpose machine learning agent in a wide variety of games.
 
-In the same year, DeepMind left another big mark in the human history. A computer program called AlphaGo defeated Lee Sedol, the best human Go player, for the first time. Go consists of a very complex board game, with more than $10^{170}$ configurations, and represents one of the biggest challenges to human intelligence and an unconceivable problem to a computer until then. Going even further, in 2017, \cite{AlphaGoZero} introduced AlphaGo Zero, an evolution of the previous version, capable of leaning how to play without any outside data from human games, but just playing with itself. Figure \ref{fig:deepmind_examples} illustrates these successful examples.
+In the same year, DeepMind left another big mark in the human history. A computer program called AlphaGo defeated Lee Sedol, the best human Go player, for the first time \cite{Silver_2016}. Go consists of a very complex board game, with more than $10^{170}$ configurations, and represents one of the biggest challenges to human intelligence and an unconceivable problem to a computer until then. Going even further, in 2017, \citen{AlphaGoZero} introduced AlphaGo Zero, an evolution of the previous version, capable of leaning how to play without any outside data from human games, but just playing with itself. Figure \ref{fig:deepmind_examples} illustrates these successful examples.
 
 \begin{figure}[ht]
   	\centering
@@ -38,9 +38,9 @@ In the same year, DeepMind left another big mark in the human history. A compute
 
 %Another big field in Computer Science which has been receiving great attention of the research community is mobile robotics. Robotics can address state of the art challenges in different domains, such as Electronics Engineering, Mechanical Engineering, Control Theory and, of course, Machine Learning.
 
-Another big field in Computer Science is mobile robotics, which plays a big role in the future of the industry and part of the forefront of academic research recently. Robotics can address state of the art challenges in different domains, such as Electronics Engineering, Mechanical Engineering, Control Theory and, of course, Machine Learning.
+Another big field in Computer Science is mobile robotics, which plays a big role in the future of the industry and part of the forefront of academic research recently. Robotics can address state-of-the-art challenges in different domains, such as Electronics Engineering, Mechanical Engineering, Control Theory and, of course, Machine Learning.
 
-AI finds in Robotics several applications, as computer vision, path planning and even motion control, and in this last one we can find one of its biggest challenges. In Atari and board games we can easily define a goal, win, but how can we define the agility and flexibility of a walk or a jump movement? In this sense, several works have been conducted in the problem of trying to reproduce human movements in humanoid robotics agents, and more specifically, in a simulated scenario.
+AI finds in Robotics several applications, as computer vision, path planning and even motion control, and in this last one we can find one of its biggest challenges. In Atari and board games we can easily define a goal, win, but how can we define the agility and flexibility of a walk or a jump movement? In this sense, several works have been conducted in the problem of trying to reproduce human movements in humanoid robotics agents, and more especifically, in a simulated scenario.
 
 \begin{figure}[ht]
   	\centering
@@ -65,9 +65,11 @@ AI finds in Robotics several applications, as computer vision, path planning and
 
 % robocup
 
-One of the biggest initiatives of the research community to foster the study of robotics is RoboCup. RoboCup established itself as one of the main international robotics competition in the world, and also organizes a scientific conference to share the latest works in the field. It pushes state-of-the-art research in robotics by maintaining different technical challenges, among them the most famous are making robots play soccer, with the mission of developing a humanoid robot team capable of winning the champion of FIFA World Cup in 2050.
+One of the biggest initiatives of the research community to foster the study of robotics is RoboCup \cite{robocup}. RoboCup established itself as one of the main international robotics competition in the world, and also organizes a scientific conference to share the latest works in the field. It pushes state-of-the-art research in robotics by maintaining different technical challenges, among them the most famous are making robots play soccer, with the mission of developing a humanoid robot team capable of winning the champion of FIFA World Cup in 2050.
 
 One RoboCup's particular league is the RoboCup 3D Soccer Simulation League, consisting of a soccer match between two teams, each one composed by up to 11 simulated NAO robots from Aldebaran Robotics. This league addresses both high level and low level robotics challenges, like path planning and locomotion, and greatly helped improving our understanding of human movements like walking and kicking the ball.
+
+A great challenge at the RoboCUp 3D Soccer Simulation League is passing the ball between agents. This feature could make room to the development of cooperative strategies between players, and none of the existing teams are effectively capable of this action nowadays. For this reason, controlling the final position for the ball during kicking would make a big impact in the game.
 
 \begin{figure}[ht]
   	\centering
@@ -87,11 +89,11 @@ One RoboCup's particular league is the RoboCup 3D Soccer Simulation League, cons
 
 \section{Problem Statement}
 
-Inspired by the RoboCup 3D Soccer Simulation (Soccer3D or SS3D) league, this dissertation's objective is to learn a low level soccer behavior for simulated humanoid robots, more specifically, the behavior of kicking the ball towards a planned final distance from the agent. In this sense, the algorithm should input the current agent state, including its joints positions and distance to the ball, and output sequential controls for each robot's joint.
+Inspired by the RoboCup 3D Soccer Simulation (Soccer3D or SS3D) league, this work's objective is to learn a low level soccer behavior for simulated humanoid robots, more especifically, the behavior of kicking the ball towards a planned final distance from the agent. In this sense, the algorithm should input the current agent state, including its joints positions and distance to the ball, and output sequential controls for each robot's joint.
 
 \section{Approach}
 
-Instead of employing a deterministic and off-line built single movement, called Keyframe movement, we intend to use a model-free deep reinforcement learning based approach that tries to learn the desired behavior by interacting with an environment (the simulation server) and receiving rewards depending on which actions it chooses.
+Instead of employing a deterministic and off-line built single movement, called Keyframe movement, we intend to use a model-free deep reinforcement learning based approach that tries to learn the desired behavior by interacting with an environment (the simulation server) and receiving rewards depending on which actions the agent has selected.
 The chosen strategy for this will be first learning a behavior that imitates the current kick movement, as described in the work \cite{deepmimic}, and then improving this behavior by reinforcement learning, targeting the desired position given as an input to the policy function.
 % PERGUNTAR MELHOR PRO MANGA
 
@@ -103,7 +105,7 @@ After these works, \citen{REINFORCE} created a new paradigm presenting the REINF
 
 Another recent breakthrough in the RL field was given by Deep Neural Networks, making possible to escalate the classical algorithms to high dimensional problems. This process was marked by the incredible results of the Deep Q-Networks (DQN) algorithm \cite{RLNature2015}. This technique was able to learn 49 Atari games directly from raw pixels of the screen. It introduces the idea of modeling the action-value function by a neural network, and handles the inherently instability problem from value function approximation by introducing also two techniques: Experience Replay \cite{ReplayBuffer} and Target Networks \cite{RLNature2015}.
 
-Meanwhile, some recent works started to address humanoid movements in the RL field. However, the main problem which comes with that endeavor is that simple rewards functions or naively selected ones, such as the score for the games problems, can lead to results that do not match the expectations. This is the common case in continuous control tasks, like locomotion. In this sense, \cite{deepmind1} proposed that rich and robust behaviors can emerge from simple reward functions, if the environment itself contains sufficient richness and diversity. This work introduces scenarios with a lot of obstacles and varying levels of difficulty, which are presented to the agent as an implicit curriculum, making possible to overcome increasingly hard challenges. A similar idea was also introduced by \cite{BengioCurrLearning}.
+Meanwhile, some recent works started to address humanoid movements in the RL field. However, the main problem which comes with that endeavor is that simple rewards functions or naively selected ones, such as the score for the games problems, can lead to results that do not match the expectations. This is the common case in continuous control tasks, like locomotion. In this sense, \citen{deepmind1} proposed that rich and robust behaviors can emerge from simple reward functions, if the environment itself contains sufficient richness and diversity. This work introduces scenarios with a lot of obstacles and varying levels of difficulty, which are presented to the agent as an implicit curriculum, making possible to overcome increasingly hard challenges. A similar idea was also introduced by \cite{BengioCurrLearning}.
 
 Other DeepMind's papers introduced methods to learn to imitate human movements, like \cite{deepmind2} and \cite{deepmind3}, which combines supervised learning and Generative Adversarial Imitation Learning (GAIL) \cite{gail}, in a way that accentuates their individual strengths and address their limitations.
 
@@ -111,15 +113,15 @@ Another recent state-of-the-art work in imitation learning is \cite{deepmimic}. 
 
 The most famous work that addresses the specific mission of kicking the ball towards a planned final distance from the agent in the Soccer3D environment is \cite{abbas}. In this work, the authors used a policy search approach to determine the optimal parameters for the kicking behavior policy $\pi(\theta | s)$, proposing the use of contextual relative entropy policy search with covariance matrix adaptation (CREPS-CMA) algorithm for this task.
 
-However, we can see some limitations of this work that are possible to tackle. In \cite{abbas}, the authors still make use of a Keyframe based movement, and the policy $\pi(\theta | s)$ only outputs the initial and final frame position given the desired distance $s$. We propose a neural network based policy which inputs and outputs all the joints positions in run time, performing a closed loop behavior. Besides, there are more recent and cutting-edge RL algorithms that can be used to learn this task, such as DDPG, TRPO and PPO. Also, by making use of the approach described in \cite{deepmimic}, it is possible to overcome the initial challenge of learning a basic but complete behavior at first.
+However, we can see some limitations of this work that are possible to tackle. In \cite{abbas}, the authors still make use of a Keyframe based movement, and the policy $\pi(\theta | s)$ only outputs the initial and final frame position given the desired distance $s$. We propose a neural network based policy which inputs and outputs all the joints positions in run time, in this way, it could represent more sophisticated non-linear movements, capable of achieving more complex tasks. Besides, there are more recent and cutting-edge RL algorithms that can be used to learn this task, such as DDPG, TRPO and PPO. Also, by making use of the approach described in \cite{deepmimic}, it is possible to overcome the initial challenge of learning a basic but complete behavior at first.
 
 At last, we must cite the work \cite{TGMuzio}, which is one of the first works covering deep reinforcement learning and the SS3D, with similar tasks regarding humanoid locomotion. More specifically, this work handles the problem of developing a behavior for dribbling the ball against a single opponent, and provide successful solutions using DDPG, TRPO and PPO.
 
 \section{Contributions}
 
-This work's major contribution is applying recent deep reinforcement learning (DRL) algorithms in the task of learning a complete behavior to kick a ball towards a planned final distance from the agent in the Soccer3D environment domain. To the best of our knowledge, this work is the first that makes use of a DRL approach to develop a complete soccer behavior for this specific task.
+This work's major contribution is applying recent deep reinforcement learning (DRL) algorithms in the task of learning a complete behavior to kick a ball towards a planned final distance from the agent in the Soccer3D environment domain. To the best of our knowledge, this work is the first that makes use of a DRL approach to develop a complete soccer behavior for this specific task. Moreover, this achievement makes room to developing cooperative strategies based on passing the ball among players.
 
-\section{Outline of this Dissertation}
+\section{Outline of this Work}
 
 This dissertation is organized as follows:
 
@@ -129,7 +131,15 @@ This dissertation is organized as follows:
 
     \item \textbf{Chapter \ref{chap:rl}} describes a brief theoretical background of reinforcement learning and neural networks.
     
-    \item \textbf{Chapter \ref{chap:deep_rl}} describes a brief theoretical background of neural networks and some cutting-edge DRL algorithms
+    \item \textbf{Chapter \ref{chap:deep_rl}} describes a brief theoretical background of neural networks and some cutting-edge DRL algorithms.
+    
+    \item \textbf{Chapter \ref{chap:method}} describes the main tools and methodology used for this work.
+    
+    \item \textbf{Chapter \ref{chap:contributions}} presents the main contributions and tasks modeling.
+    
+    \item \textbf{Chapter \ref{chap:experiments}} describes the conducted experiments and the obtained results.
+    
+    \item \textbf{Chapter \ref{chap:conclusions}} concludes this dissertation and presents our ideas for future investigation.
 
 %    \item \textbf{Chapter \ref{chap:deep_learning}} constructs the building blocks of deep learning.
 
